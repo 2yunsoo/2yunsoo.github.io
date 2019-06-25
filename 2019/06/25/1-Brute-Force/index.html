@@ -12,15 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="Brute Force (완전 탐색) 컴퓨터의 빠른 계산 능력을 이용해 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법  재귀 호출범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 (부분 문제) 기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해">
+<meta name="keywords" content="Yunsoo | yunsoo | ����">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1. Brute Force">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/1-Brute-Force/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="Brute Force (완전 탐색) 컴퓨터의 빠른 계산 능력을 이용해 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법  재귀 호출범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 (부분 문제) 기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-25T09:02:48.489Z">
+<meta property="og:updated_time" content="2019-06-25T14:41:43.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1. Brute Force">
+<meta name="twitter:description" content="Brute Force (완전 탐색) 컴퓨터의 빠른 계산 능력을 이용해 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법  재귀 호출범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 (부분 문제) 기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해">
     
 
     
@@ -167,7 +170,20 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h2 id="Brute-Force-완전-탐색"><a href="#Brute-Force-완전-탐색" class="headerlink" title="Brute Force (완전 탐색)"></a>Brute Force (완전 탐색)</h2><blockquote>
+<p>컴퓨터의 빠른 계산 능력을 이용해 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법</p>
+</blockquote>
+<h3 id="재귀-호출"><a href="#재귀-호출" class="headerlink" title="재귀 호출"></a>재귀 호출</h3><p>범위가 작아질수록 유사한 형태를 반복하는 작업에 사용</p>
+<p>여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 (부분 문제)</p>
+<p>기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환</p>
+<p>vs. 반복문 :  n개의 원소를 자유롭게 사용 가능</p>
+<h3 id="접근법"><a href="#접근법" class="headerlink" title="접근법"></a>접근법</h3><ol>
+<li>입력에 따른 시간 복잡도 계산</li>
+<li>가능한 모든 경우를 만드는 과정을 여러 개의 선택으로 나누기</li>
+<li>하나의 조각을 선택 후, 나머지 답을 재귀 호출을 통해 완성</li>
+<li>기저 사례 처리</li>
+</ol>
+
         </div>
         <footer class="article-footer">
             
@@ -252,8 +268,13 @@
         "dateCreated": "2019-06-25",
         "dateModified": "2019-06-25",
         "url": "https://2yunsoo.github.io/2019/06/25/1-Brute-Force/",
-        "description": ""
-        "wordCount": 1
+        "description": "Brute Force (완전 탐색)
+컴퓨터의 빠른 계산 능력을 이용해 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법
+
+재귀 호출범위가 작아질수록 유사한 형태를 반복하는 작업에 사용
+여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 (부분 문제)
+기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해"
+        "wordCount": 98
     }
 </script>
 
@@ -357,15 +378,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/06/25/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2019-06-25T08:06:36.620Z" itemprop="datePublished">2019-06-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -385,7 +397,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
