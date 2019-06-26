@@ -12,19 +12,19 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복한 조각 : 나머지 전체    /    거의 같은">
+    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
 <meta name="keywords" content="Yunsoo | yunsoo | ����">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2. 분할 정복">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/2-분할-정복/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복한 조각 : 나머지 전체    /    거의 같은">
+<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
-<meta property="og:updated_time" content="2019-06-26T05:40:56.206Z">
+<meta property="og:updated_time" content="2019-06-26T05:43:39.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2. 분할 정복">
-<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복한 조각 : 나머지 전체    /    거의 같은">
+<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
 <meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
     
 
@@ -180,8 +180,8 @@
 <li>merge : 각 문제의 답을 원래 문제의 답으로 병합</li>
 <li>base case : 기저 사례</li>
 </ol>
-<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>한 조각 : 나머지 전체    /    거의 같은 크기의 부분 문제들</p>
-<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 분할정복에 대한 이미지 검색결과"></p>
+<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>​                        한 조각 vs 나머지 전체                                    거의 같은 크기의 부분 문제들</p>
+<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 vs 분할정복"></p>
 <hr>
 <h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><h4 id="1-수열의-합"><a href="#1-수열의-합" class="headerlink" title="1. 수열의 합"></a>1. 수열의 합</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 기저 사례</span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> fastSum(n<span class="number">-1</span>) + n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>*fastSum(n/<span class="number">2</span>) + (n/<span class="number">2</span>) * (n/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -291,8 +291,8 @@ divide : 문제를 더 작은 문제로 분할
 merge : 각 문제의 답을 원래 문제의 답으로 병합
 base case : 기저 사례
 
-재귀호출 vs 분할정복한 조각 : 나머지 전체    /    거의 같은 "
-        "wordCount": 295
+재귀호출 vs 분할정복​                        한 조"
+        "wordCount": 345
     }
 </script>
 
