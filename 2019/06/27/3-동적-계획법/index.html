@@ -12,18 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법">
+    <meta name="description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법  참조적 투명성 : 함수의 반환 값이 그 입력 값만으">
 <meta name="keywords" content="Yunsoo | yunsoo | ����">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3. 동적 계획법">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/06/27/3-동적-계획법/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법">
+<meta property="og:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법  참조적 투명성 : 함수의 반환 값이 그 입력 값만으">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-27T04:05:02.894Z">
+<meta property="og:updated_time" content="2019-06-27T18:27:39.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3. 동적 계획법">
-<meta name="twitter:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법">
+<meta name="twitter:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    메모이제이션(memoization) 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법  참조적 투명성 : 함수의 반환 값이 그 입력 값만으">
     
 
     
@@ -175,7 +175,16 @@
 </blockquote>
 <br>
 
-<h5 id="메모이제이션-memoization-함수를-계산한-값을-저장해-뒀다-재활용하는-최적화-기법"><a href="#메모이제이션-memoization-함수를-계산한-값을-저장해-뒀다-재활용하는-최적화-기법" class="headerlink" title="메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법"></a>메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법</h5>
+<h4 id="메모이제이션-memoization"><a href="#메모이제이션-memoization" class="headerlink" title="메모이제이션(memoization)"></a>메모이제이션(memoization)</h4><blockquote>
+<p>함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법</p>
+</blockquote>
+<p>참조적 투명성 : 함수의 반환 값이 그 입력 값만으로 결정되는지 판단</p>
+<p>참조적  투명 함수 : 입력이 고정되어 있을 때 그 결과가 항상 같은 함수</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 메모이제이션 구현 예시</span></span><br><span class="line"><span class="keyword">int</span> cache[<span class="number">2500</span>][<span class="number">2500</span>]; <span class="comment">// 특정값으로 초기화</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">function</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(...) <span class="keyword">return</span> ...; <span class="comment">// 기저 사례</span></span><br><span class="line">    <span class="keyword">int</span>&amp; ret = cache[a][b];   <span class="comment">// ret은 참조자로 만들어졌으므로 ret의 수정은 그대로 cache에 반영된다.</span></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">-1</span>) <span class="keyword">return</span> ret; <span class="comment">// (a,b)에 대한 답을 구한 적이 있으면 곧장 반환</span></span><br><span class="line">    ... <span class="comment">// 답 계산</span></span><br><span class="line">    <span class="keyword">return</span> ret; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(cache,<span class="number">-1</span>,<span class="keyword">sizeof</span>(cach));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>시간복잡도 : (존재하는 부분 문제의 수) × (한 부분 문제를 풀 때 필요한 반복문의 수행 횟수)</p>
+<p>중복된 계산을 생략하기 때문에 시간복잡도를 줄여줌</p>
+
         </div>
         <footer class="article-footer">
             
@@ -258,15 +267,18 @@
         "genre": "",
         "datePublished": "2019-06-27",
         "dateCreated": "2019-06-27",
-        "dateModified": "2019-06-27",
+        "dateModified": "2019-06-28",
         "url": "https://2yunsoo.github.io/2019/06/27/3-동적-계획법/",
         "description": "동적 계획법
 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘
 
 
 
-메모이제이션(memoization) : 함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법"
-        "wordCount": 59
+메모이제이션(memoization)
+함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법
+
+참조적 투명성 : 함수의 반환 값이 그 입력 값만으"
+        "wordCount": 231
     }
 </script>
 
