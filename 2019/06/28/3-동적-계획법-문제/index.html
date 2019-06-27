@@ -6,18 +6,24 @@
     
 
     
-    <title>Archive | Yunsoo&#39;s blog</title>
+    <title>3. 동적 계획법 문제 | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yunsoo&#39;s blog">
-<meta property="og:url" content="https://2yunsoo.github.io/archives/index.html">
+        <meta name="keywords" content>
+    
+    <meta name="description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;	int&amp;amp; ret = cache[nowW][nowF];	if(ret!=-1)		// cache에 기존 계산 기록 존재하면 바로 값 반환		retu">
+<meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3. 동적 계획법 문제">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/28/3-동적-계획법-문제/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;	int&amp;amp; ret = cache[nowW][nowF];	if(ret!=-1)		// cache에 기존 계산 기록 존재하면 바로 값 반환		retu">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-27T19:05:45.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yunsoo&#39;s blog">
+<meta name="twitter:title" content="3. 동적 계획법 문제">
+<meta name="twitter:description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;	int&amp;amp; ret = cache[nowW][nowF];	if(ret!=-1)		// cache에 기존 계산 기록 존재하면 바로 값 반환		retu">
     
 
     
@@ -130,258 +136,162 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-3-동적-계획법-문제" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/문제/">문제</a>
-            </div>
-            <div class="date"><time datetime="2019-06-27T18:28:28.000Z" itemprop="datePublished">2019-06-28</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/28/3-동적-계획법-문제/">3. 동적 계획법 문제</a>
+        3. 동적 계획법 문제
         </h1>
     
 
-        <p class="article-excerpt">
-            1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&#123;	int&amp; ret = cache[nowW][nowF];	if(ret!=-1)		// cache에 기존 계산 기록 존재하면 바로 값 반환		retu
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
+            </header>
         
-        <div class="article-meta">
-            <div class="category">
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/28/3-동적-계획법-문제/" class="article-date">
+            <time datetime="2019-06-27T18:28:28.000Z" itemprop="datePublished">2019-06-28</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="1-와일드카드-WILDCARD-난이도-中"><a href="#1-와일드카드-WILDCARD-난이도-中" class="headerlink" title="1. 와일드카드(WILDCARD) (난이도:中)"></a>1. 와일드카드(WILDCARD) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">wildcard</span><span class="params">(<span class="keyword">int</span> nowW, <span class="keyword">int</span> nowF)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span>&amp; ret = cache[nowW][nowF];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(ret!=<span class="number">-1</span>)		<span class="comment">// cache에 기존 계산 기록 존재하면 바로 값 반환</span></span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(nowW &lt; lengthW &amp;&amp; nowF &lt;lengthF &amp;&amp; (w[nowW]==f[nowF] || w[nowW]==<span class="string">'?'</span>)) &#123;</span><br><span class="line">		nowW++;</span><br><span class="line">		nowF++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 비교 시, fail 되면 문제가 뭐였는지 확인</span></span><br><span class="line">	<span class="keyword">if</span>(nowW==lengthW)	<span class="comment">// W와 F가 동시에 배열에 끝에 다다랐으면 true, 아니면 false</span></span><br><span class="line">		<span class="keyword">return</span> ret = (nowF == lengthF);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(w[nowW]==<span class="string">'*'</span>)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=lengthF-nowF; i++)</span><br><span class="line">			<span class="keyword">if</span>(wildcard(nowW+<span class="number">1</span>,nowF+i))	<span class="comment">// 재귀 호출을 이용해 완전 탐색</span></span><br><span class="line">				<span class="keyword">return</span> ret = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(cache,<span class="number">-1</span>,<span class="keyword">sizeof</span>(cache)); <span class="comment">// cache -1로 설정</span></span><br><span class="line"></span><br><span class="line">    wildcard(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이-과정"><a href="#내-풀이-과정" class="headerlink" title="내 풀이 과정"></a>내 풀이 과정</h5><ul>
+<li>nowF와 nowW를 증가시켜가며 비교하는 완전 탐색 후 메모이제이션 적용하고자 함</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>now 값들을 인자로 갖는 재귀 함수를 생성하여 같을 때도 now+1을 인자로 재귀 호출을 하였는데 그러면 처음 ret 값도 같이 인자로 넘겨줬어야 함.</li>
+<li>각 비교 case 조건에 대한 이해도 부족으로 인한 구현 불가</li>
+<li>메모이제이션 적용법 생각 못 함</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>w와 f 값이 같거나 w가 ‘?’일 때는 while을 통해 간편히 비교, 한 함수 내에서 끝까지 비교 가능</li>
+<li>비교가 fail 됐을 때 원인에 대한 case 나눠줌<ol>
+<li>nowW와 nowF가 배열에 끝까지 갔으면 두 문자열은 일치하므로 return true;</li>
+<li>w[nowW]가 ‘*’일 때는 *의 길이를 0 ~ 남은length 로 설정 후,  재귀 호출</li>
+</ol>
+</li>
+<li>배열의 위치 now를 통해 memoization 적용</li>
+</ul>
+<div style="color:red"> ※ 완전 탐색 구현 시, 방법에 대한 이해도↑ + 어떻게 메모이제이션을 적용시킬 것인가? 고려하기 </div>
+
+
+        </div>
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2019-06-27T02:49:02.000Z" itemprop="datePublished">2019-06-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/27/3-동적-계획법/">3. 동적 계획법</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            동적 계획법
-문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘
 
 
 
-기본구현법 : 완전 탐색 후, 메모이제이션 적용하여 시간 복잡도 낮춤
+    <a data-url="https://2yunsoo.github.io/2019/06/28/3-동적-계획법-문제/" data-id="cjxf1g6jt0005fsngyo0k7ywf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
-메모이제이션(memoization)
-함수를 계산한 값을 저장해 뒀다 재
-        </p>
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "3. 동적 계획법 문제",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "",
+        "genre": "문제",
+        "datePublished": "2019-06-28",
+        "dateCreated": "2019-06-28",
+        "dateModified": "2019-06-28",
+        "url": "https://2yunsoo.github.io/2019/06/28/3-동적-계획법-문제/",
+        "description": "1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&#123;	int&amp; ret = cache[nowW][nowF];	if(ret!=-1)		// cache에 기존 계산 기록 존재하면 바로 값 반환		retu"
+        "wordCount": 319
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/문제/">문제</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T07:27:33.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/2-분할-정복-문제/">2. 분할 정복 문제</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1. 쿼드 트리 뒤집기 (난이도:下…?)내 풀이 과정
-압축 결과를 쿼드 트리 그림으로 되돌린 후에 상하로 뒤집고 다시 압축
-사이즈가 정해져있지 않기 때문에 x로 쪼개지는 횟수를 통해 size 추정
-해당 size로 쿼드 트리 그림을 만들 때 위치에 따른 케이스 하나하나 지정해줘야 함
-만들어진 그림을 분할 정복을 통해 다시 압축
-
-문제점
-size가 최대 2^2
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/문제/">문제</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T07:27:23.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/1-Brute-force-문제/">1. Brute force 문제</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1. 소풍 (난이도:下)123456789101112131415161718192021222324252627int jjak(int now, int remain)&#123;   int i;   if(remain==0) &#123;      count++;      return 0;   &#125;   if(remain%2==1) &#123;      for(i=
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/알고리즘/">알고리즘</a>
-            </div>
-            <div class="date"><time datetime="2019-06-26T03:59:56.000Z" itemprop="datePublished">2019-06-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/26/2-분할-정복/">2. 분할 정복</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            분할 정복 (Divide &amp; Conquer)
-주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산
-
-
-divide : 문제를 더 작은 문제로 분할
-merge : 각 문제의 답을 원래 문제의 답으로 병합
-base case : 기저 사례
-
-재귀호출 vs 분할정복​                        한 조
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/알고리즘/">알고리즘</a>
-            </div>
-            <div class="date"><time datetime="2019-06-25T08:25:21.000Z" itemprop="datePublished">2019-06-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/25/1-Brute-Force/">1. Brute Force</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Brute Force
-가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)
-
-재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용
-​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행
-​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환
-​ 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2019-06-25T08:25:03.000Z" itemprop="datePublished">2019-06-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/25/시작/">시작</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </section>
 
 
 
@@ -427,6 +337,19 @@ base case : 기저 사례
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/27/3-동적-계획법/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">3. 동적 계획법</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -570,11 +493,13 @@ base case : 기저 사례
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/28/3-동적-계획법-문제/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
