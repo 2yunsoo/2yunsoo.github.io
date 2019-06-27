@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="1. 쿼드 트리 뒤집기 (난이도:下…?)내 풀이 과정 압축 결과를 쿼드 트리 그림으로 되돌린 후에 상하로 뒤집고 다시 압축 사이즈가 정해져있지 않기 때문에 x로 쪼개지는 횟수를 통해 size 추정 해당 size로 쿼드 트리 그림을 만들 때 위치에 따른 케이스 하나하나 지정해줘야 함 만들어진 그림을 분할 정복을 통해 다시 압축  문제점 size가 최대 2^2">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-26T18:21:53.085Z">
+<meta property="og:updated_time" content="2019-06-27T02:26:08.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2. 분할 정복 문제">
 <meta name="twitter:description" content="1. 쿼드 트리 뒤집기 (난이도:下…?)내 풀이 과정 압축 결과를 쿼드 트리 그림으로 되돌린 후에 상하로 뒤집고 다시 압축 사이즈가 정해져있지 않기 때문에 x로 쪼개지는 횟수를 통해 size 추정 해당 size로 쿼드 트리 그림을 만들 때 위치에 따른 케이스 하나하나 지정해줘야 함 만들어진 그림을 분할 정복을 통해 다시 압축  문제점 size가 최대 2^2">
@@ -180,6 +180,25 @@
 <li>size가 최대 2^20 × 2^20 이었음…</li>
 <li>시간복잡도 O(n) 이하로 풀어야 하므로 압축된 입력값으로 바로 답을 구해줘야 함</li>
 </ul>
+<br>
+
+<h4 id="2-울타리-잘라내기-FENCE-난이도-中"><a href="#2-울타리-잘라내기-FENCE-난이도-中" class="headerlink" title="2. 울타리 잘라내기(FENCE) (난이도:中)"></a>2. 울타리 잘라내기(FENCE) (난이도:中)</h4><h5 id="내-풀이-과정-1"><a href="#내-풀이-과정-1" class="headerlink" title="내 풀이 과정"></a>내 풀이 과정</h5><ul>
+<li>O(n^2)은 불가능</li>
+<li>O(n·logn)으로 줄여야 할 것 같은데 방법을 못 찾음</li>
+</ul>
+<h5 id="문제점-1"><a href="#문제점-1" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>분할 정복에 대한 이해 부족</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>문제에서 찾는 최대 직사각형은 다음 세 가지 중 하나에 속함<ol>
+<li>범위를 절반으로 나눴을 때, 왼쪽 부분에서만 존재</li>
+<li>범위를 절반으로 나눴을 때, 오른쪽 부분에서만 존재</li>
+<li>왼쪽과 오른쪽 부분에 걸쳐서 존재</li>
+</ol>
+</li>
+<li>1, 2번의 경우 재귀 호출을 통해 탐색. <i> 시간복잡도 : logn × 1 = logn </i></li>
+<li>3번의 경우 (start+end)/2 지점에서부터 좌우로 진행. <i> 시간복잡도 : logn × n = n·logn </i></li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -273,7 +292,7 @@
 
 문제점
 size가 최대 2^2"
-        "wordCount": 77
+        "wordCount": 171
     }
 </script>
 
