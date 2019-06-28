@@ -6,26 +6,18 @@
     
 
     
-    <title>2. 분할 정복 | Yunsoo&#39;s blog</title>
+    <title>Tag: 메모이제이션 | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
-    
-    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="keywords" content="Yunsoo | yunsoo | ����">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2. 분할 정복">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/2-분할-정복/index.html">
+    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yunsoo&#39;s blog">
+<meta property="og:url" content="https://2yunsoo.github.io/tags/메모이제이션/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
-<meta property="og:updated_time" content="2019-06-26T07:22:43.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. 분할 정복">
-<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
+<meta name="twitter:title" content="Yunsoo&#39;s blog">
     
 
     
@@ -138,175 +130,65 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    <i class="icon fa fa-tag"></i>Tag: <em>메모이제이션</em>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-2-분할-정복" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/알고리즘/">알고리즘</a>
+            </div>
+            <div class="date"><time datetime="2019-06-27T02:49:02.000Z" itemprop="datePublished">2019-06-27</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        2. 분할 정복
+        <a href="/2019/06/27/3-동적-계획법/">3. 동적 계획법</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/06/26/2-분할-정복/" class="article-date">
-            <time datetime="2019-06-26T03:59:56.000Z" itemprop="datePublished">2019-06-26</time>
-        </a>
+        <p class="article-excerpt">
+            동적 계획법
+문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘
+
+
+
+일반적인 동적 계획법 알고리즘의 구현 :
+
+주어진 문제를 완전 탐색을 이용해 해결
+중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용
+
+
+
+        </p>
     </div>
-
-		
-
-                
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h2 id="분할-정복-Divide-amp-Conquer"><a href="#분할-정복-Divide-amp-Conquer" class="headerlink" title="분할 정복 (Divide &amp; Conquer)"></a>분할 정복 (Divide &amp; Conquer)</h2><blockquote>
-<p>주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산</p>
-</blockquote>
-<ol>
-<li>divide : 문제를 더 작은 문제로 분할</li>
-<li>merge : 각 문제의 답을 원래 문제의 답으로 병합</li>
-<li>base case : 기저 사례</li>
-</ol>
-<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>​                        한 조각 vs 나머지 전체                                    거의 같은 크기의 부분 문제들</p>
-<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 vs 분할정복"></p>
-<hr>
-<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><h4 id="1-수열의-합"><a href="#1-수열의-합" class="headerlink" title="1. 수열의 합"></a>1. 수열의 합</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 기저 사례</span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> fastSum(n<span class="number">-1</span>) + n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>*fastSum(n/<span class="number">2</span>) + (n/<span class="number">2</span>) * (n/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>재귀호출의 경우 n번의 함수 호출이 필요하나 분할 정복의 경우 함수가 호출될 때마다 두 번에 한 번은 n이 절반으로 줄어든다. 따라서 실행 시간은 O(log n)가 된다는 것을 알 수 있다.</p>
-<h4 id="2-행렬의-거듭제곱"><a href="#2-행렬의-거듭제곱" class="headerlink" title="2. 행렬의 거듭제곱"></a>2. 행렬의 거듭제곱</h4><blockquote>
-<p>A^m = A^(m/2) × A^(m/2)        if(m%2==0)</p>
-<p>A^m = A × A^(m-1)                    if(m%2==1)</p>
-</blockquote>
-<h4 id="3-Merge-Sort-amp-Quick-Sort"><a href="#3-Merge-Sort-amp-Quick-Sort" class="headerlink" title="3. Merge Sort &amp; Quick Sort"></a>3. Merge Sort &amp; Quick Sort</h4><blockquote>
-<p>병합 정렬 : 배열을 가운데에서 쪼개 비슷한 크기의 수열 두 개로 만드는 과정을 반복 후 재귀 호출을 이용해 각각 정렬. 정렬된 배열을 하나로 합침.</p>
-<p>시간복잡도 : 단계 수(O(log n)) × 한 단계 당 병합 시간 (O(n)) = O(n·logn)</p>
-</blockquote>
-<blockquote>
-<p>퀵 정렬 : 배열을 단순하게 가운데에서 쪼개는 대신 pivot을 지정하여 작거나 같은 숫자는 왼쪽, 큰 숫자는 오른쪽으로 나누는 partition을 통해 병합 과정이 필요 없도록 분할.</p>
-<p>시간복잡도 : pivot에 따라 달라짐. 평균 O(n·logn) / 최악 O(n^2)</p>
-</blockquote>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://2yunsoo.github.io/2019/06/26/2-분할-정복/" data-id="cjxfmzcqt000bncngjlio6cww" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
-    </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Yunsoo Lee"
-        },
-        "headline": "2. 분할 정복",
-        "image": "https://2yunsoo.github.iohttps://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28",
-        "keywords": "",
-        "genre": "알고리즘",
-        "datePublished": "2019-06-26",
-        "dateCreated": "2019-06-26",
-        "dateModified": "2019-06-26",
-        "url": "https://2yunsoo.github.io/2019/06/26/2-분할-정복/",
-        "description": "분할 정복 (Divide &amp; Conquer)
-주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산
-
-
-divide : 문제를 더 작은 문제로 분할
-merge : 각 문제의 답을 원래 문제의 답으로 병합
-base case : 기저 사례
-
-재귀호출 vs 분할정복​                        한 조"
-        "wordCount": 345
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
 
 
 
@@ -352,29 +234,6 @@ base case : 기저 사례
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2019/06/26/1-Brute-force-문제/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            1. Brute force 문제
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2019/06/25/1-Brute-Force/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">1. Brute Force</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -532,13 +391,11 @@ base case : 기저 사례
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/2-분할-정복/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
