@@ -6,21 +6,24 @@
     
 
     
-    <title>시작 | Yunsoo&#39;s blog</title>
+    <title>울타리 잘라내기(FENCE) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="중,분할 정복">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="울타리 잘라내기(FENCE) (난이도:中)1234567891011121314151617181920212223242526272829int fence(int start, int end)&amp;#123;	int l, r, bigger,left, right, height=10001, area=0;	if(start==end)		return h[start];	else &amp;#">
+<meta name="keywords" content="중,분할 정복">
 <meta property="og:type" content="article">
-<meta property="og:title" content="시작">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/시작/index.html">
+<meta property="og:title" content="울타리 잘라내기(FENCE)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/울타리-잘라내기-FENCE/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="울타리 잘라내기(FENCE) (난이도:中)1234567891011121314151617181920212223242526272829int fence(int start, int end)&amp;#123;	int l, r, bigger,left, right, height=10001, area=0;	if(start==end)		return h[start];	else &amp;#">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-25T08:25:03.473Z">
+<meta property="og:updated_time" content="2019-06-30T19:27:46.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="시작">
+<meta name="twitter:title" content="울타리 잘라내기(FENCE)">
+<meta name="twitter:description" content="울타리 잘라내기(FENCE) (난이도:中)1234567891011121314151617181920212223242526272829int fence(int start, int end)&amp;#123;	int l, r, bigger,left, right, height=10001, area=0;	if(start==end)		return h[start];	else &amp;#">
     
 
     
@@ -133,19 +136,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-시작" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-울타리-잘라내기-FENCE" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        시작
+        울타리 잘라내기(FENCE)
         </h1>
     
 
@@ -155,26 +158,50 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/25/시작/" class="article-date">
-            <time datetime="2019-06-25T08:25:03.000Z" itemprop="datePublished">2019-06-25</time>
+        <a href="/2019/06/26/울타리-잘라내기-FENCE/" class="article-date">
+            <time datetime="2019-06-26T07:30:35.000Z" itemprop="datePublished">2019-06-26</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/분할-정복/">분할 정복</a>, <a class="tag-link" href="/tags/중/">중</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="울타리-잘라내기-FENCE-난이도-中"><a href="#울타리-잘라내기-FENCE-난이도-中" class="headerlink" title="울타리 잘라내기(FENCE) (난이도:中)"></a>울타리 잘라내기(FENCE) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fence</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l, r, bigger,left, right, height=<span class="number">10001</span>, area=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(start==end)</span><br><span class="line">		<span class="keyword">return</span> h[start];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		l = fence(start,(start+end)/<span class="number">2</span>);</span><br><span class="line">		r = fence((start+end)/<span class="number">2</span>+<span class="number">1</span>,end);</span><br><span class="line"></span><br><span class="line">		left = (start+end) / <span class="number">2</span>;</span><br><span class="line">		right = left + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(start&lt;=left || right&lt;=end) &#123;</span><br><span class="line">			<span class="keyword">if</span>(start &lt;= left &amp;&amp; (h[left] &gt; h[right] || right&gt;end)) &#123;</span><br><span class="line">				height = min(height, h[left]);</span><br><span class="line">				left--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				height = min(height, h[right]);</span><br><span class="line">				right++;</span><br><span class="line">			&#125;</span><br><span class="line">			area = max(area, height * (right - left - <span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	bigger = max(l,r);</span><br><span class="line">	<span class="keyword">return</span> max(bigger,area);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이-과정"><a href="#내-풀이-과정" class="headerlink" title="내 풀이 과정"></a>내 풀이 과정</h5><ul>
+<li>O(n^2)은 불가능</li>
+<li>O(n·logn)으로 줄여야 할 것 같은데 방법을 못 찾음</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>분할 정복에 대한 이해 부족</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>문제에서 찾는 최대 직사각형은 다음 세 가지 중 하나에 속함<ol>
+<li>범위를 절반으로 나눴을 때, 왼쪽 부분에서만 존재</li>
+<li>범위를 절반으로 나눴을 때, 오른쪽 부분에서만 존재</li>
+<li>왼쪽과 오른쪽 부분에 걸쳐서 존재</li>
+</ol>
+</li>
+<li>1, 2번의 경우 재귀 호출을 통해 탐색. <i> 시간복잡도 : logn × 1 = logn </i></li>
+<li>3번의 경우 (start+end)/2 지점에서부터 좌우로 진행. <i> 시간복잡도 : logn × n = n·logn </i></li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/25/시작/" data-id="cjxjcjy8b0008zongqtgdoogr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/06/26/울타리-잘라내기-FENCE/" data-id="cjxjcjy8s000ezongd88vlk1z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -244,16 +271,16 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "시작",
+        "headline": "울타리 잘라내기(FENCE)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2019-06-25",
-        "dateCreated": "2019-06-25",
-        "dateModified": "2019-06-25",
-        "url": "https://2yunsoo.github.io/2019/06/25/시작/",
-        "description": ""
-        "wordCount": 1
+        "keywords": "중 분할 정복",
+        "genre": "문제",
+        "datePublished": "2019-06-26",
+        "dateCreated": "2019-06-26",
+        "dateModified": "2019-07-01",
+        "url": "https://2yunsoo.github.io/2019/06/26/울타리-잘라내기-FENCE/",
+        "description": "울타리 잘라내기(FENCE) (난이도:中)1234567891011121314151617181920212223242526272829int fence(int start, int end)&#123;	int l, r, bigger,left, right, height=10001, area=0;	if(start==end)		return h[start];	else &#"
+        "wordCount": 233
     }
 </script>
 
@@ -317,16 +344,22 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/06/25/1-Brute-Force/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/06/27/3-동적-계획법/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            1. Brute Force
+            3. 동적 계획법
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/2019/06/26/2-분할-정복-문제/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2. 분할 정복 문제</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -487,7 +520,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/25/시작/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/울타리-잘라내기-FENCE/';
     
     (function() {
     var dsq = document.createElement('script');

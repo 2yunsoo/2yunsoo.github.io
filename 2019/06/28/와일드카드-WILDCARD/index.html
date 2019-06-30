@@ -6,21 +6,24 @@
     
 
     
-    <title>시작 | Yunsoo&#39;s blog</title>
+    <title>와일드카드(WILDCARD) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="다이나믹,메모이제이션,중">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;   int&amp;amp; ret = cache[nowW][nowF];   if(ret!=-1)      // cache에 기존 계산 기록 존재하면 바로 값">
+<meta name="keywords" content="다이나믹,메모이제이션,중">
 <meta property="og:type" content="article">
-<meta property="og:title" content="시작">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/시작/index.html">
+<meta property="og:title" content="와일드카드(WILDCARD)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/28/와일드카드-WILDCARD/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;   int&amp;amp; ret = cache[nowW][nowF];   if(ret!=-1)      // cache에 기존 계산 기록 존재하면 바로 값">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-25T08:25:03.473Z">
+<meta property="og:updated_time" content="2019-06-30T19:25:56.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="시작">
+<meta name="twitter:title" content="와일드카드(WILDCARD)">
+<meta name="twitter:description" content="1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&amp;#123;   int&amp;amp; ret = cache[nowW][nowF];   if(ret!=-1)      // cache에 기존 계산 기록 존재하면 바로 값">
     
 
     
@@ -133,19 +136,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-시작" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-와일드카드-WILDCARD" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        시작
+        와일드카드(WILDCARD)
         </h1>
     
 
@@ -155,26 +158,50 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/25/시작/" class="article-date">
-            <time datetime="2019-06-25T08:25:03.000Z" itemprop="datePublished">2019-06-25</time>
+        <a href="/2019/06/28/와일드카드-WILDCARD/" class="article-date">
+            <time datetime="2019-06-27T18:28:28.000Z" itemprop="datePublished">2019-06-28</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>, <a class="tag-link" href="/tags/중/">중</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="1-와일드카드-WILDCARD-난이도-中"><a href="#1-와일드카드-WILDCARD-난이도-中" class="headerlink" title="1. 와일드카드(WILDCARD) (난이도:中)"></a>1. 와일드카드(WILDCARD) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">wildcard</span><span class="params">(<span class="keyword">int</span> nowW, <span class="keyword">int</span> nowF)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>&amp; ret = cache[nowW][nowF];</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(ret!=<span class="number">-1</span>)      <span class="comment">// cache에 기존 계산 기록 존재하면 바로 값 반환</span></span><br><span class="line">      <span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">while</span>(nowW &lt; lengthW &amp;&amp; nowF &lt;lengthF &amp;&amp; (w[nowW]==f[nowF] || w[nowW]==<span class="string">'?'</span>)) &#123;</span><br><span class="line">      nowW++;</span><br><span class="line">      nowF++;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 비교 시, fail 되면 문제가 뭐였는지 확인</span></span><br><span class="line">   <span class="keyword">if</span>(nowW==lengthW)   <span class="comment">// W와 F가 동시에 배열에 끝에 다다랐으면 true, 아니면 false</span></span><br><span class="line">      <span class="keyword">return</span> ret = (nowF == lengthF);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(w[nowW]==<span class="string">'*'</span>)</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=lengthF-nowF; i++)</span><br><span class="line">         <span class="keyword">if</span>(wildcard(nowW+<span class="number">1</span>,nowF+i))   <span class="comment">// 재귀 호출을 이용해 완전 탐색</span></span><br><span class="line">            <span class="keyword">return</span> ret = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> ret = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(cache,<span class="number">-1</span>,<span class="keyword">sizeof</span>(cache)); <span class="comment">// cache -1로 설정</span></span><br><span class="line"></span><br><span class="line">    wildcard(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이-과정"><a href="#내-풀이-과정" class="headerlink" title="내 풀이 과정"></a>내 풀이 과정</h5><ul>
+<li>nowF와 nowW를 증가시켜가며 비교하는 완전 탐색 후 메모이제이션 적용하고자 함</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>now 값들을 인자로 갖는 재귀 함수를 생성하여 같을 때도 now+1을 인자로 재귀 호출을 하였는데 그러면 처음 ret 값도 같이 인자로 넘겨줬어야 함.</li>
+<li>각 비교 case 조건에 대한 이해도 부족으로 인한 구현 불가</li>
+<li>메모이제이션 적용법 생각 못 함</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>w와 f 값이 같거나 w가 ‘?’일 때는 while을 통해 간편히 비교, 한 함수 내에서 끝까지 비교 가능</li>
+<li>비교가 fail 됐을 때 원인에 대한 case 나눠줌<ol>
+<li>nowW와 nowF가 배열에 끝까지 갔으면 두 문자열은 일치하므로 return true;</li>
+<li>w[nowW]가 ‘*’일 때는 *의 길이를 0 ~ 남은length 로 설정 후,  재귀 호출</li>
+</ol>
+</li>
+<li>배열의 위치 now를 통해 memoization 적용</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/25/시작/" data-id="cjxjcjy8b0008zongqtgdoogr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/06/28/와일드카드-WILDCARD/" data-id="cjxjcjy8n000czongfrg4qnvh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -244,16 +271,16 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "시작",
+        "headline": "와일드카드(WILDCARD)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2019-06-25",
-        "dateCreated": "2019-06-25",
-        "dateModified": "2019-06-25",
-        "url": "https://2yunsoo.github.io/2019/06/25/시작/",
-        "description": ""
-        "wordCount": 1
+        "keywords": "다이나믹 메모이제이션 중",
+        "genre": "문제",
+        "datePublished": "2019-06-28",
+        "dateCreated": "2019-06-28",
+        "dateModified": "2019-07-01",
+        "url": "https://2yunsoo.github.io/2019/06/28/와일드카드-WILDCARD/",
+        "description": "1. 와일드카드(WILDCARD) (난이도:中)123456789101112131415161718192021222324252627282930int wildcard(int nowW, int nowF)&#123;   int&amp; ret = cache[nowW][nowF];   if(ret!=-1)      // cache에 기존 계산 기록 존재하면 바로 값 "
+        "wordCount": 387
     }
 </script>
 
@@ -317,16 +344,22 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/06/25/1-Brute-Force/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/06/28/3-동적-계획법-문제/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            1. Brute Force
+            3. 동적 계획법 문제
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/2019/06/27/3-동적-계획법/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">3. 동적 계획법</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -487,7 +520,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/25/시작/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/28/와일드카드-WILDCARD/';
     
     (function() {
     var dsq = document.createElement('script');
