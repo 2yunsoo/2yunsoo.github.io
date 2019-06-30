@@ -6,24 +6,18 @@
     
 
     
-    <title>1. Brute Force | Yunsoo&#39;s blog</title>
+    <title>Archive: 2019/7 | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
-    
-    <meta name="description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
-<meta name="keywords" content="Yunsoo | yunsoo | ����">
-<meta property="og:type" content="article">
-<meta property="og:title" content="1. Brute Force">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/1-Brute-Force/index.html">
+    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yunsoo&#39;s blog">
+<meta property="og:url" content="https://2yunsoo.github.io/archives/2019/07/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-26T18:10:29.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1. Brute Force">
-<meta name="twitter:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+<meta name="twitter:title" content="Yunsoo&#39;s blog">
     
 
     
@@ -136,160 +130,54 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    <i class="icon fa fa-archive"></i>Archive: 2019/7
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-1-Brute-Force" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/알고리즘/">알고리즘</a>
+            </div>
+            <div class="date"><time datetime="2019-06-30T19:05:53.000Z" itemprop="datePublished">2019-07-01</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        1. Brute Force
+        <a href="/2019/07/01/원주율-구하기-PI/">원주율 구하기(PI)</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/06/25/1-Brute-Force/" class="article-date">
-            <time datetime="2019-06-25T08:25:21.000Z" itemprop="datePublished">2019-06-25</time>
-        </a>
+        <p class="article-excerpt">
+            원주율 구하기(PI) (난이도:下)123456789101112131415161718192021222324252627282930int getPoint(int now, int length); // 난이도 계산 후 반환int pi(int now)&#123;	int i, length;	int&amp; ret = cache[now];	if(ret!=100000)		
+        </p>
     </div>
-
-		
-
-                
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h2 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h2><blockquote>
-<p>가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)</p>
-</blockquote>
-<h4 id="재귀-호출"><a href="#재귀-호출" class="headerlink" title="재귀 호출"></a>재귀 호출</h4><p>​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용</p>
-<p>​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행</p>
-<p>​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환</p>
-<p>​    vs. 반복문 :  n개의 원소를 자유롭게 사용 가능</p>
-<h4 id="접근법"><a href="#접근법" class="headerlink" title="접근법"></a>접근법</h4><ol>
-<li>입력에 따른 시간 복잡도 계산</li>
-<li>가능한 모든 경우를 만드는 과정을 여러 개의 선택으로 나누기</li>
-<li>하나의 조각을 선택 후, 나머지 답을 재귀 호출을 통해 완성</li>
-<li>기저 사례 처리</li>
-</ol>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://2yunsoo.github.io/2019/06/25/1-Brute-Force/" data-id="cjxjccf6a000uhongz7qsvh5h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
-    </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Yunsoo Lee"
-        },
-        "headline": "1. Brute Force",
-        "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "알고리즘",
-        "datePublished": "2019-06-25",
-        "dateCreated": "2019-06-25",
-        "dateModified": "2019-06-27",
-        "url": "https://2yunsoo.github.io/2019/06/25/1-Brute-Force/",
-        "description": "Brute Force
-가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)
-
-재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용
-​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행
-​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환
-​ "
-        "wordCount": 105
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
 
 
 
@@ -335,29 +223,6 @@
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2019/06/26/2-분할-정복/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            2. 분할 정복
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2019/06/25/시작/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">시작</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -515,13 +380,11 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/25/1-Brute-Force/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

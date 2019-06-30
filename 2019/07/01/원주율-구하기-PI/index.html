@@ -6,24 +6,24 @@
     
 
     
-    <title>1. Brute Force | Yunsoo&#39;s blog</title>
+    <title>원주율 구하기(PI) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="다이나믹,메모이제이션">
     
-    <meta name="description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
-<meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="원주율 구하기(PI) (난이도:下)123456789101112131415161718192021222324252627282930int getPoint(int now, int length); // 난이도 계산 후 반환int pi(int now)&amp;#123;	int i, length;	int&amp;amp; ret = cache[now];	if(ret!=100000)">
+<meta name="keywords" content="다이나믹,메모이제이션">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1. Brute Force">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/1-Brute-Force/index.html">
+<meta property="og:title" content="원주율 구하기(PI)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/01/원주율-구하기-PI/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+<meta property="og:description" content="원주율 구하기(PI) (난이도:下)123456789101112131415161718192021222324252627282930int getPoint(int now, int length); // 난이도 계산 후 반환int pi(int now)&amp;#123;	int i, length;	int&amp;amp; ret = cache[now];	if(ret!=100000)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-26T18:10:29.198Z">
+<meta property="og:updated_time" content="2019-06-30T19:21:54.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1. Brute Force">
-<meta name="twitter:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+<meta name="twitter:title" content="원주율 구하기(PI)">
+<meta name="twitter:description" content="원주율 구하기(PI) (난이도:下)123456789101112131415161718192021222324252627282930int getPoint(int now, int length); // 난이도 계산 후 반환int pi(int now)&amp;#123;	int i, length;	int&amp;amp; ret = cache[now];	if(ret!=100000)">
     
 
     
@@ -141,14 +141,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-1-Brute-Force" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-원주율-구하기-PI" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        1. Brute Force
+        원주율 구하기(PI)
         </h1>
     
 
@@ -158,31 +158,53 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/25/1-Brute-Force/" class="article-date">
-            <time datetime="2019-06-25T08:25:21.000Z" itemprop="datePublished">2019-06-25</time>
+        <a href="/2019/07/01/원주율-구하기-PI/" class="article-date">
+            <time datetime="2019-06-30T19:05:53.000Z" itemprop="datePublished">2019-07-01</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h2><blockquote>
-<p>가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)</p>
-</blockquote>
-<h4 id="재귀-호출"><a href="#재귀-호출" class="headerlink" title="재귀 호출"></a>재귀 호출</h4><p>​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용</p>
-<p>​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행</p>
-<p>​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환</p>
-<p>​    vs. 반복문 :  n개의 원소를 자유롭게 사용 가능</p>
-<h4 id="접근법"><a href="#접근법" class="headerlink" title="접근법"></a>접근법</h4><ol>
-<li>입력에 따른 시간 복잡도 계산</li>
-<li>가능한 모든 경우를 만드는 과정을 여러 개의 선택으로 나누기</li>
-<li>하나의 조각을 선택 후, 나머지 답을 재귀 호출을 통해 완성</li>
-<li>기저 사례 처리</li>
+            <h4 id="원주율-구하기-PI-난이도-下"><a href="#원주율-구하기-PI-난이도-下" class="headerlink" title="원주율 구하기(PI) (난이도:下)"></a>원주율 구하기(PI) (난이도:下)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getPoint</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> length)</span></span>; <span class="comment">// 난이도 계산 후 반환</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pi</span><span class="params">(<span class="keyword">int</span> now)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, length;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span>&amp; ret = cache[now];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(ret!=<span class="number">100000</span>)</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(now == inputLength) &#123;</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(length=<span class="number">3</span>; length&lt;=<span class="number">5</span>; length++) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(now+length &gt; inputLength)</span><br><span class="line">			ret = min(ret,<span class="number">100000</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">int</span> point = getPoint(now,length);</span><br><span class="line">			<span class="keyword">if</span>(now+length == inputLength)</span><br><span class="line">				ret = min(ret,point);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				ret = min(ret,pi(now+length)+point);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>완전 탐색으로 먼저 구현 후 메모이제이션 적용하고자 함</li>
+<li>재귀 함수 인자로 now와 length 두 개를 입력</li>
+<li>함수 맨 앞에서 난이도를 구하였음</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>메모이제이션 적용에 대한 이해가 부족하여 구현하지 못하였음</li>
+<li>주 원인은 마지막에 세 개 미만의 숫자가 남아 불가능한 경우 어떻게 처리해야할 지를 몰랐음</li>
+<li>난이도를 계산하고 이를 어떻게 비교 적용해야할 지를 제대로 정하지 못함</li>
+<li>난이도는 함수 마지막에 ret 값을 업데이트할 때 비교하기 위한 것임을 간과</li>
+<li>ret의 기본 값을 제대로 설정하지 못함</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>재귀 함수의 기본 구성<ol>
+<li>ret에 cache 값 부여 후 ret에 대한 기저 사례 적용</li>
+<li>ret을 업데이트 해줌. 이에 따른 조건들 계산</li>
 </ol>
+</li>
+<li>불가능한 경우는 그냥 ret 값에 MAX 값이 들어가있으면 상관 없음</li>
+<li>따라서 ret의 기본 값은 MAX 값으로 설정</li>
+<li>getPoint 함수를 통해 얻은 난이도와 ret 값 비교하여 ret 값 계산</li>
+</ul>
+<br>
+
+<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><ul>
+<li>난이도 구하는 것 같이 코드가 길어지는 기능은 제발 따로 함수를 빼서 구현하자…</li>
+<li>메모이제이션 적용 방법을 이제서야 얼추 이해한 것 같다! 제대로 알아두자!!!</li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -190,7 +212,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/25/1-Brute-Force/" data-id="cjxjccf6a000uhongz7qsvh5h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/01/원주율-구하기-PI/" data-id="cjxjccf3x0007hongngjtvnxn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -260,22 +282,16 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "1. Brute Force",
+        "headline": "원주율 구하기(PI)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
+        "keywords": "다이나믹 메모이제이션",
         "genre": "알고리즘",
-        "datePublished": "2019-06-25",
-        "dateCreated": "2019-06-25",
-        "dateModified": "2019-06-27",
-        "url": "https://2yunsoo.github.io/2019/06/25/1-Brute-Force/",
-        "description": "Brute Force
-가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)
-
-재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용
-​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행
-​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환
-​ "
-        "wordCount": 105
+        "datePublished": "2019-07-01",
+        "dateCreated": "2019-07-01",
+        "dateModified": "2019-07-01",
+        "url": "https://2yunsoo.github.io/2019/07/01/원주율-구하기-PI/",
+        "description": "원주율 구하기(PI) (난이도:下)123456789101112131415161718192021222324252627282930int getPoint(int now, int length); // 난이도 계산 후 반환int pi(int now)&#123;	int i, length;	int&amp; ret = cache[now];	if(ret!=100000)		"
+        "wordCount": 288
     }
 </script>
 
@@ -339,20 +355,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/06/26/2-분할-정복/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            2. 분할 정복
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/06/25/시작/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/06/28/합친-LIS-JLIS/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">시작</p>
+        <p class="article-nav-title">합친 LIS(JLIS)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -515,7 +521,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/25/1-Brute-Force/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/01/원주율-구하기-PI/';
     
     (function() {
     var dsq = document.createElement('script');
