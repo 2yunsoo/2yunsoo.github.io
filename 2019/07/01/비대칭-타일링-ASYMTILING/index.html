@@ -6,24 +6,24 @@
     
 
     
-    <title>3. 동적 계획법 | Yunsoo&#39;s blog</title>
+    <title>비대칭 타일링(ASYMTILING) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="다이나믹,메모이제이션">
+        <meta name="keywords" content="다이나믹,메모이제이션,하">
     
-    <meta name="description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    일반적인 동적 계획법 알고리즘의 구현 :  주어진 문제를 완전 탐색을 이용해 해결 중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용">
-<meta name="keywords" content="다이나믹,메모이제이션">
+    <meta name="description" content="비대칭 타일링(ASYMTILING) (난이도:下)12345678910111213141516171819202122int tile(int width)&amp;#123;	long long&amp;amp; ret = cache[width];	if(ret!=-1)		return ret;	return ret = (tile(width-1) + tile(width-2))%MOD;&amp;#1">
+<meta name="keywords" content="다이나믹,메모이제이션,하">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3. 동적 계획법">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/27/3-동적-계획법/index.html">
+<meta property="og:title" content="비대칭 타일링(ASYMTILING)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/01/비대칭-타일링-ASYMTILING/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    일반적인 동적 계획법 알고리즘의 구현 :  주어진 문제를 완전 탐색을 이용해 해결 중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용">
+<meta property="og:description" content="비대칭 타일링(ASYMTILING) (난이도:下)12345678910111213141516171819202122int tile(int width)&amp;#123;	long long&amp;amp; ret = cache[width];	if(ret!=-1)		return ret;	return ret = (tile(width-1) + tile(width-2))%MOD;&amp;#1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-01T07:13:44.028Z">
+<meta property="og:updated_time" content="2019-07-01T08:37:05.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3. 동적 계획법">
-<meta name="twitter:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    일반적인 동적 계획법 알고리즘의 구현 :  주어진 문제를 완전 탐색을 이용해 해결 중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용">
+<meta name="twitter:title" content="비대칭 타일링(ASYMTILING)">
+<meta name="twitter:description" content="비대칭 타일링(ASYMTILING) (난이도:下)12345678910111213141516171819202122int tile(int width)&amp;#123;	long long&amp;amp; ret = cache[width];	if(ret!=-1)		return ret;	return ret = (tile(width-1) + tile(width-2))%MOD;&amp;#1">
     
 
     
@@ -136,19 +136,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-3-동적-계획법" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-비대칭-타일링-ASYMTILING" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        3. 동적 계획법
+        비대칭 타일링(ASYMTILING)
         </h1>
     
 
@@ -158,8 +158,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/27/3-동적-계획법/" class="article-date">
-            <time datetime="2019-06-27T02:49:02.000Z" itemprop="datePublished">2019-06-27</time>
+        <a href="/2019/07/01/비대칭-타일링-ASYMTILING/" class="article-date">
+            <time datetime="2019-07-01T07:14:43.000Z" itemprop="datePublished">2019-07-01</time>
         </a>
     </div>
 
@@ -168,78 +168,31 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>
+        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>, <a class="tag-link" href="/tags/하/">하</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="동적-계획법"><a href="#동적-계획법" class="headerlink" title="동적 계획법"></a>동적 계획법</h2><blockquote>
-<p>문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘</p>
-</blockquote>
-<br>
+            <h4 id="비대칭-타일링-ASYMTILING-난이도-下"><a href="#비대칭-타일링-ASYMTILING-난이도-下" class="headerlink" title="비대칭 타일링(ASYMTILING) (난이도:下)"></a>비대칭 타일링(ASYMTILING) (난이도:下)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">tile</span><span class="params">(<span class="keyword">int</span> width)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span>&amp; ret = cache[width];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(ret!=<span class="number">-1</span>)</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret = (tile(width<span class="number">-1</span>) + tile(width<span class="number">-2</span>))%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cache[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    cache[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span> || n==<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((tile(n)-(tile(n/<span class="number">2</span>)+tile(n/<span class="number">2</span><span class="number">-1</span>)))+<span class="number">2</span>*MOD)%MOD);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((tile(n)-tile((n<span class="number">-1</span>)/<span class="number">2</span>))+MOD)%MOD);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><b>일반적인 동적 계획법 알고리즘의 구현 :</b></p>
-<ol>
-<li>주어진 문제를 완전 탐색을 이용해 해결</li>
-<li>중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용</li>
-</ol>
-<br>
-
-<h4 id="메모이제이션-memoization"><a href="#메모이제이션-memoization" class="headerlink" title="메모이제이션(memoization)"></a>메모이제이션(memoization)</h4><blockquote>
-<p>함수를 계산한 값을 저장해 뒀다 재활용하는 최적화 기법</p>
-</blockquote>
-<p>참조적 투명성 : 함수의 반환 값이 그 입력 값만으로 결정되는지 판단</p>
-<p>참조적  투명 함수 : 입력이 고정되어 있을 때 그 결과가 항상 같은 함수</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 메모이제이션 구현 예시</span></span><br><span class="line"><span class="keyword">int</span> cache[<span class="number">2500</span>][<span class="number">2500</span>]; <span class="comment">// 특정값으로 초기화</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">function</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(...) <span class="keyword">return</span> ...; <span class="comment">// 기저 사례</span></span><br><span class="line">    <span class="keyword">int</span>&amp; ret = cache[a][b];   <span class="comment">// ret은 참조자로 만들어졌으므로 ret의 수정은 그대로 cache에 반영된다.</span></span><br><span class="line">    <span class="keyword">if</span>(ret != <span class="number">-1</span>) <span class="keyword">return</span> ret; <span class="comment">// (a,b)에 대한 답을 구한 적이 있으면 곧장 반환</span></span><br><span class="line">    ... <span class="comment">// 답 계산</span></span><br><span class="line">    <span class="keyword">return</span> ret; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(cache,<span class="number">-1</span>,<span class="keyword">sizeof</span>(cach));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>시간복잡도 : (존재하는 부분 문제의 수) × (한 부분 문제를 풀 때 필요한 반복문의 수행 횟수)</p>
-<p>중복된 계산을 생략하기 때문에 시간복잡도를 줄여줌</p>
-<hr>
-<h3 id="전통적-최적화-문제들"><a href="#전통적-최적화-문제들" class="headerlink" title="전통적 최적화 문제들"></a>전통적 최적화 문제들</h3><p>일반적으로 동적 계획법은 최적화 문제의 해결에 많이 사용된다. 최적화 문제를 푸는 것 또한 완전 탐색에서부토 시작하지만, 특정 성질이 성립할 경우에는 메모이제이션 적용보다 더 효율적인 구현이 가능하다.</p>
-<h5 id="최적화-문제-동적-계획법-구현"><a href="#최적화-문제-동적-계획법-구현" class="headerlink" title="최적화 문제 동적 계획법 구현"></a>최적화 문제 동적 계획법 구현</h5><ol>
-<li>완전 탐색 알고리즘을 사용하여 최적해의 점수를 반환</li>
-<li>전체 답의 점수를 반환하는 것이 아니라, 앞으로 남은 선택들에 해당하는 점수만을 반환 (부분 문제에 대한 재귀 함수 설계)</li>
-<li>재귀 호출 시 이전의 선택에 관련된 정보는 가능한 만큼 지우고 중복되는 부분 문제는 최대화시켜 메모이제이션의 활용도를 최대화</li>
-</ol>
-<h5 id="1-삼각형-위의-최대-경로"><a href="#1-삼각형-위의-최대-경로" class="headerlink" title="1. 삼각형 위의 최대 경로"></a>1. 삼각형 위의 최대 경로</h5><h5 id="2-최대-증가-부분-수열"><a href="#2-최대-증가-부분-수열" class="headerlink" title="2. 최대 증가 부분 수열"></a>2. 최대 증가 부분 수열</h5><br>
-
-<h4 id="경우의-수와-확률"><a href="#경우의-수와-확률" class="headerlink" title="경우의 수와 확률"></a>경우의 수와 확률</h4><h5 id="경우의-수-계산-구현-방법"><a href="#경우의-수-계산-구현-방법" class="headerlink" title="경우의 수 계산 구현 방법"></a>경우의 수 계산 구현 방법</h5><ol>
-<li>완전 탐색 알고리즘 설계. 이 때 재귀 호출의 선택지는 다음의 속성을 만족해야 함<ul>
-<li>모든 가능한 경우는 이 선택지들에 포함됨</li>
-<li>어떤 경우도 두 개 이상의 선택지에 중복 포함되지 않음</li>
-</ul>
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li><p>ret = (tile(width-1) + tile(width-2)) % MOD로 너비 n의 전체 타일링 방법 수를 구함</p>
 </li>
-<li>최적화 문제처럼 이전 조각에서 결정한 요소들에 대한 입력을 없애거나 변형해서 줄임</li>
-<li>메모이제이션 적용</li>
-</ol>
-<h5 id="1-타일링-방법의-수-세기-TILING2-난이도-下"><a href="#1-타일링-방법의-수-세기-TILING2-난이도-下" class="headerlink" title="1. 타일링 방법의 수 세기(TILING2) (난이도:下)"></a>1. 타일링 방법의 수 세기(TILING2) (난이도:下)</h5><ul>
-<li>맨 왼쪽 줄이 세로 타일에 의해 채워져있는지 또는 가로 타일에 의해 채워져있는지에 따라 나뉨</li>
-<li>tiling(n) = tiling(n-1) + tiling(n-2)</li>
-<li>ret = cache[width]</li>
-</ul>
-<h5 id="2-삼각형-위의-최대-경로-개수-크기-TRIPATHCNT-난이도-中"><a href="#2-삼각형-위의-최대-경로-개수-크기-TRIPATHCNT-난이도-中" class="headerlink" title="2. 삼각형 위의 최대 경로 개수  크기(TRIPATHCNT) (난이도:中)"></a>2. 삼각형 위의 최대 경로 개수  크기(TRIPATHCNT) (난이도:中)</h5><ul>
-<li><p>path(y,x,sum) = max(path(y+1,x,sum+triangle[y].[x]),path(y+1,x+1,sum+triangle[y].[x]));</p>
-</li>
-<li><p>path 배열을 통해 (1,1)에서부터 최댓값을 따라서 내려감</p>
-</li>
-<li><p>count(y,x) = count(y+1,x)                                  path(y+1,x) &gt; path(y+1,x+1)</p>
-<p>​                      count(y+1,x+1)                              path(y+1,x) &lt; path(y+1,x+1)</p>
-<p>​                      count(y+1,x) + count(y+1,x+1)    path(y+1,x) = path(y+1,x+1)</p>
-</li>
-<li><p>ret = cache[y].[x]</p>
+<li><p>대칭인 타일링 방법은  tile(n/2) + tile(n/2-1)    if(n%2==0)</p>
+<p>​                                       tile((n-1)/2)                    if(n%2==1)</p>
 </li>
 </ul>
-<h5 id="3-우물을-기어오르는-달팽이"><a href="#3-우물을-기어오르는-달팽이" class="headerlink" title="3. 우물을 기어오르는 달팽이"></a>3. 우물을 기어오르는 달팽이</h5><ul>
-<li><p>경우의 수를 계산해줌</p>
-</li>
-<li><p>climb(days, climbed) = climb(days+1,climbed+1) + climb(days+1,climbed+2)</p>
-</li>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>음수의 mod 연산은 불가능</li>
 </ul>
-<h5 id="4-장마가-찾아왔다-SNAIL-난이도-下"><a href="#4-장마가-찾아왔다-SNAIL-난이도-下" class="headerlink" title="4. 장마가 찾아왔다(SNAIL) (난이도:下)"></a>4. 장마가 찾아왔다(SNAIL) (난이도:下)</h5><ul>
-<li>각 사건의 확률이 다르기 때문에 확률을 통해 계산</li>
-<li>climb(days, climbed) = 0.75 * climb(days+1,climbed+1) + 0.25 * climb(days+1,climbed+2)</li>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>음수가 나올 가능성이 있으니 출력 시 MOD를 한 번 더해주고 다시 mod 연산 취해줌</li>
+<li>짝수의 경우 두 경우를 빼기 때문에 2*MOD를 더해줌</li>
+</ul>
+<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><ul>
+<li>음수라고 mod도 못하다니… 화난다……</li>
 </ul>
 
         </div>
@@ -248,7 +201,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/27/3-동적-계획법/" data-id="cjxk4qzv6000c78ngwwz6vk4v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/01/비대칭-타일링-ASYMTILING/" data-id="cjxk4qzuo000778ngjsva1zwh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -318,27 +271,16 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "3. 동적 계획법",
+        "headline": "비대칭 타일링(ASYMTILING)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "다이나믹 메모이제이션",
-        "genre": "알고리즘",
-        "datePublished": "2019-06-27",
-        "dateCreated": "2019-06-27",
+        "keywords": "다이나믹 메모이제이션 하",
+        "genre": "문제",
+        "datePublished": "2019-07-01",
+        "dateCreated": "2019-07-01",
         "dateModified": "2019-07-01",
-        "url": "https://2yunsoo.github.io/2019/06/27/3-동적-계획법/",
-        "description": "동적 계획법
-문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘
-
-
-
-일반적인 동적 계획법 알고리즘의 구현 :
-
-주어진 문제를 완전 탐색을 이용해 해결
-중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용
-
-
-"
-        "wordCount": 640
+        "url": "https://2yunsoo.github.io/2019/07/01/비대칭-타일링-ASYMTILING/",
+        "description": "비대칭 타일링(ASYMTILING) (난이도:下)12345678910111213141516171819202122int tile(int width)&#123;	long long&amp; ret = cache[width];	if(ret!=-1)		return ret;	return ret = (tile(width-1) + tile(width-2))%MOD;&#1"
+        "wordCount": 294
     }
 </script>
 
@@ -402,20 +344,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/06/28/와일드카드-WILDCARD/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            와일드카드(WILDCARD)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/06/26/울타리-잘라내기-FENCE/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/01/원주율-구하기-PI/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">울타리 잘라내기(FENCE)</p>
+        <p class="article-nav-title">원주율 구하기(PI)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -578,7 +510,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/27/3-동적-계획법/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/01/비대칭-타일링-ASYMTILING/';
     
     (function() {
     var dsq = document.createElement('script');
