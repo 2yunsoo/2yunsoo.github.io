@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    일반적인 동적 계획법 알고리즘의 구현 :  주어진 문제를 완전 탐색을 이용해 해결 중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-30T19:26:11.531Z">
+<meta property="og:updated_time" content="2019-07-01T07:13:44.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3. 동적 계획법">
 <meta name="twitter:description" content="동적 계획법 문제 분할 시 부분 문제들이 두 개 이상의 문제를 푸는데 이용될 때,  즉 같은 계산이 중복 사용될 때 이 계산 결과를 캐시에 저장하여 재활용함으로써 함수의 호출을 줄여 속도를 향상시키는 알고리즘    일반적인 동적 계획법 알고리즘의 구현 :  주어진 문제를 완전 탐색을 이용해 해결 중복된 부분 문제를 한 번만 계산하도록 메모이제이션 적용">
@@ -203,7 +203,45 @@
 <li>전체 답의 점수를 반환하는 것이 아니라, 앞으로 남은 선택들에 해당하는 점수만을 반환 (부분 문제에 대한 재귀 함수 설계)</li>
 <li>재귀 호출 시 이전의 선택에 관련된 정보는 가능한 만큼 지우고 중복되는 부분 문제는 최대화시켜 메모이제이션의 활용도를 최대화</li>
 </ol>
-<h5 id="1-삼각형-위의-최대-경로"><a href="#1-삼각형-위의-최대-경로" class="headerlink" title="1. 삼각형 위의 최대 경로"></a>1. 삼각형 위의 최대 경로</h5><h5 id="2-최대-증가-부분-수열"><a href="#2-최대-증가-부분-수열" class="headerlink" title="2.. 최대 증가 부분 수열"></a>2.. 최대 증가 부분 수열</h5>
+<h5 id="1-삼각형-위의-최대-경로"><a href="#1-삼각형-위의-최대-경로" class="headerlink" title="1. 삼각형 위의 최대 경로"></a>1. 삼각형 위의 최대 경로</h5><h5 id="2-최대-증가-부분-수열"><a href="#2-최대-증가-부분-수열" class="headerlink" title="2. 최대 증가 부분 수열"></a>2. 최대 증가 부분 수열</h5><br>
+
+<h4 id="경우의-수와-확률"><a href="#경우의-수와-확률" class="headerlink" title="경우의 수와 확률"></a>경우의 수와 확률</h4><h5 id="경우의-수-계산-구현-방법"><a href="#경우의-수-계산-구현-방법" class="headerlink" title="경우의 수 계산 구현 방법"></a>경우의 수 계산 구현 방법</h5><ol>
+<li>완전 탐색 알고리즘 설계. 이 때 재귀 호출의 선택지는 다음의 속성을 만족해야 함<ul>
+<li>모든 가능한 경우는 이 선택지들에 포함됨</li>
+<li>어떤 경우도 두 개 이상의 선택지에 중복 포함되지 않음</li>
+</ul>
+</li>
+<li>최적화 문제처럼 이전 조각에서 결정한 요소들에 대한 입력을 없애거나 변형해서 줄임</li>
+<li>메모이제이션 적용</li>
+</ol>
+<h5 id="1-타일링-방법의-수-세기-TILING2-난이도-下"><a href="#1-타일링-방법의-수-세기-TILING2-난이도-下" class="headerlink" title="1. 타일링 방법의 수 세기(TILING2) (난이도:下)"></a>1. 타일링 방법의 수 세기(TILING2) (난이도:下)</h5><ul>
+<li>맨 왼쪽 줄이 세로 타일에 의해 채워져있는지 또는 가로 타일에 의해 채워져있는지에 따라 나뉨</li>
+<li>tiling(n) = tiling(n-1) + tiling(n-2)</li>
+<li>ret = cache[width]</li>
+</ul>
+<h5 id="2-삼각형-위의-최대-경로-개수-크기-TRIPATHCNT-난이도-中"><a href="#2-삼각형-위의-최대-경로-개수-크기-TRIPATHCNT-난이도-中" class="headerlink" title="2. 삼각형 위의 최대 경로 개수  크기(TRIPATHCNT) (난이도:中)"></a>2. 삼각형 위의 최대 경로 개수  크기(TRIPATHCNT) (난이도:中)</h5><ul>
+<li><p>path(y,x,sum) = max(path(y+1,x,sum+triangle[y].[x]),path(y+1,x+1,sum+triangle[y].[x]));</p>
+</li>
+<li><p>path 배열을 통해 (1,1)에서부터 최댓값을 따라서 내려감</p>
+</li>
+<li><p>count(y,x) = count(y+1,x)                                  path(y+1,x) &gt; path(y+1,x+1)</p>
+<p>​                      count(y+1,x+1)                              path(y+1,x) &lt; path(y+1,x+1)</p>
+<p>​                      count(y+1,x) + count(y+1,x+1)    path(y+1,x) = path(y+1,x+1)</p>
+</li>
+<li><p>ret = cache[y].[x]</p>
+</li>
+</ul>
+<h5 id="3-우물을-기어오르는-달팽이"><a href="#3-우물을-기어오르는-달팽이" class="headerlink" title="3. 우물을 기어오르는 달팽이"></a>3. 우물을 기어오르는 달팽이</h5><ul>
+<li><p>경우의 수를 계산해줌</p>
+</li>
+<li><p>climb(days, climbed) = climb(days+1,climbed+1) + climb(days+1,climbed+2)</p>
+</li>
+</ul>
+<h5 id="4-장마가-찾아왔다-SNAIL-난이도-下"><a href="#4-장마가-찾아왔다-SNAIL-난이도-下" class="headerlink" title="4. 장마가 찾아왔다(SNAIL) (난이도:下)"></a>4. 장마가 찾아왔다(SNAIL) (난이도:下)</h5><ul>
+<li>각 사건의 확률이 다르기 때문에 확률을 통해 계산</li>
+<li>climb(days, climbed) = 0.75 * climb(days+1,climbed+1) + 0.25 * climb(days+1,climbed+2)</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
@@ -300,7 +338,7 @@
 
 
 "
-        "wordCount": 356
+        "wordCount": 640
     }
 </script>
 
