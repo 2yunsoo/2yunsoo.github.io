@@ -6,26 +6,26 @@
     
 
     
-    <title>2. 분할 정복 | Yunsoo&#39;s blog</title>
+    <title>4. 깊이 우선 탐색(DFS) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="DFS">
     
-    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷 그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
+<meta name="keywords" content="DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. 분할 정복">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/2-분할-정복/index.html">
+<meta property="og:title" content="4. 깊이 우선 탐색(DFS)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/04/4-깊이-우선-탐색-DFS/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
+<meta property="og:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷 그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
-<meta property="og:updated_time" content="2019-06-26T07:22:43.397Z">
+<meta property="og:image" content="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2">
+<meta property="og:updated_time" content="2019-07-04T02:13:26.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. 분할 정복">
-<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
+<meta name="twitter:title" content="4. 깊이 우선 탐색(DFS)">
+<meta name="twitter:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷 그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
+<meta name="twitter:image" content="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2">
     
 
     
@@ -143,14 +143,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-2-분할-정복" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-4-깊이-우선-탐색-DFS" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2. 분할 정복
+        4. 깊이 우선 탐색(DFS)
         </h1>
     
 
@@ -160,44 +160,48 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/26/2-분할-정복/" class="article-date">
-            <time datetime="2019-06-26T03:59:56.000Z" itemprop="datePublished">2019-06-26</time>
+        <a href="/2019/07/04/4-깊이-우선-탐색-DFS/" class="article-date">
+            <time datetime="2019-07-04T01:44:26.000Z" itemprop="datePublished">2019-07-04</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/DFS/">DFS</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="분할-정복-Divide-amp-Conquer"><a href="#분할-정복-Divide-amp-Conquer" class="headerlink" title="분할 정복 (Divide &amp; Conquer)"></a>분할 정복 (Divide &amp; Conquer)</h2><blockquote>
-<p>주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산</p>
+            <h2 id="깊이-우선-탐색-DFS"><a href="#깊이-우선-탐색-DFS" class="headerlink" title="깊이 우선 탐색(DFS)"></a>깊이 우선 탐색(DFS)</h2><p>일요일까지 앞 내용 추가</p>
+<p>dfs 예시 코드</p>
+<p>위상 정렬 설명</p>
+<h4 id="오일러-서킷"><a href="#오일러-서킷" class="headerlink" title="오일러 서킷"></a>오일러 서킷</h4><blockquote>
+<p>그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기</p>
 </blockquote>
+<p>그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다.</p>
+<p>최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점을 u, 끝점을 v라고 한다. 이 때, V의 차수에 대해 생각해보자.</p>
 <ol>
-<li>divide : 문제를 더 작은 문제로 분할</li>
-<li>merge : 각 문제의 답을 원래 문제의 답으로 병합</li>
-<li>base case : 기저 사례</li>
+<li>u≠v인 경우, v로 들어가는 데 하나, 나갔다 다시 들어오는 데 짝수개. 따라서 v는 홀수 개의 간선과 인접해 있다.</li>
+<li>u=v인 경우, 나갔다 다시 들어오기 때문에 v가 지나온 간선의 수는 무조건 짝수 개이다.</li>
 </ol>
-<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>​                        한 조각 vs 나머지 전체                                    거의 같은 크기의 부분 문제들</p>
-<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 vs 분할정복"></p>
-<hr>
-<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><h4 id="1-수열의-합"><a href="#1-수열의-합" class="headerlink" title="1. 수열의 합"></a>1. 수열의 합</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 기저 사례</span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> fastSum(n<span class="number">-1</span>) + n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>*fastSum(n/<span class="number">2</span>) + (n/<span class="number">2</span>) * (n/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>오일러 서킷이 존재하기 위해서는 모든 정점에 들어가는 횟수와 나오는 횟수가 같아야 한다. 즉, 각 정점의 차수가 짝수여야 한다. 역으로 각 정점에 차수가 짝수일 때도 오일러 서킷이 존재한다.</p>
+<h5 id="알고리즘-구현"><a href="#알고리즘-구현" class="headerlink" title="알고리즘 구현"></a>알고리즘 구현</h5><p>기본 전제 조건 : 모든 정점의 차수가 짝수, 모든 간선이 하나의 컴포넌트에 존재</p>
+<p><img src="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2" alt="img"></p>
+<p>findRandomCircuit(u)를 통해 임의의 정점 u에서 시작해 아직 따라가지 않은 간선 중 하나를 따라가며 임의의 경로를 만든다. 모든 정점의 차수가 짝수이므로 경로의 끝점은 무조건 u이다. circuit을 생성하고 나면 아직 따라가지 않은 간선과 인접한 정점 v를 찾아준다. 그림에서 v는 3이 되고 다시 findRandomCircuit(v)를 통해 circuit을 생성한다. 이 과정을 따라가지 않은 간선이 더 이상 남지 않을 때까지 반복 후, 모든 circuit들을 합쳐주면 오일러 서킷을 만들 수 있다.</p>
+<h5 id="깊이-우선-탐색을-이용한-구현"><a href="#깊이-우선-탐색을-이용한-구현" class="headerlink" title="깊이 우선 탐색을 이용한 구현"></a>깊이 우선 탐색을 이용한 구현</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getEulerCircuit</span><span class="params">(<span class="keyword">int</span> start, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; circuit)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;a.size(); i++)</span><br><span class="line">        <span class="keyword">while</span>(a[start][i]) &#123;</span><br><span class="line">            a[start][i]--;</span><br><span class="line">            a[i][start]--;</span><br><span class="line">            getEulerCircuit(i,circuit);</span><br><span class="line">        &#125;</span><br><span class="line">    circuit.push_back(start);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>재귀호출의 경우 n번의 함수 호출이 필요하나 분할 정복의 경우 함수가 호출될 때마다 두 번에 한 번은 n이 절반으로 줄어든다. 따라서 실행 시간은 O(log n)가 된다는 것을 알 수 있다.</p>
-<h4 id="2-행렬의-거듭제곱"><a href="#2-행렬의-거듭제곱" class="headerlink" title="2. 행렬의 거듭제곱"></a>2. 행렬의 거듭제곱</h4><blockquote>
-<p>A^m = A^(m/2) × A^(m/2)        if(m%2==0)</p>
-<p>A^m = A × A^(m-1)                    if(m%2==1)</p>
-</blockquote>
-<h4 id="3-Merge-Sort-amp-Quick-Sort"><a href="#3-Merge-Sort-amp-Quick-Sort" class="headerlink" title="3. Merge Sort &amp; Quick Sort"></a>3. Merge Sort &amp; Quick Sort</h4><blockquote>
-<p>병합 정렬 : 배열을 가운데에서 쪼개 비슷한 크기의 수열 두 개로 만드는 과정을 반복 후 재귀 호출을 이용해 각각 정렬. 정렬된 배열을 하나로 합침.</p>
-<p>시간복잡도 : 단계 수(O(log n)) × 한 단계 당 병합 시간 (O(n)) = O(n·logn)</p>
-</blockquote>
-<blockquote>
-<p>퀵 정렬 : 배열을 단순하게 가운데에서 쪼개는 대신 pivot을 지정하여 작거나 같은 숫자는 왼쪽, 큰 숫자는 오른쪽으로 나누는 partition을 통해 병합 과정이 필요 없도록 분할.</p>
-<p>시간복잡도 : pivot에 따라 달라짐. 평균 O(n·logn) / 최악 O(n^2)</p>
-</blockquote>
+<p>circuit1 : u -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 0 -&gt; u</p>
+<p>circuit2 : 3 -&gt; 5 -&gt; 6 -&gt; 7 -&gt; 3</p>
+<p>오일러 circuit : u -&gt; 2 -&gt; <font color="red">3 -&gt; 5 -&gt; 6 -&gt; 7 -&gt; 3</font> -&gt; 4 -&gt; 0 -&gt; u</p>
+<p>시간복잡도 : 각 간선마다 getEulerCircuit() 함수 호출, 함수당 O(|V|)의 반복문 =&gt; O(|V||E|)</p>
+<h5 id="오일러-트레일"><a href="#오일러-트레일" class="headerlink" title="오일러 트레일"></a>오일러 트레일</h5><p>그래프의 모든 간선을 한 번씩 지나고 시작점과 끝점이 다른 경로</p>
+<p>정점 u와 v 사이에 간선 (u,v)를 추가하여 오일러 서킷을 찾고 간선을 없애주면 완성</p>
+<p>시작점과 끝점의 차수는 홀수, 나머지 모든 정점의 차수는 짝수</p>
 
         </div>
         <footer class="article-footer">
@@ -205,7 +209,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/26/2-분할-정복/" data-id="cjxo1dbtg0004xwngfdc95fvk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/04/4-깊이-우선-탐색-DFS/" data-id="cjxo1dbtr0007xwnga6a1rwh2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -275,24 +279,23 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "2. 분할 정복",
-        "image": "https://2yunsoo.github.iohttps://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28",
-        "keywords": "",
+        "headline": "4. 깊이 우선 탐색(DFS)",
+        "image": "https://2yunsoo.github.iohttps://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2",
+        "keywords": "DFS",
         "genre": "알고리즘",
-        "datePublished": "2019-06-26",
-        "dateCreated": "2019-06-26",
-        "dateModified": "2019-06-26",
-        "url": "https://2yunsoo.github.io/2019/06/26/2-분할-정복/",
-        "description": "분할 정복 (Divide &amp; Conquer)
-주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산
+        "datePublished": "2019-07-04",
+        "dateCreated": "2019-07-04",
+        "dateModified": "2019-07-04",
+        "url": "https://2yunsoo.github.io/2019/07/04/4-깊이-우선-탐색-DFS/",
+        "description": "깊이 우선 탐색(DFS)일요일까지 앞 내용 추가
+dfs 예시 코드
+위상 정렬 설명
+오일러 서킷
+그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기
 
-
-divide : 문제를 더 작은 문제로 분할
-merge : 각 문제의 답을 원래 문제의 답으로 병합
-base case : 기저 사례
-
-재귀호출 vs 분할정복​                        한 조"
-        "wordCount": 345
+그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다.
+최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점"
+        "wordCount": 415
     }
 </script>
 
@@ -356,20 +359,10 @@ base case : 기저 사례
         
 <nav id="article-nav">
     
-        <a href="/2019/06/26/1-Brute-force-문제/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            1. Brute force 문제
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/06/25/1-Brute-Force/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/04/고대어-사전-DICTIONARY/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">1. Brute Force</p>
+        <p class="article-nav-title">고대어 사전(DICTIONARY)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +525,7 @@ base case : 기저 사례
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/2-분할-정복/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/04/4-깊이-우선-탐색-DFS/';
     
     (function() {
     var dsq = document.createElement('script');
