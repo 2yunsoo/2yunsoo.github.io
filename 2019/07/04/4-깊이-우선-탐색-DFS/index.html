@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="DFS">
     
-    <meta name="description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷1그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
+    <meta name="description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷] ㅇㅇ    그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기      ㅇㅇ    그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로">
 <meta name="keywords" content="DFS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4. 깊이 우선 탐색(DFS)">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/04/4-깊이-우선-탐색-DFS/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷1그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
+<meta property="og:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷] ㅇㅇ    그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기      ㅇㅇ    그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2">
-<meta property="og:updated_time" content="2019-07-07T13:49:15.461Z">
+<meta property="og:updated_time" content="2019-07-07T14:15:52.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4. 깊이 우선 탐색(DFS)">
-<meta name="twitter:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷1그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점">
+<meta name="twitter:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷] ㅇㅇ    그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기      ㅇㅇ    그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로">
 <meta name="twitter:image" content="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2">
     
 
@@ -180,8 +180,21 @@
             <h2 id="깊이-우선-탐색-DFS"><a href="#깊이-우선-탐색-DFS" class="headerlink" title="깊이 우선 탐색(DFS)"></a>깊이 우선 탐색(DFS)</h2><p>일요일까지 앞 내용 추가</p>
 <p>dfs 예시 코드</p>
 <p>위상 정렬 설명</p>
-<h4 id="오일러-서킷"><a href="#오일러-서킷" class="headerlink" title="오일러 서킷"></a>오일러 서킷</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기</span><br></pre></td></tr></table></figure>
-
+<h4 id="오일러-서킷"><a href="#오일러-서킷" class="headerlink" title="오일러 서킷]"></a>오일러 서킷]</h4><blockquote>
+<p>ㅇㅇ</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ㅇㅇ</p>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다.</p>
 <p>최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점을 u, 끝점을 v라고 한다. 이 때, V의 차수에 대해 생각해보자.</p>
 <ol>
@@ -289,11 +302,24 @@
         "description": "깊이 우선 탐색(DFS)일요일까지 앞 내용 추가
 dfs 예시 코드
 위상 정렬 설명
-오일러 서킷1그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기
+오일러 서킷]
+ㅇㅇ
+
+
+
+그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제. ex) 한붓 그리기
+
+
+
+
+
+ㅇㅇ
+
+
 
 그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다.
-최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점"
-        "wordCount": 421
+최대한 많은 간선을 지나고자 하는 경로"
+        "wordCount": 415
     }
 </script>
 
