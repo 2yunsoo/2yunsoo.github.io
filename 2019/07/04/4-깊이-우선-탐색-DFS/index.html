@@ -21,7 +21,7 @@
 <meta property="og:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷 그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점을 u, 끝점을 v라고">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://mblogthumb-phinf.pstatic.net/20150517_35/infoefficien_1431828027471tOSG8_PNG/2015-05-17_10%3B59%3B05.PNG?type=w2">
-<meta property="og:updated_time" content="2019-07-07T19:02:15.135Z">
+<meta property="og:updated_time" content="2019-07-07T19:56:03.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4. 깊이 우선 탐색(DFS)">
 <meta name="twitter:description" content="깊이 우선 탐색(DFS)일요일까지 앞 내용 추가 dfs 예시 코드 위상 정렬 설명 오일러 서킷 그래프의 모든 간선을 한 번씩 지나서 시작점으로 돌아오는 경로를 찾는 문제  그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다. 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점을 u, 끝점을 v라고">
@@ -259,6 +259,24 @@
 <h5 id="다리-찾기"><a href="#다리-찾기" class="headerlink" title="다리 찾기"></a>다리 찾기</h5><p>어떤 간선을 삭제했을 때 이 간선을 포함하던 컴포넌트가 두 개의 컴포넌트로 쪼개질 경우 이 간선을 다리(bridge)라고 부른다.  (u,v)가 다리가 되기 위해서는 (u,v)가 v를 루트로 하는 서브트리와 이 외의 점들을 연결하는 유일한 간선이어야 한다. 따라서 v를 루트로 하는 서브트리에 존재하는 모든 정점에서 역방향 간선을 통해 갈 수 있는 정점의 최소 발견 순서가 u보다 뒤라면 (u,v)를 다리라고 판정할 수 있다.</p>
 <br>
 
+<h4 id="강결합-컴포넌트"><a href="#강결합-컴포넌트" class="headerlink" title="강결합 컴포넌트"></a>강결합 컴포넌트</h4><p>방향 그래프 상에서 두 정점 u와 v에 대해 양 방향으로 가는 경로가 모두 있을 때 두 정점이 같은 강결합 컴포넌트(Strongly Connected Components, SCC)에 속해 있다고 한다. 방향 그래프에서 각 SCC 사이를 연결하는 간선들을 모으면 SCC들을 정점으로 하는 DAG를 만들 수 있다. 이 과정을 압축(condensation)이라고 한다. 한 사이클에 포함된 정점들은 같은 SCC에 속한다.</p>
+<h5 id="타잔의-알고리즘"><a href="#타잔의-알고리즘" class="headerlink" title="타잔의 알고리즘"></a>타잔의 알고리즘</h5><p>타잔의 알고리즘을 통해 한 번의 깊이 우선 탐색만으로 각 정점을 SCC별로 분리할 수 있다.</p>
+<ol>
+<li>각 SCC에 속한 정점 중 스패닝 트리의 가장 위에 있는 정점, 죽 SCC의 루트를 구해야 한다.</li>
+<li>정점들을 분리하기 위해 끊어야 할 간선들은 SCC의 루트로 내려가는 트리 간선들이다.</li>
+<li>정점 u가 SCC의 루트라면 u와 u의 선조는 서로 다른 SCC에 속하므로 u에서 선조로 가는 경로가 없어야 한다.</li>
+<li>u를 루트로 하는 서브트리 내의 어떠한 정점도 역방향 간선을 따라갔을 때 u보다 발견 순서가 낮은 정점을 가리키면 안된다.</li>
+<li>만약 해당 정점이 u보다 높이 위치한다면 u는 SCC의 루트가 아니게 된다.</li>
+<li>교차 간선이 존재하면 교차 간선을 역방향 간선으로 착각할 수 있으므로 모든 교차 간선은 무시한다.</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">무척 길다...</span><br><span class="line">수요일 내로 꼭 채워 넣는다...</span><br></pre></td></tr></table></figure>
+
+<p>현재 정점 now가 한 SCC의 루트라는 것을 알게 되면 서브트리의 모든 정점들을 한 SCC로 묶은 뒤 그래프에서 지워야 한다. 이는 스택을 사용해 구현한다.</p>
+<ol>
+<li>DFS를 수행하며 방문한 정점을 스택에 쌓는다.</li>
+<li>now가 SCC의 루트라는 것을 알게 되었을 때 스택에서 now 위에 쌓여 있는 정점들은 모두 now의 후손이다.</li>
+<li>now 위로 싹 다 꺼내주면 된다.</li>
+</ol>
 
         </div>
         <footer class="article-footer">
@@ -352,7 +370,7 @@ dfs 예시 코드
 
 그래프의 간선들이 두 개 이상의 컴포넌트에 나뉘어 있는 경우에는 오일러 서킷이 존재할 수 없다.
 최대한 많은 간선을 지나고자 하는 경로를 찾고자 할 때 경로의 시작점을 u, 끝점을 v라고"
-        "wordCount": 1349
+        "wordCount": 1566
     }
 </script>
 
