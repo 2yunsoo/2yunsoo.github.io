@@ -19,7 +19,7 @@
 <meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/2-분할-정복/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="ko">
 <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
 <meta property="og:updated_time" content="2019-06-26T07:22:43.397Z">
 <meta name="twitter:card" content="summary">
@@ -76,7 +76,7 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
+                                    <a class="main-nav-list-link" href="/">홈</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
@@ -90,7 +90,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -109,10 +109,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
+            POSTS: '포스트',
             PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -205,7 +205,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/26/2-분할-정복/" data-id="cjxo1dbtg0004xwngfdc95fvk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://2yunsoo.github.io/2019/06/26/2-분할-정복/" data-id="cjxo1dbtg0004xwngfdc95fvk" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -315,7 +315,7 @@ base case : 기저 사례
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>follow:</p>
+        <p>팔로우:</p>
         <ul class="social-links">
             
                 
@@ -357,7 +357,7 @@ base case : 기저 사례
 <nav id="article-nav">
     
         <a href="/2019/06/26/1-Brute-force-문제/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
+        <strong class="article-nav-caption">새로운</strong>
         <p class="article-nav-title">
         
             1. Brute force 문제
@@ -368,7 +368,7 @@ base case : 기저 사례
     
     
         <a href="/2019/06/25/1-Brute-Force/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
+        <strong class="article-nav-caption">오래된</strong>
         <p class="article-nav-title">1. Brute Force</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
@@ -384,7 +384,7 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
+        <h3 class="widget-title">최근 글</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
                 
@@ -440,7 +440,7 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
+        <h3 class="widget-title">카테고리</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">4</span></li></ul>
         </div>
@@ -450,9 +450,9 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -460,7 +460,7 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">태그</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memoization/">memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">3</span></li></ul>
         </div>
@@ -470,7 +470,7 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
             <a href="/tags/DFS/" style="font-size: 12.5px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/memoization/" style="font-size: 10px;">memoization</a> <a href="/tags/다이나믹/" style="font-size: 20px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 17.5px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/중/" style="font-size: 17.5px;">중</a> <a href="/tags/하/" style="font-size: 15px;">하</a>
         </div>
@@ -480,7 +480,7 @@ base case : 기저 사례
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">링크</h3>
         <div class="widget">
             <ul>
                 
