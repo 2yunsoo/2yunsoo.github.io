@@ -6,24 +6,18 @@
     
 
     
-    <title>두니발 박사의 탈옥(NUMB3RS) | Yunsoo&#39;s blog</title>
+    <title>Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="중,다이나믹,Memoization">
-    
-    <meta name="description" content="두니발 박사의 탈옥(NUMB3RS) (난이도:中)12345678910111213141516171819202122232425double getPercent(int now, int day)&amp;#123;	int i, cnt=0;	double sum=0;	if(!day)		return now==Q?1:0;	double&amp;amp; ret = cache[now][day]">
-<meta name="keywords" content="중,다이나믹,Memoization">
-<meta property="og:type" content="article">
-<meta property="og:title" content="두니발 박사의 탈옥(NUMB3RS)">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/07/03/두니발-박사의-탈옥-NUMB3RS/index.html">
+    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yunsoo&#39;s blog">
+<meta property="og:url" content="https://2yunsoo.github.io/page/3/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="두니발 박사의 탈옥(NUMB3RS) (난이도:中)12345678910111213141516171819202122232425double getPercent(int now, int day)&amp;#123;	int i, cnt=0;	double sum=0;	if(!day)		return now==Q?1:0;	double&amp;amp; ret = cache[now][day]">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-03T05:55:04.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="두니발 박사의 탈옥(NUMB3RS)">
-<meta name="twitter:description" content="두니발 박사의 탈옥(NUMB3RS) (난이도:中)12345678910111213141516171819202122232425double getPercent(int now, int day)&amp;#123;	int i, cnt=0;	double sum=0;	if(!day)		return now==Q?1:0;	double&amp;amp; ret = cache[now][day]">
+<meta name="twitter:title" content="Yunsoo&#39;s blog">
     
 
     
@@ -136,167 +130,60 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/문제/">문제</a>
+    <em class="page-title-link" data-url="home">홈</em>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-두니발-박사의-탈옥-NUMB3RS" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2019-06-25T08:25:03.000Z" itemprop="datePublished">2019-06-25</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        두니발 박사의 탈옥(NUMB3RS)
+        <a href="/2019/06/25/시작/">시작</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/07/03/두니발-박사의-탈옥-NUMB3RS/" class="article-date">
-            <time datetime="2019-07-03T03:16:22.000Z" itemprop="datePublished">2019-07-03</time>
-        </a>
-    </div>
-
-		
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Memoization/">Memoization</a>, <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/중/">중</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h4 id="두니발-박사의-탈옥-NUMB3RS-난이도-中"><a href="#두니발-박사의-탈옥-NUMB3RS-난이도-中" class="headerlink" title="두니발 박사의 탈옥(NUMB3RS) (난이도:中)"></a>두니발 박사의 탈옥(NUMB3RS) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getPercent</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> day)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(!day)</span><br><span class="line">		<span class="keyword">return</span> now==Q?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">double</span>&amp; ret = cache[now][day];</span><br><span class="line">	<span class="keyword">if</span>(ret!=<span class="number">-1</span>)</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">	ret = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(a[now][i]) &#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			sum+=getPercent(i,day<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt)</span><br><span class="line">		ret += sum / cnt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
-<li>getPercent(now, day) : 두니발 박사의 현재 위치, 남은 일수</li>
-<li>if(!day) -&gt; now==Q?1:0 : d일이 다 지났을 때 박사의 현재 위치가 Q이면 1 반환</li>
-<li>ret의 기본값은 0으로 부여</li>
-<li>now가 갈 수 있는 도시를 탐색하여 재귀 함수를 호출. 결과값의 합을 갈 수 있는 도시의 개수로 나눠줌</li>
-</ul>
-<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
-<li>cache[n].[d] 인데 [n].[n] 으로 초기화해서 찾느라 오래 걸림…</li>
-</ul>
-<h5 id="또-다른-풀이"><a href="#또-다른-풀이" class="headerlink" title="또 다른 풀이"></a>또 다른 풀이</h5><ul>
-<li>계산의 순서를 거꾸로 바꿈 -&gt; 도시 Q에서부터 d일 째에 p에 갈 수 있는지</li>
-<li>장점 :  도착 지점이 고정돼 있어서 찾고자하는 도시 입력 값이 바뀌어도 재귀 함수의 입력 값만 바뀌고 기저 사례는 동일 -&gt; cache 재사용 가능 -&gt; 시간 복잡도 감소</li>
-</ul>
-<h5 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h5><p>​    (부분 문제의 개수) × (한 부분 문제를 풀 때 필요한 반복문의 수행 횟수)</p>
-<ol>
-<li>정방향 : ( nd × n ) × 찾고자 하는 도시 t개 = O(n^2·t)</li>
-<li>역방향 : ( nd × n ) = O(n^2)</li>
-</ol>
-
-        </div>
-        <footer class="article-footer">
+        <p class="article-excerpt">
             
-
-
-
-    <a data-url="https://2yunsoo.github.io/2019/07/03/두니발-박사의-탈옥-NUMB3RS/" data-id="cjxunbare000i58ngjvi8ub3y" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Yunsoo Lee"
-        },
-        "headline": "두니발 박사의 탈옥(NUMB3RS)",
-        "image": "https://2yunsoo.github.io",
-        "keywords": "중 다이나믹 Memoization",
-        "genre": "문제",
-        "datePublished": "2019-07-03",
-        "dateCreated": "2019-07-03",
-        "dateModified": "2019-07-03",
-        "url": "https://2yunsoo.github.io/2019/07/03/두니발-박사의-탈옥-NUMB3RS/",
-        "description": "두니발 박사의 탈옥(NUMB3RS) (난이도:中)12345678910111213141516171819202122232425double getPercent(int now, int day)&#123;	int i, cnt=0;	double sum=0;	if(!day)		return now==Q?1:0;	double&amp; ret = cache[now][day]"
-        "wordCount": 265
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
 
+
+    </div></section>
+
+
+    <nav id="page-nav">
+        <span class="pages">Page 3 of 3</span>
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
 
 
                         </div>
@@ -341,29 +228,6 @@
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2019/07/04/고대어-사전-DICTIONARY/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            고대어 사전(DICTIONARY)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2019/07/03/폴리오미노-POLY/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">폴리오미노(POLY)</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -521,13 +385,11 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/07/03/두니발-박사의-탈옥-NUMB3RS/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

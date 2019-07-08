@@ -10,17 +10,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="DFS,중">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="감시 카메라 설치(GALLERY) (난이도:中)1허허허허허헣ㅎ헣허허헣ㅎ헣ㅎ  내 풀이 ‘한 번 관람한 갤러리를 다시 가기 위해서는 이전에 지나왔던 복도를 반드시 지나야 하는 구조’ : 사이클이 존재하지 않는 그래프 연결된 간선이 1개인 정점에서부터 진행하는데…  문제점 문제 이해를 잘못 했다… 감시 카메라는 복도로 직접 연결된 갤러리들을 감시 : 바로 옆에">
+<meta name="keywords" content="DFS,중">
 <meta property="og:type" content="article">
 <meta property="og:title" content="감시 카메라 설치(GALLERY)">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/08/감시-카메라-설치-GALLERY/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="감시 카메라 설치(GALLERY) (난이도:中)1허허허허허헣ㅎ헣허허헣ㅎ헣ㅎ  내 풀이 ‘한 번 관람한 갤러리를 다시 가기 위해서는 이전에 지나왔던 복도를 반드시 지나야 하는 구조’ : 사이클이 존재하지 않는 그래프 연결된 간선이 1개인 정점에서부터 진행하는데…  문제점 문제 이해를 잘못 했다… 감시 카메라는 복도로 직접 연결된 갤러리들을 감시 : 바로 옆에">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-08T03:45:56.750Z">
+<meta property="og:updated_time" content="2019-07-08T17:08:42.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="감시 카메라 설치(GALLERY)">
+<meta name="twitter:description" content="감시 카메라 설치(GALLERY) (난이도:中)1허허허허허헣ㅎ헣허허헣ㅎ헣ㅎ  내 풀이 ‘한 번 관람한 갤러리를 다시 가기 위해서는 이전에 지나왔던 복도를 반드시 지나야 하는 구조’ : 사이클이 존재하지 않는 그래프 연결된 간선이 1개인 정점에서부터 진행하는데…  문제점 문제 이해를 잘못 했다… 감시 카메라는 복도로 직접 연결된 갤러리들을 감시 : 바로 옆에">
     
 
     
@@ -133,7 +136,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    미지정
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
@@ -163,18 +166,48 @@
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/DFS/">DFS</a>, <a class="tag-link" href="/tags/중/">중</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="감시-카메라-설치-GALLERY-난이도-中"><a href="#감시-카메라-설치-GALLERY-난이도-中" class="headerlink" title="감시 카메라 설치(GALLERY) (난이도:中)"></a>감시 카메라 설치(GALLERY) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">허허허허허헣ㅎ헣허허헣ㅎ헣ㅎ</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>‘한 번 관람한 갤러리를 다시 가기 위해서는 이전에 지나왔던 복도를 반드시 지나야 하는 구조’ : 사이클이 존재하지 않는 그래프</li>
+<li>연결된 간선이 1개인 정점에서부터 진행하는데…</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>문제 이해를 잘못 했다…</li>
+<li>감시 카메라는 복도로 직접 연결된 갤러리들을 감시 : 바로 옆에 정점만 확인 가능…</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
+<li>루트 없는 트리 - 사이클이 존재하지 않는 그래프로 노드 간의 상하 관계가 없는 트리와 같은 형태 띰</li>
+<li>아래 조건들은 모두 동치로 하나라도 성립하면 루트 없는 트리라고 판단 가능<ul>
+<li>V-1개의 간선을 가짐</li>
+<li>사이클이 존재하지 않음</li>
+<li>두 정점 사이를 연결하는 단순 경로가 정확히 하나 존재</li>
+</ul>
+</li>
+<li>리프 노드는 자기 자신과 부모 노드밖에 연결되지 않지만 부모 노드는 위아래 둘 다 연결이 되어있음</li>
+<li>따라서 리프 노드 대신 그 부모 노드를 대신 선택</li>
+</ul>
+<h6 id="구현법"><a href="#구현법" class="headerlink" title="구현법"></a>구현법</h6><ol>
+<li>리프 노드는 선택하지 않음</li>
+<li>트리에 맨 밑에서부터 올라오면서 자손 중 아직 감시 카메라와 연결이 안 된 노드가 있을 경우에만 현재 노드 선택</li>
+</ol>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/08/감시-카메라-설치-GALLERY/" data-id="cjxtzp4gp000epongxvfe3bp3" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/08/감시-카메라-설치-GALLERY/" data-id="cjxunbaqn000858ng1fgvudef" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -246,14 +279,22 @@
         },
         "headline": "감시 카메라 설치(GALLERY)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
+        "keywords": "DFS 중",
+        "genre": "문제",
         "datePublished": "2019-07-08",
         "dateCreated": "2019-07-08",
-        "dateModified": "2019-07-08",
+        "dateModified": "2019-07-09",
         "url": "https://2yunsoo.github.io/2019/07/08/감시-카메라-설치-GALLERY/",
-        "description": ""
-        "wordCount": 1
+        "description": "감시 카메라 설치(GALLERY) (난이도:中)1허허허허허헣ㅎ헣허허헣ㅎ헣ㅎ
+
+내 풀이
+‘한 번 관람한 갤러리를 다시 가기 위해서는 이전에 지나왔던 복도를 반드시 지나야 하는 구조’ : 사이클이 존재하지 않는 그래프
+연결된 간선이 1개인 정점에서부터 진행하는데…
+
+문제점
+문제 이해를 잘못 했다…
+감시 카메라는 복도로 직접 연결된 갤러리들을 감시 : 바로 옆에"
+        "wordCount": 154
     }
 </script>
 
@@ -353,6 +394,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/08/요새-FORTRESS/" class="title">요새(FORTRESS)</a></p>
+                            <p class="item-date"><time datetime="2019-07-08T06:14:14.000Z" itemprop="datePublished">2019-07-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/08/트리-순회-순서-변경-TREVERSAL/" class="title">트리 순회 순서 변경(TREVERSAL)</a></p>
                             <p class="item-date"><time datetime="2019-07-08T05:59:48.000Z" itemprop="datePublished">2019-07-08</time></p>
                         </div>
@@ -370,7 +420,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/08/감시-카메라-설치-GALLERY/" class="title">감시 카메라 설치(GALLERY)</a></p>
                             <p class="item-date"><time datetime="2019-07-08T03:45:56.000Z" itemprop="datePublished">2019-07-08</time></p>
                         </div>
@@ -385,15 +435,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
-                            <p class="item-title"><a href="/2019/07/04/4-깊이-우선-탐색-DFS/" class="title">4. 깊이 우선 탐색(DFS)</a></p>
-                            <p class="item-date"><time datetime="2019-07-04T01:44:26.000Z" itemprop="datePublished">2019-07-04</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -403,7 +444,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -413,7 +454,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -423,7 +464,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memoization/">memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memoization/">memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -433,7 +474,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/memoization/" style="font-size: 10px;">memoization</a> <a href="/tags/다이나믹/" style="font-size: 20px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 17.5px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/중/" style="font-size: 17.5px;">중</a> <a href="/tags/트리/" style="font-size: 12.5px;">트리</a> <a href="/tags/하/" style="font-size: 17.5px;">하</a>
+            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/memoization/" style="font-size: 10px;">memoization</a> <a href="/tags/다이나믹/" style="font-size: 20px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 15px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/중/" style="font-size: 17.5px;">중</a> <a href="/tags/트리/" style="font-size: 12.5px;">트리</a> <a href="/tags/하/" style="font-size: 17.5px;">하</a>
         </div>
     </div>
 
