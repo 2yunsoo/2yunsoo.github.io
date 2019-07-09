@@ -6,26 +6,26 @@
     
 
     
-    <title>2. 분할 정복 | Yunsoo&#39;s blog</title>
+    <title>너드인가, 너드가 아닌가?2 (NERD2) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="트리,이진검색트리,중">
     
-    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)내 풀이 left와 right 두 개의 자식 노드를 가지는 트리 생성 새로운 값이 들어올 때마다 아래의 과정을 거침 부모 노드보다 p는 작고 q는 크면 왼쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복 부모 노드보다 p는 크고 q가 작으면 오른쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반">
+<meta name="keywords" content="트리,이진검색트리,중">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. 분할 정복">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/2-분할-정복/index.html">
+<meta property="og:title" content="너드인가, 너드가 아닌가?2 (NERD2)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/09/너드인가-너드가-아닌가-2-NERD2/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
+<meta property="og:description" content="너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)내 풀이 left와 right 두 개의 자식 노드를 가지는 트리 생성 새로운 값이 들어올 때마다 아래의 과정을 거침 부모 노드보다 p는 작고 q는 크면 왼쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복 부모 노드보다 p는 크고 q가 작으면 오른쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
-<meta property="og:updated_time" content="2019-06-26T07:22:43.397Z">
+<meta property="og:image" content="http://cdn.wbluke.com/algorithm_NERD2.png">
+<meta property="og:updated_time" content="2019-07-09T05:00:09.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. 분할 정복">
-<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
-<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
+<meta name="twitter:title" content="너드인가, 너드가 아닌가?2 (NERD2)">
+<meta name="twitter:description" content="너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)내 풀이 left와 right 두 개의 자식 노드를 가지는 트리 생성 새로운 값이 들어올 때마다 아래의 과정을 거침 부모 노드보다 p는 작고 q는 크면 왼쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복 부모 노드보다 p는 크고 q가 작으면 오른쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반">
+<meta name="twitter:image" content="http://cdn.wbluke.com/algorithm_NERD2.png">
     
 
     
@@ -138,19 +138,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-2-분할-정복" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-너드인가-너드가-아닌가-2-NERD2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2. 분할 정복
+        너드인가, 너드가 아닌가?2 (NERD2)
         </h1>
     
 
@@ -160,44 +160,61 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/06/26/2-분할-정복/" class="article-date">
-            <time datetime="2019-06-26T03:59:56.000Z" itemprop="datePublished">2019-06-26</time>
+        <a href="/2019/07/09/너드인가-너드가-아닌가-2-NERD2/" class="article-date">
+            <time datetime="2019-07-09T03:59:22.000Z" itemprop="datePublished">2019-07-09</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/이진검색트리/">이진검색트리</a>, <a class="tag-link" href="/tags/중/">중</a>, <a class="tag-link" href="/tags/트리/">트리</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="분할-정복-Divide-amp-Conquer"><a href="#분할-정복-Divide-amp-Conquer" class="headerlink" title="분할 정복 (Divide &amp; Conquer)"></a>분할 정복 (Divide &amp; Conquer)</h2><blockquote>
-<p>주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산</p>
-</blockquote>
-<ol>
-<li>divide : 문제를 더 작은 문제로 분할</li>
-<li>merge : 각 문제의 답을 원래 문제의 답으로 병합</li>
-<li>base case : 기저 사례</li>
+            <h4 id="너드인가-너드가-아닌가-2-NERD2-난이도-中"><a href="#너드인가-너드가-아닌가-2-NERD2-난이도-中" class="headerlink" title="너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)"></a>너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)</h4><h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>left와 right 두 개의 자식 노드를 가지는 트리 생성</li>
+<li>새로운 값이 들어올 때마다 아래의 과정을 거침<ol>
+<li>부모 노드보다 p는 작고 q는 크면 왼쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복</li>
+<li>부모 노드보다 p는 크고 q가 작으면 오른쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복</li>
+<li>p, q 둘 다 작으면 삽입 x</li>
+<li>p, q 둘 다 크면 기존 트리에서 루트 노드를 삭제하고 새로 합쳐진 트리로 과정 반복</li>
 </ol>
-<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>​                        한 조각 vs 나머지 전체                                    거의 같은 크기의 부분 문제들</p>
-<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 vs 분할정복"></p>
-<hr>
-<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><h4 id="1-수열의-합"><a href="#1-수열의-합" class="headerlink" title="1. 수열의 합"></a>1. 수열의 합</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 기저 사례</span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> fastSum(n<span class="number">-1</span>) + n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>*fastSum(n/<span class="number">2</span>) + (n/<span class="number">2</span>) * (n/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>재귀호출의 경우 n번의 함수 호출이 필요하나 분할 정복의 경우 함수가 호출될 때마다 두 번에 한 번은 n이 절반으로 줄어든다. 따라서 실행 시간은 O(log n)가 된다는 것을 알 수 있다.</p>
-<h4 id="2-행렬의-거듭제곱"><a href="#2-행렬의-거듭제곱" class="headerlink" title="2. 행렬의 거듭제곱"></a>2. 행렬의 거듭제곱</h4><blockquote>
-<p>A^m = A^(m/2) × A^(m/2)        if(m%2==0)</p>
-<p>A^m = A × A^(m-1)                    if(m%2==1)</p>
-</blockquote>
-<h4 id="3-Merge-Sort-amp-Quick-Sort"><a href="#3-Merge-Sort-amp-Quick-Sort" class="headerlink" title="3. Merge Sort &amp; Quick Sort"></a>3. Merge Sort &amp; Quick Sort</h4><blockquote>
-<p>병합 정렬 : 배열을 가운데에서 쪼개 비슷한 크기의 수열 두 개로 만드는 과정을 반복 후 재귀 호출을 이용해 각각 정렬. 정렬된 배열을 하나로 합침.</p>
-<p>시간복잡도 : 단계 수(O(log n)) × 한 단계 당 병합 시간 (O(n)) = O(n·logn)</p>
-</blockquote>
-<blockquote>
-<p>퀵 정렬 : 배열을 단순하게 가운데에서 쪼개는 대신 pivot을 지정하여 작거나 같은 숫자는 왼쪽, 큰 숫자는 오른쪽으로 나누는 partition을 통해 병합 과정이 필요 없도록 분할.</p>
-<p>시간복잡도 : pivot에 따라 달라짐. 평균 O(n·logn) / 최악 O(n^2)</p>
-</blockquote>
+</li>
+<li>최종적으로 트리에 들어있는 노드의 개수가 정답</li>
+</ul>
+<p>![KakaoTalk_20190709_130722868](C:\Users\Yunsoo\Documents\카카오톡 받은 파일\KakaoTalk_20190709_130722868.jpg)</p>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>트리 자료구조 구현을 안해봤음</li>
+<li>구조체 또한 안 써봄…</li>
+</ul>
+<h5 id="종만북-풀이"><a href="#종만북-풀이" class="headerlink" title="종만북 풀이"></a>종만북 풀이</h5><ul>
+<li><p>p와 q를 각각 x축, y축으로 갖는 2차원 평면 상에 점으로 표시</p>
+</li>
+<li><p>한 점 a가 다른 점 b보다 오른쪽 위에 있으면 b는 a에 의해 무시됨</p>
+</li>
+<li><p>한 점 a(p,q)에서 그 왼쪽 아래, 즉 x&lt;=p, y&lt;=q 인 점들은 모두 a에 의해 무시된다고 볼 수 있음</p>
+</li>
+<li><p>이를 그림으로 표시하면 아래와 같음</p>
+</li>
+<li><p>어떤 한 점이 들어왔을 때 그 점보다 오른쪽에 있는 점 중 첫 번째 점보다 q 값이 작다면 무시되는 것이고 q 값이 크면 무시되지 않으므로 입력해준다.</p>
+</li>
+<li><p>점이 새로 입력되면 왼쪽의 점들 중에서 무시되는 점을 찾아야 한다.</p>
+</li>
+<li><p>왼쪽으로 쭉 돌면서 입력된 점보다 q 값이 작은 점들을 삭제해준다.</p>
+</li>
+<li><p>점의 개수가 정답</p>
+<p><img src="http://cdn.wbluke.com/algorithm_NERD2.png" alt="2차원 평면에 표시"></p>
+</li>
+</ul>
+<h5 id="구현법"><a href="#구현법" class="headerlink" title="구현법"></a>구현법</h5><ul>
+<li>map 사용 &lt;&lt; 공부하기</li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -205,7 +222,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/06/26/2-분할-정복/" data-id="cjxvcizyt0005jgngig6ijls2" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/09/너드인가-너드가-아닌가-2-NERD2/" data-id="cjxvcj00c000ejgngcqgij4tw" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -275,24 +292,20 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "2. 분할 정복",
-        "image": "https://2yunsoo.github.iohttps://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28",
-        "keywords": "",
-        "genre": "알고리즘",
-        "datePublished": "2019-06-26",
-        "dateCreated": "2019-06-26",
-        "dateModified": "2019-06-26",
-        "url": "https://2yunsoo.github.io/2019/06/26/2-분할-정복/",
-        "description": "분할 정복 (Divide &amp; Conquer)
-주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산
-
-
-divide : 문제를 더 작은 문제로 분할
-merge : 각 문제의 답을 원래 문제의 답으로 병합
-base case : 기저 사례
-
-재귀호출 vs 분할정복​                        한 조"
-        "wordCount": 345
+        "headline": "너드인가, 너드가 아닌가?2 (NERD2)",
+        "image": "https://2yunsoo.github.iohttp://cdn.wbluke.com/algorithm_NERD2.png",
+        "keywords": "트리 이진검색트리 중",
+        "genre": "문제",
+        "datePublished": "2019-07-09",
+        "dateCreated": "2019-07-09",
+        "dateModified": "2019-07-09",
+        "url": "https://2yunsoo.github.io/2019/07/09/너드인가-너드가-아닌가-2-NERD2/",
+        "description": "너드인가, 너드가 아닌가?2 (NERD2) (난이도:中)내 풀이
+left와 right 두 개의 자식 노드를 가지는 트리 생성
+새로운 값이 들어올 때마다 아래의 과정을 거침
+부모 노드보다 p는 작고 q는 크면 왼쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반복
+부모 노드보다 p는 크고 q가 작으면 오른쪽 자식을 루트로 가지는 서브트리로 내려가서 과정 반"
+        "wordCount": 200
     }
 </script>
 
@@ -356,20 +369,10 @@ base case : 기저 사례
         
 <nav id="article-nav">
     
-        <a href="/2019/06/26/1-Brute-force-문제/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            1. Brute force 문제
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/06/25/1-Brute-Force/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/09/이진-검색-트리/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">1. Brute Force</p>
+        <p class="article-nav-title">이진 검색 트리</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +535,7 @@ base case : 기저 사례
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/2-분할-정복/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/09/너드인가-너드가-아닌가-2-NERD2/';
     
     (function() {
     var dsq = document.createElement('script');
