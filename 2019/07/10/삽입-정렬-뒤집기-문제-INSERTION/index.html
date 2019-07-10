@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12  내 풀이 n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn) n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&amp;gt; 트리 구조를 사용 각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인  문제점 트리의 노드 수를 확인하">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-10T03:54:22.703Z">
+<meta property="og:updated_time" content="2019-07-10T04:03:04.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="삽입 정렬 뒤집기 문제(INSERTION)">
 <meta name="twitter:description" content="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12  내 풀이 n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn) n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&amp;gt; 트리 구조를 사용 각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인  문제점 트리의 노드 수를 확인하">
@@ -188,11 +188,15 @@
 </ul>
 <h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
 <li>뒤에서부터 보면서 n-a[n]이 원래 n번째의 값</li>
-<li>k번째 원소가 무엇인지를 찾고, 삭제하는 작업을 구현하는 문제이므로</li>
+<li><font color="red">k번째 원소가 무엇인지를 찾고</font>, 삭제하는 작업을 구현하는 문제이므로</li>
 <li>그냥 트립 사용</li>
 <li>기본값으로 1~n으로 채워진 트립을 생성하고</li>
-<li>n-a[n]번째 원소를 찾아 빼주면 해당 노드 삭제하고 n 값은 1 줄여줌</li>
-<li>트리에서의 탐색과 삭제는 O(logn)의 시간복잡도</li>
+<li>( n-a[n]번째 원소를 찾아 빼주면 해당 노드 삭제하고 n 값은 1 줄여줌 ) 반복</li>
+<li>트리에서의 탐색과 삭제는 O(logn), 전체는 O(n·logn)</li>
+</ul>
+<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><ul>
+<li>시간복잡도는 당연한 거긴 하지만 잘 접근했으나</li>
+<li>k번째 원소를 찾는 문제라는 생각을 못했다.</li>
 </ul>
 
         </div>
@@ -201,7 +205,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/" data-id="cjxwpnukt000ragngk3dvldwx" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/" data-id="cjxws0ccz000h9ongkbqcfrq7" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -288,7 +292,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
 
 문제점
 트리의 노드 수를 확인하"
-        "wordCount": 120
+        "wordCount": 141
     }
 </script>
 
@@ -352,6 +356,16 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
         
 <nav id="article-nav">
     
+        <a href="/2019/07/10/우선순위큐와-힙/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            우선운위큐와 힙
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2019/07/09/너드인가-너드가-아닌가-2-NERD2/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
@@ -373,6 +387,15 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
         <h3 class="widget-title">최근 글</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
+                            <p class="item-title"><a href="/2019/07/10/우선순위큐와-힙/" class="title">우선운위큐와 힙</a></p>
+                            <p class="item-date"><time datetime="2019-07-10T04:03:58.000Z" itemprop="datePublished">2019-07-10</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -410,15 +433,6 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
-                            <p class="item-title"><a href="/2019/07/08/트리-순회-순서-변경-TREVERSAL/" class="title">트리 순회 순서 변경(TREVERSAL)</a></p>
-                            <p class="item-date"><time datetime="2019-07-08T05:59:48.000Z" itemprop="datePublished">2019-07-08</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -428,7 +442,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">6</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -438,7 +452,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -448,7 +462,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memoization/">memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memoization/">memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -458,7 +472,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/DFS/" style="font-size: 14px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/memoization/" style="font-size: 10px;">memoization</a> <a href="/tags/다이나믹/" style="font-size: 18px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 14px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 12px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 14px;">트리</a> <a href="/tags/트립/" style="font-size: 10px;">트립</a> <a href="/tags/하/" style="font-size: 16px;">하</a>
+            <a href="/tags/DFS/" style="font-size: 14px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/memoization/" style="font-size: 10px;">memoization</a> <a href="/tags/다이나믹/" style="font-size: 18px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 14px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/우선순위큐/" style="font-size: 10px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 12px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 14px;">트리</a> <a href="/tags/트립/" style="font-size: 10px;">트립</a> <a href="/tags/하/" style="font-size: 16px;">하</a> <a href="/tags/힙/" style="font-size: 10px;">힙</a>
         </div>
     </div>
 
