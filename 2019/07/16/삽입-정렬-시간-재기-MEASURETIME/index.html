@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>삽입 정렬 시간 재기(MEASURETIME) | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="구간트리,펜윅트리,트립,병합정렬">
+    
+    <meta name="description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)12  내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원">
+<meta name="keywords" content="구간트리,펜윅트리,트립,병합정렬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="삽입 정렬 시간 재기(MEASURETIME)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)12  내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-07-16T05:21:12.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="삽입 정렬 시간 재기(MEASURETIME)">
+<meta name="twitter:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)12  내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문/">문</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/문/">문</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-삽입-정렬-시간-재기-MEASURETIME" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        삽입 정렬 시간 재기(MEASURETIME)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" class="article-date">
+            <time datetime="2019-07-16T04:51:12.000Z" itemprop="datePublished">2019-07-16</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/구간트리/">구간트리</a>, <a class="tag-link" href="/tags/병합정렬/">병합정렬</a>, <a class="tag-link" href="/tags/트립/">트립</a>, <a class="tag-link" href="/tags/펜윅트리/">펜윅트리</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="삽입-정렬-시간-재기-MEASURETIME-난이도-中"><a href="#삽입-정렬-시간-재기-MEASURETIME-난이도-中" class="headerlink" title="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)"></a>삽입 정렬 시간 재기(MEASURETIME) (난이도:中)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>logn에 해결봐야됨</li>
+<li>트립 사용하면 k보다 작은 노드의 개수 셀 수 있음</li>
+<li>근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>음… 펜윅트리로 어떻게 표현해야할 지 몰랐음</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><h6 id="1-펜윅-트리"><a href="#1-펜윅-트리" class="headerlink" title="1. 펜윅 트리"></a>1. 펜윅 트리</h6><p>입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로 잡고 입력 받으면서 해당 숫자의 개수를 저장해준다. 그러고 펜윅트리를 사용해 전체 숫자의 개수에서 A[i]보다 작거나 같은 숫자의 개수를 빼주면 A[i]보다 큰 숫자의 개수를 세줄 수 있다.</p>
+<p>입력으로 주어지는 숫자의 최댓값이 M이라고 하면 이 풀이의 시간복잡도는 O(NlogM)이다.</p>
+<h6 id="2-트립"><a href="#2-트립" class="headerlink" title="2. 트립"></a>2. 트립</h6><p>트리에 주어진 키 k보다 작은 키가 몇 개 있는지 계산하는 연산은 O(logN)이므로 O(NlogN) 내에 해결 가능하다.</p>
+<h6 id="3-병합-정렬"><a href="#3-병합-정렬" class="headerlink" title="3. 병합 정렬"></a>3. 병합 정렬</h6><p>각 입력 숫자에 대해 이미 받은 수열 내에 존재하는 더 큰 숫자를 찾는 것이 아니라 전체 수열에서 더 큰 수가 앞에 있고 작은 수는 뒤에 있는 반전의 개수를 센다. 삽입 정렬에서 숫자를 한 번 옮길 때마다 반전이 하나 줄어들기 때문에 반전의 개수와 숫자를 움직이는 개수는 같다.</p>
+<p>반전의 수를 세는 방법으로는 병합 정렬을 사용한다. 주어진 수열을 절반으로 나눠 L, R이라고 하면 반전은</p>
+<ol>
+<li>두 수가 모두 L에 포함되거나</li>
+<li>두 수가 모두 R에 포함되거나</li>
+<li>큰 수는 L에, 작은 수는 R에 포함되어 있다.</li>
+</ol>
+<p>1, 2번은 분할 정복으로 세고 3번은 두 수열을 병합하는 과정에서 셀 수 있다. 병합하는 두 수열은 이미 정렬된 상태로 존재하기 때문에(음… 닭이 먼저인가. 달걀이 먼저인가. 정렬돼있기 때문에 이런 방법을 쓰지만 이런 방법을 쓰기 때문에 정렬돼서 존재하는 거 아닌가…) L의 앞에서부터 돌면서 만약 L에 있는 수가 R에 있는 수보다 커지면 L에 남아있는 모든 수가 R의 수보다 크다고 볼 수 있다. 따라서 L에 남아있는 개수만큼의 반전이 존재한다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" data-id="cjy5dmca6000meongkg34z7zc" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "삽입 정렬 시간 재기(MEASURETIME)",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "구간트리 펜윅트리 트립 병합정렬",
+        "genre": "문",
+        "datePublished": "2019-07-16",
+        "dateCreated": "2019-07-16",
+        "dateModified": "2019-07-16",
+        "url": "https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/",
+        "description": "삽입 정렬 시간 재기(MEASURETIME) (난이도:中)12
+
+내 풀이
+logn에 해결봐야됨
+트립 사용하면 k보다 작은 노드의 개수 셀 수 있음
+근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…
+
+문제점
+음… 펜윅트리로 어떻게 표현해야할 지 몰랐음
+
+올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원"
+        "wordCount": 276
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/07/12/양자화-Quantization/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">양자화(Quantization)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문/">문</a></p>
+                            <p class="item-title"><a href="/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" class="title">삽입 정렬 시간 재기(MEASURETIME)</a></p>
+                            <p class="item-date"><time datetime="2019-07-16T04:51:12.000Z" itemprop="datePublished">2019-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/12/양자화-Quantization/" class="title">양자화(Quantization)</a></p>
+                            <p class="item-date"><time datetime="2019-07-12T05:13:48.000Z" itemprop="datePublished">2019-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/11/족보-탐험-FAMILYTREE/" class="title">족보 탐험(FAMILYTREE)</a></p>
+                            <p class="item-date"><time datetime="2019-07-11T04:21:53.000Z" itemprop="datePublished">2019-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/11/등산로-MORDOR/" class="title">등산로(MORDOR)</a></p>
+                            <p class="item-date"><time datetime="2019-07-11T03:08:40.000Z" itemprop="datePublished">2019-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
+                            <p class="item-title"><a href="/2019/07/11/구간-트리/" class="title">구간 트리</a></p>
+                            <p class="item-date"><time datetime="2019-07-11T01:32:16.000Z" itemprop="datePublished">2019-07-11</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/DFS/" style="font-size: 14px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 14px;">구간트리</a> <a href="/tags/다이나믹/" style="font-size: 18px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16px;">메모이제이션</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 12px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 12px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 14px;">트리</a> <a href="/tags/트립/" style="font-size: 12px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 10px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18px;">하</a> <a href="/tags/힙/" style="font-size: 12px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

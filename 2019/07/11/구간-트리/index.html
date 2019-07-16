@@ -20,10 +20,12 @@
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="구간 트리 (segment tree) 저장된 자료들을 적절히 전처리해 그들에 대한 질의들을 빠르게 대답할 때 사용하는 트리 흔히 일차원 배열의 특정 구간에 대한 질문을 계산하는데 사용  구간 트리는 주어진 배열의 구간들을 표현하는 이진 트리로 만든다. 루트는 배열의 전체 구간 [0,n-1]을 표현하며, 각 자식들은 해당 구간의 절반, 리프 노드는 길이가 1">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-11T03:07:14.899Z">
+<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/223A5E5058C922EE23">
+<meta property="og:updated_time" content="2019-07-16T04:32:22.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="구간 트리">
 <meta name="twitter:description" content="구간 트리 (segment tree) 저장된 자료들을 적절히 전처리해 그들에 대한 질의들을 빠르게 대답할 때 사용하는 트리 흔히 일차원 배열의 특정 구간에 대한 질문을 계산하는데 사용  구간 트리는 주어진 배열의 구간들을 표현하는 이진 트리로 만든다. 루트는 배열의 전체 구간 [0,n-1]을 표현하며, 각 자식들은 해당 구간의 절반, 리프 노드는 길이가 1">
+<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/223A5E5058C922EE23">
     
 
     
@@ -77,7 +79,7 @@
                                     <a class="main-nav-list-link" href="/">홈</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문/">문</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -205,6 +207,23 @@
 <li>두 구간을 합쳐 최대로 출현한 값이 바뀔 경우 : 새로 구해줘야 한다.</li>
 </ol>
 <p>입력이 정렬된 수열로 들어오기 때문에 위의 세 예외 사항은 모두 왼쪽 구간의 오른쪽 끝 값과 오른쪽 구간의 왼쪽 끝 값이 같아 해당 값의 출현 빈도가 늘어날 때 발생함을 알 수 있다. 따라서 구간 트리 생성 시, 왼쪽 구간의 오른쪽 끝 수 및 출현 빈도, 오른쪽 구간의 왼쪽 끝 수 밑 출현 빈도를 추가로 저장하면 된다.</p>
+<br>
+
+<h3 id="펜윅-트리"><a href="#펜윅-트리" class="headerlink" title="펜윅 트리"></a>펜윅 트리</h3><hr>
+<p>구간 합 대신 부분 합을 계산하는 자료 구조를 통해 빠르게 구간 합을 계산. 시간 복잡도를 줄일 수 있음</p>
+<hr>
+<p>psum[pos] = A[0] + A[1] + ··· + A[pos]일 때, [i,j] 구간의 합은 psum[j] - psum[i-1]</p>
+<p><img src="https://t1.daumcdn.net/cfile/tistory/223A5E5058C922EE23" alt="구간 트리에서 필요 없는 구간을 지운 펜윅 트리"></p>
+<p>부분 합을 통해 구간 합을 계산할 때, 한 구간 아래에 두 개의 구간이 있다면 그 중에 하나의 구간의 합만 알아도 나머지 구간의 합을 알 수 있기 때문에 오른쪽 구간은 정보를 저장하지 않는다. 그러면 구간 트리가 위의 그림처럼 나오게 되고 각 구간의 오른쪽 끝 위치는 0~pos 까지 서로 다른 수임을 확인할 수 있다. 따라서 총 n의 크기를 갖는 다음과 같은 배열을 만들 수 있다.</p>
+<p>tree[i] = 오른쪽 끝 위치가 A[i]인 구간의 합</p>
+<p>A[pos]까지의 합 psum[pos]는 tree[pos]를 더하고 tree[pos]가 포함하지 않는 구간에 대해 마찬가지의 작업을 반복하여 구할 수 있게 된다. 따라서 O(logn)개의 구간 합만 있으면 어떤 부분합이든 구할 수 있다.</p>
+<p>특정 부분 합을 구하기 위해 더해야 할 구간 합들은 다음의 규칙으로 구해준다. ret = pos + 1이라 하고 2진수로 표현하여 가장 끝의 수를 빼주면서 tree[ret] 값을 더하는 작업을 반복한다.</p>
+<p>​    psum[7] = tree[7] + tree[6] + tree[4] =&gt; 111 - 110 - 100</p>
+<p>펜윅 트리의 갱신은 해당 위치를 pos라고 했을 때 ret = pos +1 이라 하고 2진수로 표현하여 끝에서부터 봤을 때 처음 나오는 1인 비트를 더해주면서 tree[ret] 값을 갱신하는 작업을 반복한다.</p>
+<p>​    A[5]를 add 해주면 tree[5], tree[6], tree[8], tree[16]이 갱신 =&gt; 101,110, 1000, 10000</p>
+<p>두 작업은 반복문이 수행될 때마다 트리의 층을 하나씩 올라가므로 시간복잡도는 O(logn)이다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FenwickTree</span> &#123;</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tree;</span><br><span class="line">	FenwickTree(<span class="keyword">int</span> n) : tree(n+<span class="number">1</span>) &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 구간 합 구하기</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        ++pos;</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(pos) &#123;</span><br><span class="line">            ret += tree[pos];</span><br><span class="line">            pos &amp;= (pos<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 트리 갱신</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        ++pos;</span><br><span class="line">        <span class="keyword">while</span>(pos &lt; tree.size()) &#123;</span><br><span class="line">            tree[pos] += val;</span><br><span class="line">            pos += (pos &amp; -pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         <footer class="article-footer">
@@ -212,7 +231,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/11/구간-트리/" data-id="cjy542btj000e7knghk627zc0" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/11/구간-트리/" data-id="cjy5dmc990008eongefjzo6kr" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -283,19 +302,19 @@
             "name": "Yunsoo Lee"
         },
         "headline": "구간 트리",
-        "image": "https://2yunsoo.github.io",
+        "image": "https://2yunsoo.github.iohttps://t1.daumcdn.net/cfile/tistory/223A5E5058C922EE23",
         "keywords": "구간트리",
         "genre": "알고리즘",
         "datePublished": "2019-07-11",
         "dateCreated": "2019-07-11",
-        "dateModified": "2019-07-11",
+        "dateModified": "2019-07-16",
         "url": "https://2yunsoo.github.io/2019/07/11/구간-트리/",
         "description": "구간 트리 (segment tree)
 저장된 자료들을 적절히 전처리해 그들에 대한 질의들을 빠르게 대답할 때 사용하는 트리
 흔히 일차원 배열의 특정 구간에 대한 질문을 계산하는데 사용
 
 구간 트리는 주어진 배열의 구간들을 표현하는 이진 트리로 만든다. 루트는 배열의 전체 구간 [0,n-1]을 표현하며, 각 자식들은 해당 구간의 절반, 리프 노드는 길이가 1"
-        "wordCount": 874
+        "wordCount": 1373
     }
 </script>
 
@@ -394,6 +413,15 @@
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문/">문</a></p>
+                            <p class="item-title"><a href="/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" class="title">삽입 정렬 시간 재기(MEASURETIME)</a></p>
+                            <p class="item-date"><time datetime="2019-07-16T04:51:12.000Z" itemprop="datePublished">2019-07-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2019/07/12/양자화-Quantization/" class="title">양자화(Quantization)</a></p>
                             <p class="item-date"><time datetime="2019-07-12T05:13:48.000Z" itemprop="datePublished">2019-07-12</time></p>
@@ -427,15 +455,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
-                            <p class="item-title"><a href="/2019/07/10/변화하는-중간-값-RUNNINGMEDIAN/" class="title">변화하는 중간 값(RUNNINGMEDIAN)</a></p>
-                            <p class="item-date"><time datetime="2019-07-10T05:02:50.000Z" itemprop="datePublished">2019-07-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -445,7 +464,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -455,7 +474,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -465,7 +484,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -475,7 +494,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 13.33px;">구간트리</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 10px;">트립</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+            <a href="/tags/DFS/" style="font-size: 14px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 14px;">구간트리</a> <a href="/tags/다이나믹/" style="font-size: 18px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16px;">메모이제이션</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 12px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 12px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 14px;">트리</a> <a href="/tags/트립/" style="font-size: 12px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 10px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18px;">하</a> <a href="/tags/힙/" style="font-size: 12px;">힙</a>
         </div>
     </div>
 
