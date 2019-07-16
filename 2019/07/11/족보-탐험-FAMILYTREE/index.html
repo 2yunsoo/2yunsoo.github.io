@@ -10,17 +10,22 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="구간트리,상">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="족보 탐험(FAMILYTREE) (난이도:上)12  내 풀이올바른 풀이 아이디어2와 5 사이의 촌수는 2 - 1 - 3 - 5로 나타낼 수 있다. 5와 9 사이의 촌수는 5 - 3 - 1 - 0 - 8 - 9로 나타낼 수 있다. 주어진 두 사람의 촌수를 계산하기 위해서는 두 사람의 최소 공통 조상을 찾아 그 사이의 촌수를 더해주면 된다. 트리의 최소 공통">
+<meta name="keywords" content="구간트리,상">
 <meta property="og:type" content="article">
 <meta property="og:title" content="족보 탐험(FAMILYTREE)">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/11/족보-탐험-FAMILYTREE/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="족보 탐험(FAMILYTREE) (난이도:上)12  내 풀이올바른 풀이 아이디어2와 5 사이의 촌수는 2 - 1 - 3 - 5로 나타낼 수 있다. 5와 9 사이의 촌수는 5 - 3 - 1 - 0 - 8 - 9로 나타낼 수 있다. 주어진 두 사람의 촌수를 계산하기 위해서는 두 사람의 최소 공통 조상을 찾아 그 사이의 촌수를 더해주면 된다. 트리의 최소 공통">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-11T04:21:53.814Z">
+<meta property="og:image" content="https://algospot.com/media/judge-attachments/52a11e471716e8816ece02feb792f583/a.png">
+<meta property="og:updated_time" content="2019-07-16T01:00:23.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="족보 탐험(FAMILYTREE)">
+<meta name="twitter:description" content="족보 탐험(FAMILYTREE) (난이도:上)12  내 풀이올바른 풀이 아이디어2와 5 사이의 촌수는 2 - 1 - 3 - 5로 나타낼 수 있다. 5와 9 사이의 촌수는 5 - 3 - 1 - 0 - 8 - 9로 나타낼 수 있다. 주어진 두 사람의 촌수를 계산하기 위해서는 두 사람의 최소 공통 조상을 찾아 그 사이의 촌수를 더해주면 된다. 트리의 최소 공통">
+<meta name="twitter:image" content="https://algospot.com/media/judge-attachments/52a11e471716e8816ece02feb792f583/a.png">
     
 
     
@@ -133,7 +138,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    미지정
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
@@ -163,18 +168,35 @@
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/구간트리/">구간트리</a>, <a class="tag-link" href="/tags/상/">상</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="족보-탐험-FAMILYTREE-난이도-上"><a href="#족보-탐험-FAMILYTREE-난이도-上" class="headerlink" title="족보 탐험(FAMILYTREE) (난이도:上)"></a>족보 탐험(FAMILYTREE) (난이도:上)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><p><img src="https://algospot.com/media/judge-attachments/52a11e471716e8816ece02feb792f583/a.png" alt="족보 탐험 입력 데이터의 트리"></p>
+<h6 id="아이디어"><a href="#아이디어" class="headerlink" title="아이디어"></a>아이디어</h6><p>2와 5 사이의 촌수는 2 - 1 - 3 - 5로 나타낼 수 있다.</p>
+<p>5와 9 사이의 촌수는 5 - 3 - 1 - 0 - 8 - 9로 나타낼 수 있다.</p>
+<p>주어진 두 사람의 촌수를 계산하기 위해서는 두 사람의 최소 공통 조상을 찾아 그 사이의 촌수를 더해주면 된다. 트리의 최소 공통 조상(least/lowest common ancestor, LCA)을 찾는 문제는 다음과 같은 방법으로 풀 수 있다.</p>
+<p>구간 트리는 일렬로 늘어선 배열을 처리하는 자료 구조이기 때문에 주어진 트리를 펴서 일렬로 만들어 준다. 이 때 전위 순회를 사용하고 재귀 호출이 끝나고 이전 노드로 돌아올 때도 방문에 기록한다.</p>
+<p>​    Path = {0,1,2,1,3,4,3,5,3,1,0,6,7,6,0,8,9,10,9,11,9,8,12,8,0}</p>
+<p>이 경로에서 u에서 시작해 v에서 끝나는 부분 경로를 살펴보면 재귀 호출이 끝나고 돌아올 때도 경로 상에 넣었으므로 u를 포함하는 서브트리에서 v를 포함하는 서브트리로 넘어가기 위해서는 무조건 u와 v의 최소 공통 조상, LCA(u,v)를 지나야 한다. 또 LCA(u,v)보다 상위 노드가 나오기 위해서는 LCA(u,v)를 루트로 하는 서브트리의 모든 노드를 지나야 한다. 따라서 이 부분 경로 내에서 방문하는 최상위 노드는 항상 LCA(u,v)가 된다. </p>
+<p>구간 트리를 쉽게 생성하기 위해서 전위 순회하여 경로를 만들 때, 방문 순서에 따라 노드에 번호를 매기면 자손 노드는 항상 부모 노드보다 높은 번호를 가지게 된다. 따라서 특정 구간에서의 최소치를 가지는 노드가 최소 공통 조상이 된다.</p>
+<h6 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h6><p>전위 순회를 통해 일련 번호 부여, 순회 경로, 각 노드가 경로 상에서 처음 나타나는 위치, 각 노드의 깊이.</p>
+<p>각 노드와 일련 번호 사이의 대응 관계(no2serial, serial2no) 사용</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/11/족보-탐험-FAMILYTREE/" data-id="cjxy61bb4001h94ng5b9ctvb0" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/11/족보-탐험-FAMILYTREE/" data-id="cjy542bws001u7kng29xzkcyq" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -245,15 +267,20 @@
             "name": "Yunsoo Lee"
         },
         "headline": "족보 탐험(FAMILYTREE)",
-        "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
+        "image": "https://2yunsoo.github.iohttps://algospot.com/media/judge-attachments/52a11e471716e8816ece02feb792f583/a.png",
+        "keywords": "구간트리 상",
+        "genre": "문제",
         "datePublished": "2019-07-11",
         "dateCreated": "2019-07-11",
-        "dateModified": "2019-07-11",
+        "dateModified": "2019-07-16",
         "url": "https://2yunsoo.github.io/2019/07/11/족보-탐험-FAMILYTREE/",
-        "description": ""
-        "wordCount": 1
+        "description": "족보 탐험(FAMILYTREE) (난이도:上)12
+
+내 풀이올바른 풀이
+아이디어2와 5 사이의 촌수는 2 - 1 - 3 - 5로 나타낼 수 있다.
+5와 9 사이의 촌수는 5 - 3 - 1 - 0 - 8 - 9로 나타낼 수 있다.
+주어진 두 사람의 촌수를 계산하기 위해서는 두 사람의 최소 공통 조상을 찾아 그 사이의 촌수를 더해주면 된다. 트리의 최소 공통 "
+        "wordCount": 256
     }
 </script>
 
@@ -317,6 +344,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2019/07/12/양자화-Quantization/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            양자화(Quantization)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2019/07/11/등산로-MORDOR/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
@@ -343,6 +380,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/12/양자화-Quantization/" class="title">양자화(Quantization)</a></p>
+                            <p class="item-date"><time datetime="2019-07-12T05:13:48.000Z" itemprop="datePublished">2019-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/11/족보-탐험-FAMILYTREE/" class="title">족보 탐험(FAMILYTREE)</a></p>
                             <p class="item-date"><time datetime="2019-07-11T04:21:53.000Z" itemprop="datePublished">2019-07-11</time></p>
                         </div>
@@ -375,15 +421,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
-                            <p class="item-title"><a href="/2019/07/10/우선순위큐와-힙/" class="title">우선운위큐와 힙</a></p>
-                            <p class="item-date"><time datetime="2019-07-10T04:03:58.000Z" itemprop="datePublished">2019-07-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -393,7 +430,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -403,7 +440,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -413,7 +450,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -423,7 +460,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/DFS/" style="font-size: 14px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 12px;">구간트리</a> <a href="/tags/다이나믹/" style="font-size: 18px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/우선순위큐/" style="font-size: 12px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 12px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 14px;">트리</a> <a href="/tags/트립/" style="font-size: 10px;">트립</a> <a href="/tags/하/" style="font-size: 18px;">하</a> <a href="/tags/힙/" style="font-size: 12px;">힙</a>
+            <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 13.33px;">구간트리</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 10px;">트립</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
         </div>
     </div>
 

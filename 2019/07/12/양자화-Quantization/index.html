@@ -6,24 +6,21 @@
     
 
     
-    <title>삽입 정렬 뒤집기 문제(INSERTION) | Yunsoo&#39;s blog</title>
+    <title>양자화(Quantization) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="중,이진검색트리,트립">
+        <meta name="keywords" content>
     
-    <meta name="description" content="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12  내 풀이 n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn) n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&amp;gt; 트리 구조를 사용 각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인  문제점 트리의 노드 수를 확인하">
-<meta name="keywords" content="중,이진검색트리,트립">
+    <meta name="keywords" content="Yunsoo | yunsoo | ����">
 <meta property="og:type" content="article">
-<meta property="og:title" content="삽입 정렬 뒤집기 문제(INSERTION)">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/index.html">
+<meta property="og:title" content="양자화(Quantization)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/12/양자화-Quantization/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12  내 풀이 n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn) n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&amp;gt; 트리 구조를 사용 각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인  문제점 트리의 노드 수를 확인하">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-10T04:03:04.725Z">
+<meta property="og:updated_time" content="2019-07-12T05:13:48.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="삽입 정렬 뒤집기 문제(INSERTION)">
-<meta name="twitter:description" content="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12  내 풀이 n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn) n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&amp;gt; 트리 구조를 사용 각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인  문제점 트리의 노드 수를 확인하">
+<meta name="twitter:title" content="양자화(Quantization)">
     
 
     
@@ -136,19 +133,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/문제/">문제</a>
+    미지정
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-삽입-정렬-뒤집기-문제-INSERTION" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-양자화-Quantization" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        삽입 정렬 뒤집기 문제(INSERTION)
+        양자화(Quantization)
         </h1>
     
 
@@ -158,54 +155,26 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/" class="article-date">
-            <time datetime="2019-07-10T03:14:36.000Z" itemprop="datePublished">2019-07-10</time>
+        <a href="/2019/07/12/양자화-Quantization/" class="article-date">
+            <time datetime="2019-07-12T05:13:48.000Z" itemprop="datePublished">2019-07-12</time>
         </a>
     </div>
 
 		
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/이진검색트리/">이진검색트리</a>, <a class="tag-link" href="/tags/중/">중</a>, <a class="tag-link" href="/tags/트립/">트립</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="삽입-정렬-뒤집기-문제-INSERTION-난이도-中"><a href="#삽입-정렬-뒤집기-문제-INSERTION-난이도-中" class="headerlink" title="삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)"></a>삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
-<li>n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn)</li>
-<li>n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&gt; 트리 구조를 사용</li>
-<li>각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인</li>
-</ul>
-<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
-<li>트리의 노드 수를 확인하면 size 값을 가지고 있는 트립이 딱이지만…</li>
-<li>문제에서 설마 그 트립을 구현해서 사용하라고 할까? 싶어 MAP을 이용한 풀이를 열심히 생각</li>
-</ul>
-<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
-<li>뒤에서부터 보면서 n-a[n]이 원래 n번째의 값</li>
-<li><font color="red">k번째 원소가 무엇인지를 찾고</font>, 삭제하는 작업을 구현하는 문제이므로</li>
-<li>그냥 트립 사용</li>
-<li>기본값으로 1~n으로 채워진 트립을 생성하고</li>
-<li>( n-a[n]번째 원소를 찾아 빼주면 해당 노드 삭제하고 n 값은 1 줄여줌 ) 반복</li>
-<li>트리에서의 탐색과 삭제는 O(logn), 전체는 O(n·logn)</li>
-</ul>
-<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><ul>
-<li>시간복잡도는 당연한 거긴 하지만 잘 접근했으나</li>
-<li>k번째 원소를 찾는 문제라는 생각을 못했다.</li>
-</ul>
-
+            
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/" data-id="cjy542bv700117kngxheeoizc" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/12/양자화-Quantization/" data-id="cjy542bvi00157kngli3y5duz" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -275,24 +244,16 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "삽입 정렬 뒤집기 문제(INSERTION)",
+        "headline": "양자화(Quantization)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "중 이진검색트리 트립",
-        "genre": "문제",
-        "datePublished": "2019-07-10",
-        "dateCreated": "2019-07-10",
-        "dateModified": "2019-07-10",
-        "url": "https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/",
-        "description": "삽입 정렬 뒤집기 문제(INSERTION) (난이도:中)12
-
-내 풀이
-n의 범위가 50000까지기 때문에 시간복잡도는 O(n·logn)
-n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한 결과값을 구하는 시간은 logn -&gt; 트리 구조를 사용
-각 경우에 대해 값들이 이동한 칸의 수는 트리에서의 노드 수를 확인
-
-문제점
-트리의 노드 수를 확인하"
-        "wordCount": 141
+        "keywords": "",
+        "genre": "",
+        "datePublished": "2019-07-12",
+        "dateCreated": "2019-07-12",
+        "dateModified": "2019-07-12",
+        "url": "https://2yunsoo.github.io/2019/07/12/양자화-Quantization/",
+        "description": ""
+        "wordCount": 1
     }
 </script>
 
@@ -356,20 +317,10 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
         
 <nav id="article-nav">
     
-        <a href="/2019/07/10/우선순위큐와-힙/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            우선운위큐와 힙
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/07/09/너드인가-너드가-아닌가-2-NERD2/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/11/족보-탐험-FAMILYTREE/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">너드인가, 너드가 아닌가?2 (NERD2)</p>
+        <p class="article-nav-title">족보 탐험(FAMILYTREE)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +483,7 @@ n개의 입력을 스캔하면서 정답을 구해야 하므로 입력에 대한
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/12/양자화-Quantization/';
     
     (function() {
     var dsq = document.createElement('script');
