@@ -6,24 +6,24 @@
     
 
     
-    <title>우선운위큐와 힙 | Yunsoo&#39;s blog</title>
+    <title>Sorting Game(SORTGAME) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="우선순위큐,힙">
+        <meta name="keywords" content="그래프,BFS,중">
     
-    <meta name="description" content="우선순위 큐와 힙 우선순위 큐 : 순서대로 기다리고 있는 자료들을 저장하여 우선순위가 가장 높은 자료를 가장 먼저 꺼내주는 자료 구조  우선순위 큐의 구현연결리스트, 배열 : 원소를 꺼낼 때마다 모든 원소를 순회하며 우선순위가 가장 높은 원소를 찾는다. ​                                원소 추가에 O(1), 원소 꺼내기에 O(N)">
-<meta name="keywords" content="우선순위큐,힙">
+    <meta name="description" content="Sorting Game(SORTGAME) (난이도:中)12  내 풀이 어렵  올바른 풀이입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&amp;lt;int&amp;g">
+<meta name="keywords" content="그래프,BFS,중">
 <meta property="og:type" content="article">
-<meta property="og:title" content="우선운위큐와 힙">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/07/10/우선순위큐와-힙/index.html">
+<meta property="og:title" content="Sorting Game(SORTGAME)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/17/Sorting-Game-SORTGAME/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="우선순위 큐와 힙 우선순위 큐 : 순서대로 기다리고 있는 자료들을 저장하여 우선순위가 가장 높은 자료를 가장 먼저 꺼내주는 자료 구조  우선순위 큐의 구현연결리스트, 배열 : 원소를 꺼낼 때마다 모든 원소를 순회하며 우선순위가 가장 높은 원소를 찾는다. ​                                원소 추가에 O(1), 원소 꺼내기에 O(N)">
+<meta property="og:description" content="Sorting Game(SORTGAME) (난이도:中)12  내 풀이 어렵  올바른 풀이입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&amp;lt;int&amp;g">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-10T05:33:15.498Z">
+<meta property="og:updated_time" content="2019-07-17T06:28:27.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="우선운위큐와 힙">
-<meta name="twitter:description" content="우선순위 큐와 힙 우선순위 큐 : 순서대로 기다리고 있는 자료들을 저장하여 우선순위가 가장 높은 자료를 가장 먼저 꺼내주는 자료 구조  우선순위 큐의 구현연결리스트, 배열 : 원소를 꺼낼 때마다 모든 원소를 순회하며 우선순위가 가장 높은 원소를 찾는다. ​                                원소 추가에 O(1), 원소 꺼내기에 O(N)">
+<meta name="twitter:title" content="Sorting Game(SORTGAME)">
+<meta name="twitter:description" content="Sorting Game(SORTGAME) (난이도:中)12  내 풀이 어렵  올바른 풀이입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&amp;lt;int&amp;g">
     
 
     
@@ -136,19 +136,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-우선순위큐와-힙" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Sorting-Game-SORTGAME" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        우선운위큐와 힙
+        Sorting Game(SORTGAME)
         </h1>
     
 
@@ -158,8 +158,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/07/10/우선순위큐와-힙/" class="article-date">
-            <time datetime="2019-07-10T04:03:58.000Z" itemprop="datePublished">2019-07-10</time>
+        <a href="/2019/07/17/Sorting-Game-SORTGAME/" class="article-date">
+            <time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time>
         </a>
     </div>
 
@@ -168,46 +168,25 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/우선순위큐/">우선순위큐</a>, <a class="tag-link" href="/tags/힙/">힙</a>
+        <a class="tag-link" href="/tags/BFS/">BFS</a>, <a class="tag-link" href="/tags/그래프/">그래프</a>, <a class="tag-link" href="/tags/중/">중</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="우선순위-큐와-힙"><a href="#우선순위-큐와-힙" class="headerlink" title="우선순위 큐와 힙"></a>우선순위 큐와 힙</h2><hr>
-<p>우선순위 큐 : 순서대로 기다리고 있는 자료들을 저장하여 우선순위가 가장 높은 자료를 가장 먼저 꺼내주는 자료 구조</p>
-<hr>
-<h4 id="우선순위-큐의-구현"><a href="#우선순위-큐의-구현" class="headerlink" title="우선순위 큐의 구현"></a>우선순위 큐의 구현</h4><p>연결리스트, 배열 : 원소를 꺼낼 때마다 모든 원소를 순회하며 우선순위가 가장 높은 원소를 찾는다.</p>
-<p>​                                원소 추가에 O(1), 원소 꺼내기에 O(N) 시간이 걸린다.</p>
-<p>균형 잡힌이진 검색 트리 : 원소들을 우선순위로 정렬해 두면 원소의 삽입과 삭제에 O(logN) 시간이면 된다.</p>
-<p>​                                              그러나 힙의 사용처는 단순한 데 비해 구현이 너무 복잡하므로 적합하지 않다.</p>
-<p><strong>힙(heap)</strong> : 가장 큰 혹은 작은 원소를 찾는 데 최적화된 형태의 이진 트리이다.</p>
-<p>​                   원소의 삽입과 삭제에 O(logN) 이면 되며 구현도 간단하다.</p>
-<br>
+            <h4 id="Sorting-Game-SORTGAME-난이도-中"><a href="#Sorting-Game-SORTGAME-난이도-中" class="headerlink" title="Sorting Game(SORTGAME) (난이도:中)"></a>Sorting Game(SORTGAME) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h4 id="힙-heap"><a href="#힙-heap" class="headerlink" title="힙 (heap)"></a>힙 (heap)</h4><hr>
-<p>힙 : 최대 원소를 가능한 한 빠르게 찾을 수 있는 방법으로 설계된 트리</p>
-<hr>
-<h5 id="힙의-규칙"><a href="#힙의-규칙" class="headerlink" title="힙의 규칙"></a>힙의 규칙</h5><ul>
-<li><p>대소 관계 규칙 : 부모 노드가 가진 원소는 항상 자식 노드가 가진 원소 이상이다.</p>
-<p>(왼쪽 자식과 오른쪽 자식의 크기까지 고려하는 이진 검색 트리와는 달리 부모 자식 관계만 고려하면 된다.)</p>
-<p>트리에서 가장 큰 원소가 항상 트리의 루트에 들어가게 된다.</p>
-</li>
-<li><p>모양 규칙 : 힙의 높이는 항상 O(logN)이 된다.</p>
-<ul>
-<li>마지막 레벨을 제외한 모든 레벨에 모든 노드가 꽉 차 있어야 한다.</li>
-<li>마지막 레벨에 노드가 있을 때는 항상 가장 왼쪽부터 순서대로 채워져 있어야 한다.</li>
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>어렵</li>
 </ul>
-</li>
-</ul>
-<h5 id="힙의-구현"><a href="#힙의-구현" class="headerlink" title="힙의 구현"></a>힙의 구현</h5><p>힙의 모양 규칙에 의해 힙은 루트 노드부터 마지막 리프 노드까지 각 깊이 m마다 2^(m-1)개의 노드로 모두 차 있다.  따라서 힙은 간단하게 배열로 구현할 수 있다.</p>
-<p>자기 자신이 A[i]일 때, A[i×2+1]과 A[i×2+2]의 두 자식 노드를 가지고 A[(i-1)/2]의 부모 노드를 가진다.</p>
-<h5 id="원소의-삽입"><a href="#원소의-삽입" class="headerlink" title="원소의 삽입"></a>원소의 삽입</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_heap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; heap, <span class="keyword">int</span> newValue)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    heap.push_back(newValue);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> index = heap.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(index&gt;<span class="number">0</span> &amp;&amp; heap[(index<span class="number">-1</span>)/<span class="number">2</span>] &lt; heap[index]) &#123;</span><br><span class="line">        swap(heap[index], heap[(index<span class="number">-1</span>)/<span class="number">2</span>]);</span><br><span class="line">        index = (index - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="원소의-삭제"><a href="#원소의-삭제" class="headerlink" title="원소의 삭제"></a>원소의 삭제</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop_heap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; heap)</span> </span>&#123;</span><br><span class="line">    heap[<span class="number">0</span>] = heap.back();</span><br><span class="line">    heap.pop_back();</span><br><span class="line">    <span class="keyword">int</span> now = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(ture) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = now*<span class="number">2</span>+<span class="number">1</span>, right = now*<span class="number">2</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(left&gt;=heap.size())</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span>(heap[now] &lt; heap[left])</span><br><span class="line">            next = left;</span><br><span class="line">        <span class="keyword">if</span>(right&lt;heap.size() &amp;&amp; heap[now] &lt; heap[right])</span><br><span class="line">            next = right;</span><br><span class="line">        <span class="keyword">if</span>(next==now)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        swap(heap[now],heap[next]);</span><br><span class="line">        now = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="힙-정렬-Heap-sort"><a href="#힙-정렬-Heap-sort" class="headerlink" title="힙 정렬 (Heap sort)"></a>힙 정렬 (Heap sort)</h5><p>힙에서 원소들을 꺼낼 때 항상 정렬된 순서대로 반환하는 점을 이용하여 정렬한다. 힙에서 만든 뒤 모든 원소들을 꺼내서 역순으로 배열하면 정렬 결과가 된다. 이 때 힙에서 원소를 꺼내면 힙의 배열 맨 뒤쪽이 비게 되고 꺼낸 원소를 그 자리에 옮기면 추가 메모리를 사용하지 않고 정렬을 구현할 수 있다. 시간 복잡도는 최악의 경우에도 O(N·logN)을 만족한다.</p>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><p>입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&lt;int&gt; 요렇게 넣어준다. queue&lt;vector&lt;int&gt; &gt; q 이런 식으로 만들어 주고.</p>
+<p>이렇게 코드를 구현했을 시, 최악의 경우 8!(=40320)개의 정점을 확인해야 한다. 테스트 케이스는 최대 1000개기 때문에 시간 초과가 날 수 있으므로 시간복잡도를 줄여줘야 한다. 다음의 두 가지를 확인해보자.</p>
+<ol>
+<li>숫자는 다르더라도 상대적 크기가 같은 배열은 정답이 같다.</li>
+<li>양방향 그래프이기 때문에, 시작 정점에서 목표 정점까지의 최단거리는 목표 정점에서 시작정점까지의 최단거리와 같다.</li>
+</ol>
+<p>이를 통해 보다 빠른 다음과 같은 알고리즘을 도출해낼 수 있다. 모든 n에 대해 정렬돼 있는 배열에서 다른 모든 배열까지 도달하기까지의 경로의 수를 계산해 두는 것이다. 입력 데이터를 0~n-1 까지의 수로 전처리해주면 모든 케이스에 대해 한 번에 정답을 알 수 있다.</p>
 
         </div>
         <footer class="article-footer">
@@ -215,7 +194,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/10/우선순위큐와-힙/" data-id="cjy6v7760001rvong3wgfzh5d" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/17/Sorting-Game-SORTGAME/" data-id="cjy6v771u000cvonglh6z4f8l" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -285,20 +264,21 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "우선운위큐와 힙",
+        "headline": "Sorting Game(SORTGAME)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "우선순위큐 힙",
-        "genre": "알고리즘",
-        "datePublished": "2019-07-10",
-        "dateCreated": "2019-07-10",
-        "dateModified": "2019-07-10",
-        "url": "https://2yunsoo.github.io/2019/07/10/우선순위큐와-힙/",
-        "description": "우선순위 큐와 힙
-우선순위 큐 : 순서대로 기다리고 있는 자료들을 저장하여 우선순위가 가장 높은 자료를 가장 먼저 꺼내주는 자료 구조
+        "keywords": "그래프 BFS 중",
+        "genre": "문제",
+        "datePublished": "2019-07-17",
+        "dateCreated": "2019-07-17",
+        "dateModified": "2019-07-17",
+        "url": "https://2yunsoo.github.io/2019/07/17/Sorting-Game-SORTGAME/",
+        "description": "Sorting Game(SORTGAME) (난이도:中)12
 
-우선순위 큐의 구현연결리스트, 배열 : 원소를 꺼낼 때마다 모든 원소를 순회하며 우선순위가 가장 높은 원소를 찾는다.
-​                                원소 추가에 O(1), 원소 꺼내기에 O(N)"
-        "wordCount": 708
+내 풀이
+어렵
+
+올바른 풀이입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&lt;int&g"
+        "wordCount": 158
     }
 </script>
 
@@ -362,20 +342,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/07/10/변화하는-중간-값-RUNNINGMEDIAN/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            변화하는 중간 값(RUNNINGMEDIAN)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/07/10/삽입-정렬-뒤집기-문제-INSERTION/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/17/너비-우선-탐색-BFS/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">삽입 정렬 뒤집기 문제(INSERTION)</p>
+        <p class="article-nav-title">너비 우선 탐색(BFS)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -538,7 +508,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/07/10/우선순위큐와-힙/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/17/Sorting-Game-SORTGAME/';
     
     (function() {
     var dsq = document.createElement('script');
