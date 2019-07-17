@@ -10,20 +10,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="구간트리,트립,펜윅트리,병합정렬">
+        <meta name="keywords" content="구간트리,펜윅트리,트립,병합정렬">
     
-    <meta name="description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로">
-<meta name="keywords" content="구간트리,트립,펜윅트리,병합정렬">
+    <meta name="description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…    문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음    올바른 풀이1. 펜윅 트리 입력 데이터의 범위가 1,000,000 미만이기 때문에 일차">
+<meta name="keywords" content="구간트리,펜윅트리,트립,병합정렬">
 <meta property="og:type" content="article">
 <meta property="og:title" content="삽입 정렬 시간 재기(MEASURETIME)">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로">
+<meta property="og:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…    문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음    올바른 풀이1. 펜윅 트리 입력 데이터의 범위가 1,000,000 미만이기 때문에 일차">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-16T06:11:01.510Z">
+<meta property="og:updated_time" content="2019-07-17T08:16:22.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="삽입 정렬 시간 재기(MEASURETIME)">
-<meta name="twitter:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…  문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음  올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로">
+<meta name="twitter:description" content="삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이 logn에 해결봐야됨 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…    문제점 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음    올바른 풀이1. 펜윅 트리 입력 데이터의 범위가 1,000,000 미만이기 때문에 일차">
     
 
     
@@ -180,15 +180,22 @@
 <li>트립 사용하면 k보다 작은 노드의 개수 셀 수 있음</li>
 <li>근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…</li>
 </ul>
+<br>
+
 <h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
 <li>음… 펜윅트리로 어떻게 표현해야할 지 몰랐음</li>
 </ul>
-<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><h6 id="1-펜윅-트리"><a href="#1-펜윅-트리" class="headerlink" title="1. 펜윅 트리"></a>1. 펜윅 트리</h6><p>입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로 잡고 입력 받으면서 해당 숫자의 개수를 저장해준다. 그러고 펜윅트리를 사용해 전체 숫자의 개수에서 A[i]보다 작거나 같은 숫자의 개수를 빼주면 A[i]보다 큰 숫자의 개수를 세줄 수 있다.</p>
+<br>
+
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><p><strong>1. 펜윅 트리</strong></p>
+<p>입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로 잡고 입력 받으면서 해당 숫자의 개수를 저장해준다. 그러고 펜윅트리를 사용해 전체 숫자의 개수에서 A[i]보다 작거나 같은 숫자의 개수를 빼주면 A[i]보다 큰 숫자의 개수를 세줄 수 있다.</p>
 <p>입력으로 주어지는 숫자의 최댓값이 M이라고 하면 이 풀이의 시간복잡도는 O(NlogM)이다.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUM += (tree.sum(<span class="number">999999</span>) - tree.sum(t));</span><br></pre></td></tr></table></figure>
 
-<h6 id="2-트립"><a href="#2-트립" class="headerlink" title="2. 트립"></a>2. 트립</h6><p>트리에 주어진 키 k보다 작은 키가 몇 개 있는지 계산하는 연산은 O(logN)이므로 O(NlogN) 내에 해결 가능하다.</p>
-<h6 id="3-병합-정렬"><a href="#3-병합-정렬" class="headerlink" title="3. 병합 정렬"></a>3. 병합 정렬</h6><p>각 입력 숫자에 대해 이미 받은 수열 내에 존재하는 더 큰 숫자를 찾는 것이 아니라 전체 수열에서 더 큰 수가 앞에 있고 작은 수는 뒤에 있는 반전의 개수를 센다. 삽입 정렬에서 숫자를 한 번 옮길 때마다 반전이 하나 줄어들기 때문에 반전의 개수와 숫자를 움직이는 개수는 같다.</p>
+<p><strong>2. 트립</strong></p>
+<p>트리에 주어진 키 k보다 작은 키가 몇 개 있는지 계산하는 연산은 O(logN)이므로 O(NlogN) 내에 해결 가능하다.</p>
+<p><strong>3. 병합 정렬</strong></p>
+<p>각 입력 숫자에 대해 이미 받은 수열 내에 존재하는 더 큰 숫자를 찾는 것이 아니라 전체 수열에서 더 큰 수가 앞에 있고 작은 수는 뒤에 있는 반전의 개수를 센다. 삽입 정렬에서 숫자를 한 번 옮길 때마다 반전이 하나 줄어들기 때문에 반전의 개수와 숫자를 움직이는 개수는 같다.</p>
 <p>반전의 수를 세는 방법으로는 병합 정렬을 사용한다. 주어진 수열을 절반으로 나눠 L, R이라고 하면 반전은</p>
 <ol>
 <li>두 수가 모두 L에 포함되거나</li>
@@ -203,7 +210,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" data-id="cjy6v775m001lvonggs31jr0a" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" data-id="cjy6z8lu5001boongy0bjshhm" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -275,22 +282,27 @@
         },
         "headline": "삽입 정렬 시간 재기(MEASURETIME)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "구간트리 트립 펜윅트리 병합정렬",
+        "keywords": "구간트리 펜윅트리 트립 병합정렬",
         "genre": "문",
         "datePublished": "2019-07-16",
         "dateCreated": "2019-07-16",
-        "dateModified": "2019-07-16",
+        "dateModified": "2019-07-17",
         "url": "https://2yunsoo.github.io/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/",
         "description": "삽입 정렬 시간 재기(MEASURETIME) (난이도:中)내 풀이
 logn에 해결봐야됨
 트립 사용하면 k보다 작은 노드의 개수 셀 수 있음
 근데 펜윅 트리 문제 연습이라 그걸로 아무리 생각해봐도 생각이 안남…
 
+
+
 문제점
 음… 펜윅트리로 어떻게 표현해야할 지 몰랐음
 
-올바른 풀이1. 펜윅 트리입력 데이터의 범위가 1,000,000 미만이기 때문에 일차원배열로 "
-        "wordCount": 279
+
+
+올바른 풀이1. 펜윅 트리
+입력 데이터의 범위가 1,000,000 미만이기 때문에 일차"
+        "wordCount": 262
     }
 </script>
 
@@ -389,6 +401,33 @@ logn에 해결봐야됨
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/17/불/" class="title">불</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:24.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/17/음주-코딩/" class="title">음주 코딩</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:13.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/17/영화수집/" class="title">영화수집</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:01.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/17/Sorting-Game-SORTGAME/" class="title">Sorting Game(SORTGAME)</a></p>
                             <p class="item-date"><time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time></p>
@@ -401,33 +440,6 @@ logn에 해결봐야됨
                             <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
                             <p class="item-title"><a href="/2019/07/17/너비-우선-탐색-BFS/" class="title">너비 우선 탐색(BFS)</a></p>
                             <p class="item-date"><time datetime="2019-07-17T04:06:08.000Z" itemprop="datePublished">2019-07-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/문/">문</a></p>
-                            <p class="item-title"><a href="/2019/07/16/삽입-정렬-시간-재기-MEASURETIME/" class="title">삽입 정렬 시간 재기(MEASURETIME)</a></p>
-                            <p class="item-date"><time datetime="2019-07-16T04:51:12.000Z" itemprop="datePublished">2019-07-16</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/12/양자화-Quantization/" class="title">양자화(Quantization)</a></p>
-                            <p class="item-date"><time datetime="2019-07-12T05:13:48.000Z" itemprop="datePublished">2019-07-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
-                            <p class="item-title"><a href="/2019/07/11/족보-탐험-FAMILYTREE/" class="title">족보 탐험(FAMILYTREE)</a></p>
-                            <p class="item-date"><time datetime="2019-07-11T04:21:53.000Z" itemprop="datePublished">2019-07-11</time></p>
                         </div>
                     </li>
                 
@@ -450,7 +462,7 @@ logn에 해결봐야됨
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
