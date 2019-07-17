@@ -10,17 +10,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="구간트리,펜윅트리,백준">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="음주 코딩 (백준)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495struct Pt">
+<meta name="keywords" content="구간트리,펜윅트리,백준">
 <meta property="og:type" content="article">
 <meta property="og:title" content="음주 코딩">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/17/음주-코딩/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="음주 코딩 (백준)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495struct Pt">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-17T08:21:13.228Z">
+<meta property="og:updated_time" content="2019-07-17T08:48:39.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="음주 코딩">
+<meta name="twitter:description" content="음주 코딩 (백준)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495struct Pt">
     
 
     
@@ -133,7 +136,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    미지정
+    <a class="page-title-link" href="/categories/문제/">문제</a>
     </h1>
 </div>
 
@@ -163,11 +166,21 @@
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/구간트리/">구간트리</a>, <a class="tag-link" href="/tags/백준/">백준</a>, <a class="tag-link" href="/tags/펜윅트리/">펜윅트리</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="음주-코딩-백준"><a href="#음주-코딩-백준" class="headerlink" title="음주 코딩 (백준)"></a>음주 코딩 (백준)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Ptree</span> &#123;</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tree;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; zeros;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; check;</span><br><span class="line"></span><br><span class="line">	Ptree(<span class="keyword">int</span> n) &#123;</span><br><span class="line">		tree.assign(n+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		zeros.assign(n+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		check.assign(n+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">		++pos;</span><br><span class="line">		<span class="keyword">int</span> SUM = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(pos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			SUM += tree[pos];</span><br><span class="line">			pos &amp;= (pos<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> SUM;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">		++pos;</span><br><span class="line">		<span class="keyword">while</span>(pos &lt; tree.size()) &#123;</span><br><span class="line">			tree[pos] += val;</span><br><span class="line">			pos += (pos &amp; (-pos));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">		++pos;</span><br><span class="line">		<span class="keyword">if</span>(check[pos]) &#123;</span><br><span class="line">			check[pos]--;</span><br><span class="line">			<span class="keyword">int</span> ret = zeros[pos];</span><br><span class="line">			<span class="keyword">while</span>(pos &lt; zeros.size()) &#123;</span><br><span class="line">				zeros[pos] -= ret;</span><br><span class="line">				pos += (pos &amp; (-pos));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">sumZero</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">		++pos;</span><br><span class="line">		<span class="keyword">int</span> SUM = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(pos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			SUM += zeros[pos];</span><br><span class="line">			pos &amp;= (pos<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> SUM;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">addZero</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">		++pos;</span><br><span class="line">		check[pos]++;</span><br><span class="line">		<span class="keyword">while</span>(pos &lt; zeros.size()) &#123;</span><br><span class="line">			zeros[pos]++;</span><br><span class="line">			pos += (pos &amp; (-pos));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d %d "</span>,&amp;n,&amp;k)) &#123;</span><br><span class="line">		a.assign(n+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		<span class="function">Ptree <span class="title">tree</span><span class="params">(n+<span class="number">1</span>)</span></span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">			<span class="keyword">if</span>(a[i]==<span class="number">0</span>)</span><br><span class="line">				tree.addZero(i);</span><br><span class="line">			tree.add(i,(a[i]&gt;=<span class="number">0</span>?<span class="number">0</span>:<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;k; i++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;c);</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%c %d %d"</span>,&amp;c,&amp;x,&amp;y);</span><br><span class="line">			<span class="keyword">if</span>(c==<span class="string">'C'</span>) &#123;</span><br><span class="line">				tree.del(x);</span><br><span class="line">				<span class="keyword">if</span>(y==<span class="number">0</span>)</span><br><span class="line">					tree.addZero(x);</span><br><span class="line">				<span class="keyword">if</span>((y&gt;=<span class="number">0</span>?<span class="number">0</span>:<span class="number">1</span>)!=(a[x]&gt;=<span class="number">0</span>?<span class="number">0</span>:<span class="number">1</span>))</span><br><span class="line">					tree.add(x,<span class="number">1</span>);</span><br><span class="line">				a[x] = y;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(tree.sumZero(y) - tree.sumZero(x<span class="number">-1</span>) &gt; <span class="number">0</span>)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>((tree.sum(y) - tree.sum(x<span class="number">-1</span>)) % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"+"</span>);</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>곱했을 때, 음수의 개수에 따라 부호가 달라지므로 짝수는 0, 홀수는 1로 바꿔 더해주면 된다. 0의 경우에는 최대 노드의 개수 10만보다 큰 값으로 더해주거나 따로 vector를 만들어서 체크해주면 된다. 큰 값을 더해주면 long long을 쓰는데다 안 이뻐지는 것 같길래 zeros를 만들어 체크해줬는데 중간에 구간트리랑 헷갈려서 논리가 꼬였다. 그래서 check vector를 하나 더 만들어서 그냥 처리해버렸다. 원래는 zeros(pos) - zeros(pos-1) 해야되지 않나 싶다. 결론적으로는 코드도 길어지고 벡터도 두 개나 더 쓰게 된 것 같다.</p>
+<p>EOF를 근 10년만에 다시 봤다. c = getchar(); if(c==EOF) return; 어릴 때는 이런 식으로 썼던 것 같은데 이렇게 말고 while(~scanf(“%d”,d)) ; 이렇게 쓰면 깔끔하게 해결된다.</p>
+<p>scanf를 사용할 때, “%d “,&amp;a와 “%d”,&amp;a 에는 차이가 있다. 헷갈린다. 실수의 입력 때는 상관 없는 것 같은데 문자 입력을 받을 때 문제가 생겨 잘 해결봐야한다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -246,14 +259,14 @@
         },
         "headline": "음주 코딩",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
+        "keywords": "구간트리 펜윅트리 백준",
+        "genre": "문제",
         "datePublished": "2019-07-17",
         "dateCreated": "2019-07-17",
         "dateModified": "2019-07-17",
         "url": "https://2yunsoo.github.io/2019/07/17/음주-코딩/",
-        "description": ""
-        "wordCount": 1
+        "description": "음주 코딩 (백준)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495struct Pt"
+        "wordCount": 543
     }
 </script>
 
@@ -352,7 +365,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/17/불/" class="title">불</a></p>
                             <p class="item-date"><time datetime="2019-07-17T08:21:24.000Z" itemprop="datePublished">2019-07-17</time></p>
                         </div>
@@ -361,7 +374,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/17/음주-코딩/" class="title">음주 코딩</a></p>
                             <p class="item-date"><time datetime="2019-07-17T08:21:13.000Z" itemprop="datePublished">2019-07-17</time></p>
                         </div>
@@ -370,7 +383,7 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/17/영화수집/" class="title">영화수집</a></p>
                             <p class="item-date"><time datetime="2019-07-17T08:21:01.000Z" itemprop="datePublished">2019-07-17</time></p>
                         </div>
@@ -403,7 +416,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">9</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -423,7 +436,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -433,7 +446,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 11.67px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 15px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 13.33px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 10px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+            <a href="/tags/BFS/" style="font-size: 13.33px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 13.33px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 10px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
         </div>
     </div>
 
