@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>1. Brute Force | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+<meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1. Brute Force">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/25/Brute-Force/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-06-26T18:10:29.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1. Brute Force">
+<meta name="twitter:description" content="Brute Force 가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)  재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용 ​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행 ​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환 ​">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문/">문</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Brute-Force" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        1. Brute Force
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/25/Brute-Force/" class="article-date">
+            <time datetime="2019-06-25T08:25:21.000Z" itemprop="datePublished">2019-06-25</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h2><blockquote>
+<p>가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)</p>
+</blockquote>
+<h4 id="재귀-호출"><a href="#재귀-호출" class="headerlink" title="재귀 호출"></a>재귀 호출</h4><p>​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용</p>
+<p>​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행</p>
+<p>​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환</p>
+<p>​    vs. 반복문 :  n개의 원소를 자유롭게 사용 가능</p>
+<h4 id="접근법"><a href="#접근법" class="headerlink" title="접근법"></a>접근법</h4><ol>
+<li>입력에 따른 시간 복잡도 계산</li>
+<li>가능한 모든 경우를 만드는 과정을 여러 개의 선택으로 나누기</li>
+<li>하나의 조각을 선택 후, 나머지 답을 재귀 호출을 통해 완성</li>
+<li>기저 사례 처리</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/06/25/Brute-Force/" data-id="cjy81i4jk000wykngbqx84pu5" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "1. Brute Force",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "",
+        "genre": "알고리즘",
+        "datePublished": "2019-06-25",
+        "dateCreated": "2019-06-25",
+        "dateModified": "2019-06-27",
+        "url": "https://2yunsoo.github.io/2019/06/25/Brute-Force/",
+        "description": "Brute Force
+가능한 경우의 수를 일일이 나열하면서 답을 찾는 방법 (완전 탐색)
+
+재귀 호출​    범위가 작아질수록 유사한 형태를 반복하는 작업에 사용
+​    여러 조각으로 쪼갠 유사한 작업 중 한 조각을 수행하고 자기 자신을 다시 호출해 실행
+​    기저 사례 : ‘더 이상 쪼개지지 않는’ 최소한의 작업. 조건문을 통해 답을 곧장 반환
+​ "
+        "wordCount": 105
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/26/분할-정복/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            2. 분할 정복
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/25/시작/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">시작</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/18/어린이날-CHILDRENDAY/" class="title">어린이날(CHILDRENDAY)</a></p>
+                            <p class="item-date"><time datetime="2019-07-18T00:56:55.000Z" itemprop="datePublished">2019-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/불/" class="title">불</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:24.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/음주-코딩/" class="title">음주 코딩</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:13.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/영화수집/" class="title">영화수집</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:01.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/Sorting-Game-SORTGAME/" class="title">Sorting Game(SORTGAME)</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BFS/" style="font-size: 15px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 15px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 11.67px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/25/Brute-Force/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

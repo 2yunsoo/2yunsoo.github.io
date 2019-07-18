@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2. 분할 정복 | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
+<meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. 분할 정복">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/분할-정복/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
+<meta property="og:updated_time" content="2019-06-26T07:22:43.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2. 분할 정복">
+<meta name="twitter:description" content="분할 정복 (Divide &amp;amp; Conquer) 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산   divide : 문제를 더 작은 문제로 분할 merge : 각 문제의 답을 원래 문제의 답으로 병합 base case : 기저 사례  재귀호출 vs 분할정복​                        한 조">
+<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문/">문</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-분할-정복" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2. 분할 정복
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/26/분할-정복/" class="article-date">
+            <time datetime="2019-06-26T03:59:56.000Z" itemprop="datePublished">2019-06-26</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="분할-정복-Divide-amp-Conquer"><a href="#분할-정복-Divide-amp-Conquer" class="headerlink" title="분할 정복 (Divide &amp; Conquer)"></a>분할 정복 (Divide &amp; Conquer)</h2><blockquote>
+<p>주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산</p>
+</blockquote>
+<ol>
+<li>divide : 문제를 더 작은 문제로 분할</li>
+<li>merge : 각 문제의 답을 원래 문제의 답으로 병합</li>
+<li>base case : 기저 사례</li>
+</ol>
+<h4 id="재귀호출-vs-분할정복"><a href="#재귀호출-vs-분할정복" class="headerlink" title="재귀호출 vs 분할정복"></a>재귀호출 vs 분할정복</h4><p>​                        한 조각 vs 나머지 전체                                    거의 같은 크기의 부분 문제들</p>
+<p><img src="https://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28" alt="재귀호출 vs 분할정복"></p>
+<hr>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><h4 id="1-수열의-합"><a href="#1-수열의-합" class="headerlink" title="1. 수열의 합"></a>1. 수열의 합</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fastSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 기저 사례</span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> fastSum(n<span class="number">-1</span>) + n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>*fastSum(n/<span class="number">2</span>) + (n/<span class="number">2</span>) * (n/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>재귀호출의 경우 n번의 함수 호출이 필요하나 분할 정복의 경우 함수가 호출될 때마다 두 번에 한 번은 n이 절반으로 줄어든다. 따라서 실행 시간은 O(log n)가 된다는 것을 알 수 있다.</p>
+<h4 id="2-행렬의-거듭제곱"><a href="#2-행렬의-거듭제곱" class="headerlink" title="2. 행렬의 거듭제곱"></a>2. 행렬의 거듭제곱</h4><blockquote>
+<p>A^m = A^(m/2) × A^(m/2)        if(m%2==0)</p>
+<p>A^m = A × A^(m-1)                    if(m%2==1)</p>
+</blockquote>
+<h4 id="3-Merge-Sort-amp-Quick-Sort"><a href="#3-Merge-Sort-amp-Quick-Sort" class="headerlink" title="3. Merge Sort &amp; Quick Sort"></a>3. Merge Sort &amp; Quick Sort</h4><blockquote>
+<p>병합 정렬 : 배열을 가운데에서 쪼개 비슷한 크기의 수열 두 개로 만드는 과정을 반복 후 재귀 호출을 이용해 각각 정렬. 정렬된 배열을 하나로 합침.</p>
+<p>시간복잡도 : 단계 수(O(log n)) × 한 단계 당 병합 시간 (O(n)) = O(n·logn)</p>
+</blockquote>
+<blockquote>
+<p>퀵 정렬 : 배열을 단순하게 가운데에서 쪼개는 대신 pivot을 지정하여 작거나 같은 숫자는 왼쪽, 큰 숫자는 오른쪽으로 나누는 partition을 통해 병합 과정이 필요 없도록 분할.</p>
+<p>시간복잡도 : pivot에 따라 달라짐. 평균 O(n·logn) / 최악 O(n^2)</p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/06/26/분할-정복/" data-id="cjy81i4js0011ykngeaaw4k9j" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "2. 분할 정복",
+        "image": "https://2yunsoo.github.iohttps://t1.daumcdn.net/cfile/tistory/2206833C58B64F7A28",
+        "keywords": "",
+        "genre": "알고리즘",
+        "datePublished": "2019-06-26",
+        "dateCreated": "2019-06-26",
+        "dateModified": "2019-06-26",
+        "url": "https://2yunsoo.github.io/2019/06/26/분할-정복/",
+        "description": "분할 정복 (Divide &amp; Conquer)
+주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답으로부터 전체 문제의 답을 계산
+
+
+divide : 문제를 더 작은 문제로 분할
+merge : 각 문제의 답을 원래 문제의 답으로 병합
+base case : 기저 사례
+
+재귀호출 vs 분할정복​                        한 조"
+        "wordCount": 345
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/26/Brute-force-문제/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            1. Brute force 문제
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/25/Brute-Force/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">1. Brute Force</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/18/어린이날-CHILDRENDAY/" class="title">어린이날(CHILDRENDAY)</a></p>
+                            <p class="item-date"><time datetime="2019-07-18T00:56:55.000Z" itemprop="datePublished">2019-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/불/" class="title">불</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:24.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/음주-코딩/" class="title">음주 코딩</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:13.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/영화수집/" class="title">영화수집</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:01.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/Sorting-Game-SORTGAME/" class="title">Sorting Game(SORTGAME)</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BFS/" style="font-size: 15px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 15px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 11.67px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/분할-정복/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

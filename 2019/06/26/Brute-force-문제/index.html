@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>1. Brute force 문제 | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="1. 소풍 (난이도:下)123456789101112131415161718192021222324252627int jjak(int now, int remain)&amp;#123;   int i;   if(remain==0) &amp;#123;      count++;      return 0;   &amp;#125;   if(remain%2==1) &amp;#123;      for(i=">
+<meta name="keywords" content="Yunsoo | yunsoo | ����">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1. Brute force 문제">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/06/26/Brute-force-문제/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="1. 소풍 (난이도:下)123456789101112131415161718192021222324252627int jjak(int now, int remain)&amp;#123;   int i;   if(remain==0) &amp;#123;      count++;      return 0;   &amp;#125;   if(remain%2==1) &amp;#123;      for(i=">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-06-27T02:48:36.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1. Brute force 문제">
+<meta name="twitter:description" content="1. 소풍 (난이도:下)123456789101112131415161718192021222324252627int jjak(int now, int remain)&amp;#123;   int i;   if(remain==0) &amp;#123;      count++;      return 0;   &amp;#125;   if(remain%2==1) &amp;#123;      for(i=">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문/">문</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/문제/">문제</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Brute-force-문제" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        1. Brute force 문제
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/26/Brute-force-문제/" class="article-date">
+            <time datetime="2019-06-26T07:27:23.000Z" itemprop="datePublished">2019-06-26</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="1-소풍-난이도-下"><a href="#1-소풍-난이도-下" class="headerlink" title="1. 소풍 (난이도:下)"></a>1. 소풍 (난이도:下)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jjak</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> remain)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(remain==<span class="number">0</span>) &#123;</span><br><span class="line">      count++;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(remain%<span class="number">2</span>==<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span>(i=now+<span class="number">1</span>; i&lt;n; i++) &#123;</span><br><span class="line">         <span class="keyword">if</span>(isFriend[now][i]==<span class="number">1</span> &amp;&amp; hasFriend[i]==<span class="number">0</span>) &#123;</span><br><span class="line">            hasFriend[i] = <span class="number">1</span>;</span><br><span class="line">            jjak(now,remain<span class="number">-1</span>);</span><br><span class="line">            hasFriend[i] = <span class="number">0</span>;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(i=now+<span class="number">1</span>; i&lt;n; i++)</span><br><span class="line">         <span class="keyword">if</span>(hasFriend[i]==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">      hasFriend[i] = <span class="number">1</span>;</span><br><span class="line">      jjak(i,remain<span class="number">-1</span>);</span><br><span class="line">      hasFriend[i] = <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><p>​    재귀 함수를 통한 완전 탐색</p>
+<p>​    remain을 통해 짝의 주체와 짝을 찾을 때의 차이를 줌</p>
+<p>​    중복 방지를 위해 앞의 학생에게 먼저 짝을 지정</p>
+<h5 id="시간복잡도-9-7-5-3-1"><a href="#시간복잡도-9-7-5-3-1" class="headerlink" title="시간복잡도 : 9 * 7 * 5 * 3 * 1"></a>시간복잡도 : 9 * 7 * 5 * 3 * 1</h5><br>
+
+<h4 id="2-게임판-덮기-난이도-下"><a href="#2-게임판-덮기-난이도-下" class="headerlink" title="2. 게임판 덮기 (난이도:下)"></a>2. 게임판 덮기 (난이도:下)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dx[<span class="number">2</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">-1</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[<span class="number">2</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">boardcover</span><span class="params">(<span class="keyword">int</span> whiteNum, <span class="keyword">int</span> y, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i, j, k, x1, x2, y1, y2;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(!whiteNum) &#123;</span><br><span class="line">      count++;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(i=y; i&lt;=H; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=W; j++) &#123;</span><br><span class="line">         <span class="keyword">if</span>(a[i][j]==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">0</span>; k&lt;<span class="number">4</span>; k++) &#123;</span><br><span class="line">               x1 = j + dx[<span class="number">0</span>][k];</span><br><span class="line">               x2 = j + dx[<span class="number">1</span>][k];</span><br><span class="line">               y1 = i + dy[<span class="number">0</span>][k];</span><br><span class="line">               y2 = i + dy[<span class="number">1</span>][k];</span><br><span class="line">               <span class="keyword">if</span>(a[y1][x1]==<span class="number">0</span> &amp;&amp; a[y2][x2]==<span class="number">0</span>) &#123;</span><br><span class="line">                  a[i][j] = a[y1][x1] = a[y2][x2] = <span class="number">1</span>;</span><br><span class="line">                  boardcover(whiteNum<span class="number">-3</span>,i,j);</span><br><span class="line">                  a[i][j] = a[y1][x1] = a[y2][x2] = <span class="number">0</span>;</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이-1"><a href="#내-풀이-1" class="headerlink" title="내 풀이"></a>내 풀이</h5><p>​    마찬가지로 재귀 함수 사용</p>
+<p>​    중복 방지를 위해 더 위에 있고(i가 작은), 더 왼쪽에 있는(j가 작은) 흰 칸을 먼저 덮음</p>
+<p>​    이 때, 가능한 모양은 ┏,  ┓, ┛, ┗  이렇게 4개</p>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><p>​    왼쪽 위를 선택함에 따라 모양이 위의 4개만 나온다는 것을 찾지 못했음</p>
+<h5 id="시간복잡도-4-16"><a href="#시간복잡도-4-16" class="headerlink" title="시간복잡도 : 4^16"></a>시간복잡도 : 4^16</h5><br>
+
+<h4 id="3-시계-맞추기-난이도-中"><a href="#3-시계-맞추기-난이도-中" class="headerlink" title="3. 시계 맞추기 (난이도:中)"></a>3. 시계 맞추기 (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">clockSwitch</span><span class="params">(<span class="keyword">int</span> count, <span class="keyword">int</span> now)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">16</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(sum[i]%<span class="number">4</span>==need[i])</span><br><span class="line">			cnt++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt==<span class="number">16</span> &amp;&amp; min &gt; count) &#123;</span><br><span class="line">		min = count;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(now==<span class="number">10</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">4</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">16</span>; j++)</span><br><span class="line">			sum[j]+=(clock[now][j]*i);</span><br><span class="line">		clockSwitch(count+i,now+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">16</span>; j++)</span><br><span class="line">			sum[j]-=(clock[now][j]*i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이-과정"><a href="#내-풀이-과정" class="headerlink" title="내 풀이 과정"></a>내 풀이 과정</h5><ul>
+<li>시계가 4번 돌면 원상태로 돌아오기 때문에 각 시계는 최대 3번, 즉 0~3번만 돌음</li>
+<li>가장 적게 스위치를 누르고자 하기 때문에 누르는 스위치의 개수를 0개에서부터 증가시킴</li>
+<li>최대로 스위치를 누를 수 있는 개수는 30개. 30C0 ~ 30C30까지 확인해가며 해답 발견 시 중지</li>
+<li>시간복잡도 : 최악의 경우 2^30</li>
+</ul>
+<h5 id="문제점-1"><a href="#문제점-1" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>가장 적은 스위치를 고르는 최적화 문제여서 선택 스위치의 개수를 증가시켜가며 풀어야 한다고 생각하여 간단하게 각 스위치를 3개로 복제시켜 문제 발생</li>
+<li>30Cn을 하는 경우, 각각의 스위치가 3개씩 들어가 있음. 이로 인한 중복 케이스 발생으로 시간 초과</li>
+</ul>
+<h5 id="수정-사항"><a href="#수정-사항" class="headerlink" title="수정 사항"></a>수정 사항</h5><ul>
+<li>10개의 시계가 각각 4가지 경우를 가지므로 총 탐색은 4^10(=2^20)번</li>
+<li>총 탐색의 수가 많지 않으므로 모든 경우 탐색 후 최솟값을 찾아주면 됨</li>
+</ul>
+<hr>
+<h4 id="백준"><a href="#백준" class="headerlink" title="+ 백준"></a>+ 백준</h4><ul>
+<li>1065) 한수</li>
+<li>2309) 일곱 난쟁이</li>
+<li>2503) 숫자 야구</li>
+</ul>
+<p>​    치킨 배달, 구슬 탈출, 2048 풀어보자</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/06/26/Brute-force-문제/" data-id="cjy81i4i4000aykng7zqxihts" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "1. Brute force 문제",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "",
+        "genre": "문제",
+        "datePublished": "2019-06-26",
+        "dateCreated": "2019-06-26",
+        "dateModified": "2019-06-27",
+        "url": "https://2yunsoo.github.io/2019/06/26/Brute-force-문제/",
+        "description": "1. 소풍 (난이도:下)123456789101112131415161718192021222324252627int jjak(int now, int remain)&#123;   int i;   if(remain==0) &#123;      count++;      return 0;   &#125;   if(remain%2==1) &#123;      for(i="
+        "wordCount": 1066
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/26/분할-정복-문제/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            2. 분할 정복 문제
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/26/분할-정복/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">2. 분할 정복</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/18/어린이날-CHILDRENDAY/" class="title">어린이날(CHILDRENDAY)</a></p>
+                            <p class="item-date"><time datetime="2019-07-18T00:56:55.000Z" itemprop="datePublished">2019-07-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/불/" class="title">불</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:24.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/음주-코딩/" class="title">음주 코딩</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:13.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/영화수집/" class="title">영화수집</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T08:21:01.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/17/Sorting-Game-SORTGAME/" class="title">Sorting Game(SORTGAME)</a></p>
+                            <p class="item-date"><time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/문/">문</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BFS/" style="font-size: 15px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 15px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 11.67px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/06/26/Brute-force-문제/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
