@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="map">
     
-    <meta name="description" content="key 값 존재 여부 확인map::find123456789map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(key)=">
+    <meta name="description" content="key 값 존재 여부 확인map::find1234567891011map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(k">
 <meta name="keywords" content="map">
 <meta property="og:type" content="article">
 <meta property="og:title" content="map">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/19/map/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="key 값 존재 여부 확인map::find123456789map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(key)=">
+<meta property="og:description" content="key 값 존재 여부 확인map::find1234567891011map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(k">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-19T01:44:34.295Z">
+<meta property="og:updated_time" content="2019-07-19T07:40:23.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="map">
-<meta name="twitter:description" content="key 값 존재 여부 확인map::find123456789map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(key)=">
+<meta name="twitter:description" content="key 값 존재 여부 확인map::find1234567891011map&amp;lt;key_type,value_type&amp;gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(k">
     
 
     
@@ -175,7 +175,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="key-값-존재-여부-확인"><a href="#key-값-존재-여부-확인" class="headerlink" title="key 값 존재 여부 확인"></a>key 값 존재 여부 확인</h4><h5 id="map-find"><a href="#map-find" class="headerlink" title="map::find"></a>map::find</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;key_type,value_type&gt;::iterator iter;</span><br><span class="line">iter = m.find(key);</span><br><span class="line"><span class="comment">// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return</span></span><br><span class="line"><span class="comment">// key가 존재하지 않는다면 map::end, 즉 m.end()를 return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(m.find(key)==m.end()) &#123;</span><br><span class="line">&#125; <span class="comment">// not found</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">&#125;  <span class="comment">// found</span></span><br></pre></td></tr></table></figure>
+            <h4 id="key-값-존재-여부-확인"><a href="#key-값-존재-여부-확인" class="headerlink" title="key 값 존재 여부 확인"></a>key 값 존재 여부 확인</h4><h5 id="map-find"><a href="#map-find" class="headerlink" title="map::find"></a>map::find</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;key_type,value_type&gt;::iterator iter;</span><br><span class="line">iter = m.find(key);</span><br><span class="line"><span class="comment">// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return</span></span><br><span class="line"><span class="comment">// key가 존재하지 않는다면 map::end, 즉 m.end()를 return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(m.find(key)==m.end()) &#123;</span><br><span class="line">&#125; <span class="comment">// not found</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    key_type KEY = iter-&gt;first;</span><br><span class="line">    value_type VALUE = iter-&gt;second;	<span class="comment">// 요렇게 key 값과 value 값을 꺼낼 수 있음</span></span><br><span class="line">&#125;  <span class="comment">// found</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="map-count"><a href="#map-count" class="headerlink" title="map::count"></a>map::count</h5><p>iterator가 필요하지 않고 딱 존재 여부만 확인하는 경우에는 count()를 사용해도 된다.<br>count()는 원소가 몇 개인지 세는 함수지만 map의 key 값은 중복되지 않은 고유한 값이므로 1 아니면 0으로만 나온다.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m.count(key)) &#123;</span><br><span class="line">&#125; <span class="comment">// found</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">&#125; <span class="comment">// not found</span></span><br></pre></td></tr></table></figure>
@@ -265,8 +265,8 @@
         "dateCreated": "2019-07-19",
         "dateModified": "2019-07-19",
         "url": "https://2yunsoo.github.io/2019/07/19/map/",
-        "description": "key 값 존재 여부 확인map::find123456789map&lt;key_type,value_type&gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(key)="
-        "wordCount": 124
+        "description": "key 값 존재 여부 확인map::find1234567891011map&lt;key_type,value_type&gt;::iterator iter;iter = m.find(key);// 찾는 key가 존재한다면 key가 담겨있는 iterator를 return// key가 존재하지 않는다면 map::end, 즉 m.end()를 returnif(m.find(k"
+        "wordCount": 151
     }
 </script>
 
