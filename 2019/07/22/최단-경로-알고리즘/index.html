@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="최단경로,다익스트라">
     
-    <meta name="description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 12345678음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌##### 시간 복잡도간선 검사 : |E|개 간선이므로 O(|E|)우선순위 큐에 원소 삽입 : 최대 |E|개이므로 O(|E|log|E|)합치면 O(|E|lo">
+    <meta name="description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 다익스트라(Dijkstra)시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v">
 <meta name="keywords" content="최단경로,다익스트라">
 <meta property="og:type" content="article">
 <meta property="og:title" content="최단 경로 알고리즘">
 <meta property="og:url" content="https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 12345678음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌##### 시간 복잡도간선 검사 : |E|개 간선이므로 O(|E|)우선순위 큐에 원소 삽입 : 최대 |E|개이므로 O(|E|log|E|)합치면 O(|E|lo">
+<meta property="og:description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 다익스트라(Dijkstra)시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-22T05:12:09.110Z">
+<meta property="og:updated_time" content="2019-07-22T05:54:10.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="최단 경로 알고리즘">
-<meta name="twitter:description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 12345678음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌##### 시간 복잡도간선 검사 : |E|개 간선이므로 O(|E|)우선순위 큐에 원소 삽입 : 최대 |E|개이므로 O(|E|log|E|)합치면 O(|E|lo">
+<meta name="twitter:description" content="최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌 다익스트라(Dijkstra)시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v">
     
 
     
@@ -176,8 +176,6 @@
         
         <div class="article-entry" itemprop="articleBody">
             <h2 id="최단-경로-알고리즘"><a href="#최단-경로-알고리즘" class="headerlink" title="최단 경로 알고리즘"></a>최단 경로 알고리즘</h2><p>음수 사이클이 존재하면 안됨<br>무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">음수 사이클이 존재하면 안됨</span><br><span class="line">무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 시간 복잡도</span><br><span class="line">간선 검사 : |E|개 간선이므로 O(|E|)</span><br><span class="line">우선순위 큐에 원소 삽입 : 최대 |E|개이므로 O(|E|log|E|)</span><br><span class="line">합치면 O(|E|log|E|)이긴 한데 |E|는 아무리 커도 |V|^2보다는 작으므로 O(|E|log|V|)라고 해주자.</span><br></pre></td></tr></table></figure>
-
 <h4 id="다익스트라-Dijkstra"><a href="#다익스트라-Dijkstra" class="headerlink" title="다익스트라(Dijkstra)"></a>다익스트라(Dijkstra)</h4><p>시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v)를 우선순위 큐에 넣는다.</p>
 <p>우선순위 큐는 가장 큰 값을 자동으로 찾아서 빼 주기 때문에 최단 경로에 마이너스를 붙여 큐에 저장해주면 손쉽게 사용 가능.</p>
 <h5 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> V;</span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; adj[MAX_V];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dijkstra(<span class="keyword">int</span> src) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dist(V,INF);</span><br><span class="line">    dist[src] = <span class="number">0</span>;</span><br><span class="line">    priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; pq;</span><br><span class="line">    pq.push(make_pair(<span class="number">0</span>,src));</span><br><span class="line">    <span class="keyword">while</span>(!pq.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> cost = -pq.top().first;</span><br><span class="line">        <span class="keyword">int</span> here = pq.top().second;</span><br><span class="line">        pq.pop(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(dist[here] &lt; cost)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;adj[here].size(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> there = adj[here][i].first;</span><br><span class="line">            <span class="keyword">int</span> nextDist = cost + adj[here][i].second;</span><br><span class="line">            <span class="keyword">if</span>(dist[there] &gt; nextDist) &#123;</span><br><span class="line">                dist[there] = nextDist;</span><br><span class="line">                pq.push(make_parir(-nextDist,there));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -191,7 +189,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘/" data-id="cjydxodkh002j3cng6dlyze7f" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘/" data-id="cjye0o9ab002mo4ngeivgy1at" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -270,8 +268,8 @@
         "dateModified": "2019-07-22",
         "url": "https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘/",
         "description": "최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌
-12345678음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌##### 시간 복잡도간선 검사 : |E|개 간선이므로 O(|E|)우선순위 큐에 원소 삽입 : 최대 |E|개이므로 O(|E|log|E|)합치면 O(|E|lo"
-        "wordCount": 469
+다익스트라(Dijkstra)시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v"
+        "wordCount": 415
     }
 </script>
 
@@ -371,6 +369,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/22/소방차-FIRETRUCKS/" class="title">소방차(FIRETRUCKS)</a></p>
+                            <p class="item-date"><time datetime="2019-07-22T05:43:58.000Z" itemprop="datePublished">2019-07-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/22/신호-라우팅/" class="title">신호 라우팅</a></p>
                             <p class="item-date"><time datetime="2019-07-22T04:57:32.000Z" itemprop="datePublished">2019-07-22</time></p>
                         </div>
@@ -403,15 +410,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/18/const/" class="title">const</a></p>
-                            <p class="item-date"><time datetime="2019-07-18T06:30:20.000Z" itemprop="datePublished">2019-07-18</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -421,7 +419,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">10</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -431,7 +429,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -441,7 +439,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다익스트라/">다익스트라</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로/">최단경로</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memoization/">Memoization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/구간트리/">구간트리</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그래프/">그래프</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다이나믹/">다이나믹</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/다익스트라/">다익스트라</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/메모이제이션/">메모이제이션</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백준/">백준</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/병합정렬/">병합정렬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할-정복/">분할 정복</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/상/">상</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/우선순위큐/">우선순위큐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진-검색-트리/">이진 검색 트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/이진검색트리/">이진검색트리</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/중/">중</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로/">최단경로</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트리/">트리</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/트립/">트립</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/펜윅트리/">펜윅트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/하/">하</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/힙/">힙</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -451,7 +449,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 16.67px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 16.67px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 11.67px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 11.67px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 11.67px;">최단경로</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
+            <a href="/tags/BFS/" style="font-size: 16.67px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 18.33px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 16.67px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.33px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 13.33px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 13.33px;">백준</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 11.67px;">상</a> <a href="/tags/우선순위큐/" style="font-size: 11.67px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.67px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 13.33px;">최단경로</a> <a href="/tags/트리/" style="font-size: 15px;">트리</a> <a href="/tags/트립/" style="font-size: 11.67px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 13.33px;">펜윅트리</a> <a href="/tags/하/" style="font-size: 18.33px;">하</a> <a href="/tags/힙/" style="font-size: 11.67px;">힙</a>
         </div>
     </div>
 
