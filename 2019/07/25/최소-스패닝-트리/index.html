@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>최소 스패닝 트리 | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="그래프,스패닝트리">
+    
+    <meta name="description" content="최소 스패닝 트리 무향 그래프의 스패닝 트리는 원래 그래프의 정점 전부와 간선의 부분 집합으로 구성된 부분 그래프이다. 스패닝 트리에 포함된 간선들은 정점들을 트리 형태로 전부 연결해야 한다.  크루스칼의 최소 스패닝 트리 알고리즘크루스칼의 알고리즘은 모든 간선을 가중치에 대해 정렬한 뒤 추가했을 때 사이클을 이루지 않는 가장 작은 가중치를 가지는 간선들을">
+<meta name="keywords" content="그래프,스패닝트리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="최소 스패닝 트리">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/25/최소-스패닝-트리/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="최소 스패닝 트리 무향 그래프의 스패닝 트리는 원래 그래프의 정점 전부와 간선의 부분 집합으로 구성된 부분 그래프이다. 스패닝 트리에 포함된 간선들은 정점들을 트리 형태로 전부 연결해야 한다.  크루스칼의 최소 스패닝 트리 알고리즘크루스칼의 알고리즘은 모든 간선을 가중치에 대해 정렬한 뒤 추가했을 때 사이클을 이루지 않는 가장 작은 가중치를 가지는 간선들을">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-07-25T01:59:25.025Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="최소 스패닝 트리">
+<meta name="twitter:description" content="최소 스패닝 트리 무향 그래프의 스패닝 트리는 원래 그래프의 정점 전부와 간선의 부분 집합으로 구성된 부분 그래프이다. 스패닝 트리에 포함된 간선들은 정점들을 트리 형태로 전부 연결해야 한다.  크루스칼의 최소 스패닝 트리 알고리즘크루스칼의 알고리즘은 모든 간선을 가중치에 대해 정렬한 뒤 추가했을 때 사이클을 이루지 않는 가장 작은 가중치를 가지는 간선들을">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-최소-스패닝-트리" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        최소 스패닝 트리
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/07/25/최소-스패닝-트리/" class="article-date">
+            <time datetime="2019-07-25T00:11:31.000Z" itemprop="datePublished">2019-07-25</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/그래프/">그래프</a>, <a class="tag-link" href="/tags/스패닝트리/">스패닝트리</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="최소-스패닝-트리"><a href="#최소-스패닝-트리" class="headerlink" title="최소 스패닝 트리"></a>최소 스패닝 트리</h2><hr>
+<p>무향 그래프의 스패닝 트리는 원래 그래프의 정점 전부와 간선의 부분 집합으로 구성된 부분 그래프이다. 스패닝 트리에 포함된 간선들은 정점들을 트리 형태로 전부 연결해야 한다.</p>
+<hr>
+<h4 id="크루스칼의-최소-스패닝-트리-알고리즘"><a href="#크루스칼의-최소-스패닝-트리-알고리즘" class="headerlink" title="크루스칼의 최소 스패닝 트리 알고리즘"></a>크루스칼의 최소 스패닝 트리 알고리즘</h4><p>크루스칼의 알고리즘은 모든 간선을 가중치에 대해 정렬한 뒤 추가했을 때 사이클을 이루지 않는 가장 작은 가중치를 가지는 간선들을 추가해 나가는 방식이다. 크루스칼의 구현에 있어 가장 중요한 것은 산발적으로 생성된 간선들이 트리에 추가될 때 이미 있는 간선과 사이클을 이루는지 판단해주는 것이다. </p>
+<h4 id="프림의-최소-스패닝-트리-알고리즘"><a href="#프림의-최소-스패닝-트리-알고리즘" class="headerlink" title="프림의 최소 스패닝 트리 알고리즘"></a>프림의 최소 스패닝 트리 알고리즘</h4><p>모든 간선에 대해 간선을 추가해나가며 트리를 만드는 크루스칼 알고리즘과 달리 프림의 알고리즘은 하나의 시작점을 잡고 거기서부터 가장 작은 가중치를 가지는 간선을 추가해나가며 트리를 만들어내는 방식이다.</p>
+<p>구현 방식을 살펴보자. 모든 간선을 순회하면서 트리에 추가된 정점과 아직 추가되지 않은 정점이 연결되어 있는 간선을 찾아 추가하는 식으로 정점을 추가시킬 수 있다. 그러나 이렇게 구현하면 정점 하나당 O(|E|)의 시간이 걸리고 최종적으로 시간복잡도는 O(|V||E|)가 된다. 이를 줄이기 위해서는 정점을 추가하는데 걸리는 시간을 줄여볼 수 있다. 현재 만들어진 트리와 아직 추가되지 않은 정점들 사이에는 가장 작은 가중치를 가지는 간선이 존재할 것이고 이 외에 다른 간선은 필요하지 않다. 따라서 트리가 갱신될 때마다 트리와 나머지 정점들 사이의 간선 중 가장 작은 가중치를 가지는 간선에 대한 정보를 저장해준다. 이렇게 하면 정점 개수만큼만 돌면서 그 중 가장 작은 가중치의 간선을 고르면 되므로 정점 추가 작업은 O(|V|)만에 끝나게 된다.</p>
+<p>V개 정점에 대해 O(|V|) 시간에 걸쳐 정점을 찾아 추가하고 추가한 뒤에 각 정점과 연결된 간선을 순회하며 다른 정점 간의 연결된 최소 가중치 간선을 갱신하므로 총 시간 복잡도는 O(|V|^2 + |E|)가 된다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/07/25/최소-스패닝-트리/" data-id="cjyifw1re003vqongpddsxdp4" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "최소 스패닝 트리",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "그래프 스패닝트리",
+        "genre": "알고리즘",
+        "datePublished": "2019-07-25",
+        "dateCreated": "2019-07-25",
+        "dateModified": "2019-07-25",
+        "url": "https://2yunsoo.github.io/2019/07/25/최소-스패닝-트리/",
+        "description": "최소 스패닝 트리
+무향 그래프의 스패닝 트리는 원래 그래프의 정점 전부와 간선의 부분 집합으로 구성된 부분 그래프이다. 스패닝 트리에 포함된 간선들은 정점들을 트리 형태로 전부 연결해야 한다.
+
+크루스칼의 최소 스패닝 트리 알고리즘크루스칼의 알고리즘은 모든 간선을 가중치에 대해 정렬한 뒤 추가했을 때 사이클을 이루지 않는 가장 작은 가중치를 가지는 간선들을"
+        "wordCount": 252
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            최단 경로 알고리즘 - 다익스트라
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/07/24/음주-운전-단속-DRUNKEN/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">음주 운전 단속(DRUNKEN)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/25/여행경로-정하기-TPATH/" class="title">여행경로 정하기(TPATH)</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T07:38:28.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/Disjoint-Set/" class="title">Disjoint Set</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:28:26.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-플로이드/" class="title">최단 경로 알고리즘 - 플로이드</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:16:08.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-벨만-포드/" class="title">최단 경로 알고리즘 - 벨만-포드</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:15:51.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" class="title">최단 경로 알고리즘 - 다익스트라</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:15:32.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BFS/" style="font-size: 15.71px;">BFS</a> <a href="/tags/DFS/" style="font-size: 14.29px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 17.14px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.57px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 17.14px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 14.29px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15.71px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.86px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 10px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.86px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.43px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.43px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.14px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 14.29px;">트리</a> <a href="/tags/트립/" style="font-size: 11.43px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.86px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 10px;">플로이드</a> <a href="/tags/하/" style="font-size: 17.14px;">하</a> <a href="/tags/힙/" style="font-size: 11.43px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/25/최소-스패닝-트리/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

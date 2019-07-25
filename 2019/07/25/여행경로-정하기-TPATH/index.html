@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>여행경로 정하기(TPATH) | Yunsoo&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="그래프,최소스패닝트리,크루스칼">
+    
+    <meta name="description" content="여행경로 정하기(TPATH) (난이도:中)12  내 풀이 출발점의 정점과 연결된 간선의 각 가중치를 기준으로 크루스칼을 진행한다. 진행하면서 MIN, MAX를 갱신해나가고 단순히 최솟값이 아닌 MIN, MAX와의 차의 절댓값으로 크루스칼을 사용한다.  문제점 MIN, MAX가 계속 갱신됨에 따라 가중치의 정렬 또한 계속 뒤바뀌게 된다. 이에 따라 시간복잡도">
+<meta name="keywords" content="그래프,최소스패닝트리,크루스칼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="여행경로 정하기(TPATH)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/25/여행경로-정하기-TPATH/index.html">
+<meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="여행경로 정하기(TPATH) (난이도:中)12  내 풀이 출발점의 정점과 연결된 간선의 각 가중치를 기준으로 크루스칼을 진행한다. 진행하면서 MIN, MAX를 갱신해나가고 단순히 최솟값이 아닌 MIN, MAX와의 차의 절댓값으로 크루스칼을 사용한다.  문제점 MIN, MAX가 계속 갱신됨에 따라 가중치의 정렬 또한 계속 뒤바뀌게 된다. 이에 따라 시간복잡도">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-07-25T08:53:06.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="여행경로 정하기(TPATH)">
+<meta name="twitter:description" content="여행경로 정하기(TPATH) (난이도:中)12  내 풀이 출발점의 정점과 연결된 간선의 각 가중치를 기준으로 크루스칼을 진행한다. 진행하면서 MIN, MAX를 갱신해나가고 단순히 최솟값이 아닌 MIN, MAX와의 차의 절댓값으로 크루스칼을 사용한다.  문제점 MIN, MAX가 계속 갱신됨에 따라 가중치의 정렬 또한 계속 뒤바뀌게 된다. 이에 따라 시간복잡도">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/logo.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Algorithm study</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/문제/">문제</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/알고리즘/">알고리즘</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/문제/">문제</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-여행경로-정하기-TPATH" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        여행경로 정하기(TPATH)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/07/25/여행경로-정하기-TPATH/" class="article-date">
+            <time datetime="2019-07-25T07:38:28.000Z" itemprop="datePublished">2019-07-25</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/그래프/">그래프</a>, <a class="tag-link" href="/tags/최소스패닝트리/">최소스패닝트리</a>, <a class="tag-link" href="/tags/크루스칼/">크루스칼</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="여행경로-정하기-TPATH-난이도-中"><a href="#여행경로-정하기-TPATH-난이도-中" class="headerlink" title="여행경로 정하기(TPATH) (난이도:中)"></a>여행경로 정하기(TPATH) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h5><ul>
+<li>출발점의 정점과 연결된 간선의 각 가중치를 기준으로 크루스칼을 진행한다.</li>
+<li>진행하면서 MIN, MAX를 갱신해나가고 단순히 최솟값이 아닌 MIN, MAX와의 차의 절댓값으로 크루스칼을 사용한다.</li>
+</ul>
+<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
+<li>MIN, MAX가 계속 갱신됨에 따라 가중치의 정렬 또한 계속 뒤바뀌게 된다. 이에 따라 시간복잡도가|E|^2×log|E|가 된다.</li>
+</ul>
+<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><p>상한과 하한을 동시에 찾는 대신 하한을 고정시키고 상한이 최소가 되게 한다. 즉, 모든 가중치에 대해 그 값을 하한으로 두고 크루스칼 알고리즘을 사용하여 상한, 하한 간의 차이의 최솟값을 구하는 것이다.</p>
+<p>내가 접근하려던 방법은 출발점에 연결된 가중치만을 보기 때문에 그보다 작은 값이 존재하게 되어 단순 크루스칼도 사용하지 못하고 절댓값을 이용해야 했다. 또한 절댓값을 이용한다는 사실부터 기준이 MIN, MAX 두 개가 되는 것이었기 때문에 기존 정렬된 간선들 또한 끊임 없이 변해버리게 되었다. </p>
+<p>그에 비해 이렇게 하한을 고정시켜버리면 딱 기준이 정해지기 때문에 하한보다 작은 가중치의 간선은 다 버리고 그 이상의 가중치를 가지는 간선들 중에서 작은 값부터 보면 되기 떄문에 훨씬 효율적이게 된다. 또한 모든 간선을 기준으로 삼아 한 번씩 크루스칼 알고리즘을 돌리므로 좀 많이 돌지 않을까 싶었지만 오히려 간선의 정렬을 처음 시작할 때 한 번만 하면 되어 시간복잡도가 O(ElogE)(정렬) + O(E^2)(모든 가중치 E개 × 크루스칼 E), 즉 O(|E|^2) 밖에 되지 않는다.</p>
+<p>구현 방식은 모든 가중치에 대해 돌면서 하한 low로 잡고 크루스칼을 진행하는데 도중에 v-1 정점에 도달하면 종료시키면 된다. 가중치는 정렬된 상태이므로 이 값 그대로가 상한 값으로 볼 수 있다.</p>
+<h6 id="상한을-구하는-다른-방법"><a href="#상한을-구하는-다른-방법" class="headerlink" title="상한을 구하는 다른 방법"></a>상한을 구하는 다른 방법</h6><p>크루스칼 대신 이분 검색과 너비 우선 탐색을 통해서도 상한을 구해줄 수 있다. 너비 우선 탐색은 O(V+E)의 시간이 걸리고 이분 검색을 통한 상한, 하한 설정은 logE, 그리고 모든 가중치 E를 보므로 총 시간 복잡도는 O(E^2×logE)가 된다.</p>
+<p>구현법은 이분 검색으로 하한 lo는 low로 고정, 상한 hi는 초기값을 최대 가중치로 설정해줘서 bfs를 통해 확인하여 경로가 존재하면 hi를 줄여준다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(lo + <span class="number">1</span> &lt; hi) &#123;</span><br><span class="line">	<span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">if</span>(hasPath(weigths[low], weights[mid]))</span><br><span class="line">		hi = mid;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		lo = mid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(hi==weights.size())</span><br><span class="line">	<span class="keyword">return</span> INF;</span><br><span class="line"><span class="keyword">return</span> wieghts[hi];</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="다른-접근법"><a href="#다른-접근법" class="headerlink" title="다른 접근법"></a>다른 접근법</h5><p>모든 가중치의 쌍으로 하한과 상한을 설정하여 가능한 경로를 구한 다음 최적화를 진행하는 방법을 살펴보자. 가능한 모든 쌍을 보는 것이기 떄문에 lo와 hi를 잡는 데 E^2이 필요하고 경로가 있는지 확인하는 hasPath는 V+E가 필요하므로 총 O(N^3)이 된다. 먼저 lo를 잡아주고 hi를 올리면서 확인하다가 경로가 발견된다면 그 hi가 lo에 대해 차이가 가장 작은 상한 값이므로 더 큰 hi는 볼 필요가 없다. 또한 lo 값을 키워 lo+1을 보면 더 작은 값 lo를 하한으로 뒀을 때에도 hi보다 작은 상한으로는 경로가 존재하지 않았으므로 hi 밑으로는 보지 않고 hi부터 확인해도 된다. 이를 코드로 표현해보면 다음과 같다.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> lo=<span class="number">0</span>; lo&lt;weights.size(); lo++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> hi=prehi; hi&lt;weights.size(); hi++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(hasPath(weigths[lo],weights[hi])) &#123;</span><br><span class="line">            <span class="keyword">int</span> prehi = hi;</span><br><span class="line">            ret = min(ret, weights[hi] - weights[lo]);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>잘 살펴보자. 상한이 정해지고 나면 그 다음 하한은 그 상한을 그대로 유지한 채로 확인을 하고 경로가 있다면 상한을 유지한 채로 하한만 키워나간다. 경로가 없다면 하한은 유지한 채로 상한을 키워나간다. 즉, hasPath 함수 확인 한 번에 lo 또는 hi가 하나씩 커지는 꼴이다. 총 진행 횟수는 2×E 이고 시간 복잡도는 O(E^2)가 된다. 매 턴마다 hasPath의 return 값에 따라 lo 또는 hi를 증가시키는 방식으로 코드를 구현해보자.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lo = hi = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(hasPath(weights[lo],weights[hi])) &#123;</span><br><span class="line">        ret = min(ret, weights[hi] - weights[lo]);</span><br><span class="line">        lo++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        hi++;</span><br><span class="line">        <span class="keyword">if</span>(hi==weights.size())</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><p>상한, 하한에서 하나를 고정시키는 것이 중요했다. 조건이 여러 개라면 그 조건을 줄여서 생각하는 습관을 길러야겠다. 그리고 밑에 풀이가 진짜 대단한 것 같다. 저렇게 풀어보고 싶다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2yunsoo.github.io/2019/07/25/여행경로-정하기-TPATH/" data-id="cjyifw1ok0020qongb31y0zpi" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yunsoo Lee"
+        },
+        "headline": "여행경로 정하기(TPATH)",
+        "image": "https://2yunsoo.github.io",
+        "keywords": "그래프 최소스패닝트리 크루스칼",
+        "genre": "문제",
+        "datePublished": "2019-07-25",
+        "dateCreated": "2019-07-25",
+        "dateModified": "2019-07-25",
+        "url": "https://2yunsoo.github.io/2019/07/25/여행경로-정하기-TPATH/",
+        "description": "여행경로 정하기(TPATH) (난이도:中)12
+
+내 풀이
+출발점의 정점과 연결된 간선의 각 가중치를 기준으로 크루스칼을 진행한다.
+진행하면서 MIN, MAX를 갱신해나가고 단순히 최솟값이 아닌 MIN, MAX와의 차의 절댓값으로 크루스칼을 사용한다.
+
+문제점
+MIN, MAX가 계속 갱신됨에 따라 가중치의 정렬 또한 계속 뒤바뀌게 된다. 이에 따라 시간복잡도"
+        "wordCount": 741
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2yunsoo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/starlee9711" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://youtube.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/07/25/Disjoint-Set/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">Disjoint Set</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/25/여행경로-정하기-TPATH/" class="title">여행경로 정하기(TPATH)</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T07:38:28.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/Disjoint-Set/" class="title">Disjoint Set</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:28:26.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-플로이드/" class="title">최단 경로 알고리즘 - 플로이드</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:16:08.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-벨만-포드/" class="title">최단 경로 알고리즘 - 벨만-포드</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:15:51.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" class="title">최단 경로 알고리즘 - 다익스트라</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T01:15:32.000Z" itemprop="datePublished">2019-07-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BFS/" style="font-size: 15.71px;">BFS</a> <a href="/tags/DFS/" style="font-size: 14.29px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 17.14px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.57px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 17.14px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 14.29px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15.71px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.86px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 10px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.86px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.43px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.43px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.14px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 14.29px;">트리</a> <a href="/tags/트립/" style="font-size: 11.43px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.86px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 10px;">플로이드</a> <a href="/tags/하/" style="font-size: 17.14px;">하</a> <a href="/tags/힙/" style="font-size: 11.43px;">힙</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/2yunsoo">Github</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://facebook.com/starlee9711">Facebook</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Yunsoo Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/25/여행경로-정하기-TPATH/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
