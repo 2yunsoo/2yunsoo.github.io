@@ -156,21 +156,20 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/문제/">문제</a>
+            <a class="article-category-link" href="/categories/알고리즘/">알고리즘</a>
             </div>
-            <div class="date"><time datetime="2019-07-22T05:43:58.000Z" itemprop="datePublished">2019-07-22</time></div>
+            <div class="date"><time datetime="2019-07-22T03:19:59.000Z" itemprop="datePublished">2019-07-22</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/22/소방차-FIRETRUCKS/">소방차(FIRETRUCKS)</a>
+        <a href="/2019/07/22/최단-경로-알고리즘-벨만-포드/">최단 경로 알고리즘 - 벨만-포드</a>
         </h1>
     
 
         <p class="article-excerpt">
-            소방차(FIRETRUCKS) (난이도:中)1adj[v+1].push_back(xy(t,0));
-
-올바른 풀이어느 소방서든지 상관 없이 소방서로부터의 거리만 최소화하면 된다. 모든 소방서에서 동시에 다익스트라 알고리즘을 수행한다. 그래프에 가상의 시작점을 생성 후 모든 소방서에 가중치가 0인 간선을 추가해주면 한 번의 다익스트라 알고리즘으로 모든 정점까지의 
+            최단 경로 알고리즘(2)벨만-포드(Bellman-Ford)음수 간선이 있는 그래프에 대해서도 최단 경로를 찾을 수 있으며 음수 사이클의 존재 여부까지 판단 가능
+벨만-포드 알고리즘은 시작점에서부터 각 정점까지 가는 최단 거리의 상한을 잡아두고 실제 값과 예측 값의 오차를 반복적으로 줄여나가는 방식으로 진행된다. 따라서 시작점의 최단거리 upper[s]는 0
         </p>
     </div>
 </article>
@@ -179,37 +178,6 @@
     
     
     
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/문제/">문제</a>
-            </div>
-            <div class="date"><time datetime="2019-07-22T04:57:32.000Z" itemprop="datePublished">2019-07-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/22/신호-라우팅/">신호 라우팅</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            신호 라우팅(ROUTING) (난이도:下)123456789101112131415161718192021222324252627282930313233343536373839404142typedef pair&lt;double,int&gt; xy;vector&lt;double&gt; dist;vector&lt;vector&lt;xy&gt; &gt; adj;void d
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -223,21 +191,25 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/22/최단-경로-알고리즘/">최단 경로 알고리즘</a>
+        <a href="/2019/07/22/최단-경로-알고리즘-다익스트라/">최단 경로 알고리즘 - 다익스트라</a>
         </h1>
     
 
         <p class="article-excerpt">
-            최단 경로 알고리즘음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌
-다익스트라(Dijkstra)시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v],v
+            최단 경로 알고리즘(1)다익스트라(Dijkstra)음수 사이클이 존재하면 안됨무방향 그래프는 두 개로 쪼개서 각각 방향 그래프로 바꿔줌
+시작점에서부터 인접한 정점을 검사. 간선 (u,v)를 검사하였는데 아직 v를 방문하지 않았으면 u까지의 최단거리에 (u,v)의 가중치를 더한다. 이 값이 현재 저장되어 있는 dist[v]보다 작다면 갱신 후에 (dist[v
         </p>
     </div>
 </article>
+    
+        </div>
     
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -261,14 +233,10 @@
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -292,10 +260,14 @@
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -319,14 +291,10 @@
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -355,10 +323,14 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -382,14 +354,10 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -413,10 +381,14 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -436,6 +408,38 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
 
         <p class="article-excerpt">
             영화 수집 (백준)12345678910111213141516171819202122232425262728293031323334353637383940struct Ptree &#123;	vector&lt;int&gt; tree;	Ptree(int n) : tree(n+1) &#123;&#125;        int sum(int pos) &#123;       
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/문제/">문제</a>
+            </div>
+            <div class="date"><time datetime="2019-07-17T04:30:11.000Z" itemprop="datePublished">2019-07-17</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/07/17/Sorting-Game-SORTGAME/">Sorting Game(SORTGAME)</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Sorting Game(SORTGAME) (난이도:中)12
+
+내 풀이
+어렵
+
+올바른 풀이입력받은 n개의 수를 배열하는 방법은 n!개이다. 서로 다른 이 배열들을 정점으로 하고 한 배열에서 뒤집기 연산을 통해 다른 배열로 바꿀 수 있을 때 두 정점이 간선으로 연결되어 있다고 하여 그래프를 만들어줄 수 있다. 배열이 정점이기 때문에 vector&lt;int&g
         </p>
     </div>
 </article>
@@ -529,27 +533,27 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-플로이드/" class="title">최단 경로 알고리즘 - 플로이드</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:16:08.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
+                            <p class="item-title"><a href="/2019/07/25/최소-스패닝-트리/" class="title">최소 스패닝 트리</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T00:11:31.000Z" itemprop="datePublished">2019-07-25</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-벨만-포드/" class="title">최단 경로 알고리즘 - 벨만-포드</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:15:51.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/24/음주-운전-단속-DRUNKEN/" class="title">음주 운전 단속(DRUNKEN)</a></p>
+                            <p class="item-date"><time datetime="2019-07-24T04:15:20.000Z" itemprop="datePublished">2019-07-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" class="title">최단 경로 알고리즘 - 다익스트라</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:15:32.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/24/시간여행-TIMETRIP/" class="title">시간여행(TIMETRIP)</a></p>
+                            <p class="item-date"><time datetime="2019-07-23T19:59:53.000Z" itemprop="datePublished">2019-07-24</time></p>
                         </div>
                     </li>
                 
@@ -562,7 +566,7 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">11</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -572,7 +576,7 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -582,7 +586,7 @@ insight이 문제가 왜 그래프 문제인지 어떻게 그래프로 표현할
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 15.71px;">BFS</a> <a href="/tags/DFS/" style="font-size: 14.29px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 17.14px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.57px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 17.14px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 14.29px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15.71px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.86px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 10px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.86px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.43px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.43px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.14px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 14.29px;">트리</a> <a href="/tags/트립/" style="font-size: 11.43px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.86px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 10px;">플로이드</a> <a href="/tags/하/" style="font-size: 17.14px;">하</a> <a href="/tags/힙/" style="font-size: 11.43px;">힙</a>
+            <a href="/tags/BFS/" style="font-size: 15px;">BFS</a> <a href="/tags/DFS/" style="font-size: 13.75px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 16.25px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.75px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 16.25px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 13.75px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.5px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 11.25px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.5px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.25px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.25px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.5px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 13.75px;">트리</a> <a href="/tags/트립/" style="font-size: 11.25px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.5px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 11.25px;">플로이드</a> <a href="/tags/하/" style="font-size: 16.25px;">하</a> <a href="/tags/힙/" style="font-size: 11.25px;">힙</a>
         </div>
     </div>
 

@@ -6,21 +6,24 @@
     
 
     
-    <title>최단 경로 알고리즘 - 다익스트라 | Yunsoo&#39;s blog</title>
+    <title>최단 경로 알고리즘 - 플로이드 | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="그래프,최단경로,플로이드">
     
-    <meta name="keywords" content="Yunsoo | yunsoo | ����">
+    <meta name="description" content="최단 경로 알고리즘(3)플로이드한 개의 시작점을 정하지 않고 모든 정점의 쌍 간의 최단 거리를 구하기 위한 알고리즘 정점 집합 S에 포함된 정점만을 경유점으로 사용해 u에서 v로 가는 최단 경로의 길이를 Ds(u,v)라고 하자. 이 때, S 중에 정점 x를 하나 골라 x르 경유하는 경우와 경유하지 않는 경우를 나눠 본다. x를 경유한다면 최단 경로는 각각">
+<meta name="keywords" content="그래프,최단경로,플로이드">
 <meta property="og:type" content="article">
-<meta property="og:title" content="최단 경로 알고리즘 - 다익스트라">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/07/25/최단-경로-알고리즘-다익스트라/index.html">
+<meta property="og:title" content="최단 경로 알고리즘 - 플로이드">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘-플로이드/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
+<meta property="og:description" content="최단 경로 알고리즘(3)플로이드한 개의 시작점을 정하지 않고 모든 정점의 쌍 간의 최단 거리를 구하기 위한 알고리즘 정점 집합 S에 포함된 정점만을 경유점으로 사용해 u에서 v로 가는 최단 경로의 길이를 Ds(u,v)라고 하자. 이 때, S 중에 정점 x를 하나 골라 x르 경유하는 경우와 경유하지 않는 경우를 나눠 본다. x를 경유한다면 최단 경로는 각각">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-25T01:15:32.396Z">
+<meta property="og:updated_time" content="2019-07-25T08:56:50.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="최단 경로 알고리즘 - 다익스트라">
+<meta name="twitter:title" content="최단 경로 알고리즘 - 플로이드">
+<meta name="twitter:description" content="최단 경로 알고리즘(3)플로이드한 개의 시작점을 정하지 않고 모든 정점의 쌍 간의 최단 거리를 구하기 위한 알고리즘 정점 집합 S에 포함된 정점만을 경유점으로 사용해 u에서 v로 가는 최단 경로의 길이를 Ds(u,v)라고 하자. 이 때, S 중에 정점 x를 하나 골라 x르 경유하는 경우와 경유하지 않는 경우를 나눠 본다. x를 경유한다면 최단 경로는 각각">
     
 
     
@@ -133,19 +136,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    미지정
+    <a class="page-title-link" href="/categories/알고리즘/">알고리즘</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-최단-경로-알고리즘-다익스트라" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-최단-경로-알고리즘-플로이드" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        최단 경로 알고리즘 - 다익스트라
+        최단 경로 알고리즘 - 플로이드
         </h1>
     
 
@@ -155,26 +158,47 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" class="article-date">
-            <time datetime="2019-07-25T01:15:32.000Z" itemprop="datePublished">2019-07-25</time>
+        <a href="/2019/07/22/최단-경로-알고리즘-플로이드/" class="article-date">
+            <time datetime="2019-07-22T07:19:59.000Z" itemprop="datePublished">2019-07-22</time>
         </a>
     </div>
 
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/그래프/">그래프</a>, <a class="tag-link" href="/tags/최단경로/">최단경로</a>, <a class="tag-link" href="/tags/플로이드/">플로이드</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h2 id="최단-경로-알고리즘-3"><a href="#최단-경로-알고리즘-3" class="headerlink" title="최단 경로 알고리즘(3)"></a>최단 경로 알고리즘(3)</h2><h3 id="플로이드"><a href="#플로이드" class="headerlink" title="플로이드"></a>플로이드</h3><p>한 개의 시작점을 정하지 않고 모든 정점의 쌍 간의 최단 거리를 구하기 위한 알고리즘</p>
+<p>정점 집합 S에 포함된 정점만을 경유점으로 사용해 u에서 v로 가는 최단 경로의 길이를 Ds(u,v)라고 하자. 이 때, S 중에 정점 x를 하나 골라 x르 경유하는 경우와 경유하지 않는 경우를 나눠 본다. x를 경유한다면 최단 경로는 각각 u에서 x, x에서 v까지의 최단 경로로 나눌 수 있다. x를 경유하지 않는다면 Ds(u,v)는 Ds-x(u,v)와 같게 된다. 따라서 Ds(u,v)는 다음과 같에 재귀적을 정의 가능하다.</p>
+<p><code>Ds(u,v) = min(Ds-x(u,x)+Ds-x(x,v), Ds-x(u,v)</code></p>
+<p>ck = Dsk라고 했을 때, </p>
+<p><code>Ck(u,v) = min(Ck-1(u,k)+Ck-1(k,v), Ck-1(u,v))</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;V; i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;v; j++)</span><br><span class="line">		<span class="keyword">if</span>(i!=j)</span><br><span class="line">        	c[<span class="number">0</span>][i][j] = min(adj[i][j], adj[i][<span class="number">0</span>] + adj[<span class="number">0</span>][j])</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			c[<span class="number">0</span>][i][j] = <span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line"><span class="keyword">for</span>(k=<span class="number">1</span>:V)</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>:V)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>:v)</span><br><span class="line">			C[k][i][j] = min(C[k<span class="number">-1</span>][i][j], C[k<span class="number">-1</span>][i][k]+C[k<span class="number">-1</span>][k][j]);</span><br></pre></td></tr></table></figure>
+
+<p>이와 같이 구현 가능하다. 이 구현의 시간복잡도는 O(|V|^3), 메모리 또한 O(|V|^3)이다. 너무 메모리 사용량이 크기 때문에 줄여보자. C[k]를 구하는데 C[k-1]만 사용되고 이전의 정보는 필요하지 않으므로 C[0]과 C[1]에 번갈아 넣어줄 수 있다. C[k%2]. 이렇게 되면 메모리 사용량이 2×|V|^2가 된다.</p>
+<p>더 줄이자.</p>
+<p><code>Ck(u,v) = min(Ck-1(u,k)+Ck-1(k,v), Ck-1(u,v))</code> 에서 Ck-1(u,k)와 Ck-1(k,v)는 각각 k가 종착점과 시작점이므로 Ck(u,k)와 Ck(k,v)와 같다. 따라서 C[k%2]와 C[(k-1)%2]를 구분할 필요 없이 한데 묶어 사용해도 된다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;V; i++)</span><br><span class="line">    adj[i][j] = <span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line"><span class="keyword">for</span>(k=<span class="number">0</span>:V)</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>:V)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>:v)</span><br><span class="line">			adj[i][j] = min(adj[i][j], adj[i][k]+adj[k][j]);</span><br></pre></td></tr></table></figure>
+
+<p>더 빠르게 하자.</p>
+<p>시간 복잡도는 바뀌지 않지만 조금이라도 더 빠르게 하기 위해서는 i에서 k로 가는 경로가 없다면 j에 대한 for문을 돌지 않게 막아준다.</p>
+<p>실제 경로를 구해보자.</p>
+<p>adj[u],[v]를 마지막으로 갱신한 k 값은 곧 경유점을 뜻하므로 이를 저장해 주고 재귀 호출로 이를 찾아준다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reconstruct</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; path)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(via[u][v]==<span class="number">-1</span>) &#123;</span><br><span class="line">		path.push_back(u);</span><br><span class="line">		<span class="keyword">if</span>(u!=v)</span><br><span class="line">			path.push_back(v);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> w = via[u][v];</span><br><span class="line">		reconstruct(u,w,path);</span><br><span class="line">		path.pop_back();</span><br><span class="line">		reconstruct(w,v,path);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/25/최단-경로-알고리즘-다익스트라/" data-id="cjyifw1po002sqongmalzaks5" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘-플로이드/" data-id="cjyifw1q90036qongznuwsat6" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -244,16 +268,17 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "최단 경로 알고리즘 - 다익스트라",
+        "headline": "최단 경로 알고리즘 - 플로이드",
         "image": "https://2yunsoo.github.io",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2019-07-25",
-        "dateCreated": "2019-07-25",
+        "keywords": "그래프 최단경로 플로이드",
+        "genre": "알고리즘",
+        "datePublished": "2019-07-22",
+        "dateCreated": "2019-07-22",
         "dateModified": "2019-07-25",
-        "url": "https://2yunsoo.github.io/2019/07/25/최단-경로-알고리즘-다익스트라/",
-        "description": ""
-        "wordCount": 1
+        "url": "https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘-플로이드/",
+        "description": "최단 경로 알고리즘(3)플로이드한 개의 시작점을 정하지 않고 모든 정점의 쌍 간의 최단 거리를 구하기 위한 알고리즘
+정점 집합 S에 포함된 정점만을 경유점으로 사용해 u에서 v로 가는 최단 경로의 길이를 Ds(u,v)라고 하자. 이 때, S 중에 정점 x를 하나 골라 x르 경유하는 경우와 경유하지 않는 경우를 나눠 본다. x를 경유한다면 최단 경로는 각각 "
+        "wordCount": 356
     }
 </script>
 
@@ -317,20 +342,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/07/25/최단-경로-알고리즘-벨만-포드/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/07/23/철인-N종-경기-NTHLON/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">새로운</strong>
         <p class="article-nav-title">
         
-            최단 경로 알고리즘 - 벨만-포드
+            철인 N종 경기(NTHLON)
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/07/25/최소-스패닝-트리/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/22/소방차-FIRETRUCKS/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">최소 스패닝 트리</p>
+        <p class="article-nav-title">소방차(FIRETRUCKS)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -370,27 +395,27 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-플로이드/" class="title">최단 경로 알고리즘 - 플로이드</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:16:08.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/알고리즘/">알고리즘</a></p>
+                            <p class="item-title"><a href="/2019/07/25/최소-스패닝-트리/" class="title">최소 스패닝 트리</a></p>
+                            <p class="item-date"><time datetime="2019-07-25T00:11:31.000Z" itemprop="datePublished">2019-07-25</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-벨만-포드/" class="title">최단 경로 알고리즘 - 벨만-포드</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:15:51.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/24/음주-운전-단속-DRUNKEN/" class="title">음주 운전 단속(DRUNKEN)</a></p>
+                            <p class="item-date"><time datetime="2019-07-24T04:15:20.000Z" itemprop="datePublished">2019-07-24</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/최단-경로-알고리즘-다익스트라/" class="title">최단 경로 알고리즘 - 다익스트라</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T01:15:32.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/24/시간여행-TIMETRIP/" class="title">시간여행(TIMETRIP)</a></p>
+                            <p class="item-date"><time datetime="2019-07-23T19:59:53.000Z" itemprop="datePublished">2019-07-24</time></p>
                         </div>
                     </li>
                 
@@ -403,7 +428,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">11</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -413,7 +438,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -423,7 +448,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 15.71px;">BFS</a> <a href="/tags/DFS/" style="font-size: 14.29px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 17.14px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.57px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 17.14px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 14.29px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15.71px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.86px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 10px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.86px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.43px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.43px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.14px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 14.29px;">트리</a> <a href="/tags/트립/" style="font-size: 11.43px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.86px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 10px;">플로이드</a> <a href="/tags/하/" style="font-size: 17.14px;">하</a> <a href="/tags/힙/" style="font-size: 11.43px;">힙</a>
+            <a href="/tags/BFS/" style="font-size: 15px;">BFS</a> <a href="/tags/DFS/" style="font-size: 13.75px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 16.25px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.75px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 16.25px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 13.75px;">다익스트라</a> <a href="/tags/메모이제이션/" style="font-size: 15px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.5px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 11.25px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.5px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.25px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.25px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.5px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 13.75px;">트리</a> <a href="/tags/트립/" style="font-size: 11.25px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.5px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 11.25px;">플로이드</a> <a href="/tags/하/" style="font-size: 16.25px;">하</a> <a href="/tags/힙/" style="font-size: 11.25px;">힙</a>
         </div>
     </div>
 
@@ -483,7 +508,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/07/25/최단-경로-알고리즘-다익스트라/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/22/최단-경로-알고리즘-플로이드/';
     
     (function() {
     var dsq = document.createElement('script');
