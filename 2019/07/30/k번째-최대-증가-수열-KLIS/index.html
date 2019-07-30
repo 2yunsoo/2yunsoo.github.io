@@ -6,24 +6,24 @@
     
 
     
-    <title>폴리오미노(POLY) | Yunsoo&#39;s blog</title>
+    <title>k번째 최대 증가 수열(KLIS) | Yunsoo&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="메모이제이션,다이나믹,중">
+        <meta name="keywords" content="메모이제이션,다이나믹">
     
-    <meta name="description" content="폴리오미노(POLY) (난이도:中)1일요일에 구현 끝내기  내 풀이 처음엔 뭔가 규칙이 있지 않을까 열심히 찾아봤고… 그 다음엔 시작 지점에서부터 뻗어나가는데 위아래로 뻗어나가다가 한 번이라도 좌우로 두 칸 이상 가면 오던 방향으로 다시 못 돌아간다는 그런 쓰잘데기 없는 생각을 해봤고…  문제점 그냥 몰랐음  올바른 풀이 가로줄에 있는 정사각형은 무조건 연">
-<meta name="keywords" content="메모이제이션,다이나믹,중">
+    <meta name="description" content="k번째 최대 증가 수열(KLIS) (난이도:上)12  k번째 정답을 구하는 문제이다. k개의 LIS를 일일히 검사하기에는 시간이 부족하므로 특정 기준으로 묶어 개수를 세주고 k보다 작은 그 개술들을 빼줘서 시간을 줄여야 한다. LIS는 증가수열이므로 앞의 시작하는 숫자에 따라 구분을 지어 개수를 구해준다. 입력 배열의 뒤에서부터 탐색하여 그 점을 시작점으로">
+<meta name="keywords" content="메모이제이션,다이나믹">
 <meta property="og:type" content="article">
-<meta property="og:title" content="폴리오미노(POLY)">
-<meta property="og:url" content="https://2yunsoo.github.io/2019/07/03/폴리오미노-POLY/index.html">
+<meta property="og:title" content="k번째 최대 증가 수열(KLIS)">
+<meta property="og:url" content="https://2yunsoo.github.io/2019/07/30/k번째-최대-증가-수열-KLIS/index.html">
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
-<meta property="og:description" content="폴리오미노(POLY) (난이도:中)1일요일에 구현 끝내기  내 풀이 처음엔 뭔가 규칙이 있지 않을까 열심히 찾아봤고… 그 다음엔 시작 지점에서부터 뻗어나가는데 위아래로 뻗어나가다가 한 번이라도 좌우로 두 칸 이상 가면 오던 방향으로 다시 못 돌아간다는 그런 쓰잘데기 없는 생각을 해봤고…  문제점 그냥 몰랐음  올바른 풀이 가로줄에 있는 정사각형은 무조건 연">
+<meta property="og:description" content="k번째 최대 증가 수열(KLIS) (난이도:上)12  k번째 정답을 구하는 문제이다. k개의 LIS를 일일히 검사하기에는 시간이 부족하므로 특정 기준으로 묶어 개수를 세주고 k보다 작은 그 개술들을 빼줘서 시간을 줄여야 한다. LIS는 증가수열이므로 앞의 시작하는 숫자에 따라 구분을 지어 개수를 구해준다. 입력 배열의 뒤에서부터 탐색하여 그 점을 시작점으로">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-12T00:30:02.566Z">
+<meta property="og:updated_time" content="2019-07-30T03:53:06.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="폴리오미노(POLY)">
-<meta name="twitter:description" content="폴리오미노(POLY) (난이도:中)1일요일에 구현 끝내기  내 풀이 처음엔 뭔가 규칙이 있지 않을까 열심히 찾아봤고… 그 다음엔 시작 지점에서부터 뻗어나가는데 위아래로 뻗어나가다가 한 번이라도 좌우로 두 칸 이상 가면 오던 방향으로 다시 못 돌아간다는 그런 쓰잘데기 없는 생각을 해봤고…  문제점 그냥 몰랐음  올바른 풀이 가로줄에 있는 정사각형은 무조건 연">
+<meta name="twitter:title" content="k번째 최대 증가 수열(KLIS)">
+<meta name="twitter:description" content="k번째 최대 증가 수열(KLIS) (난이도:上)12  k번째 정답을 구하는 문제이다. k개의 LIS를 일일히 검사하기에는 시간이 부족하므로 특정 기준으로 묶어 개수를 세주고 k보다 작은 그 개술들을 빼줘서 시간을 줄여야 한다. LIS는 증가수열이므로 앞의 시작하는 숫자에 따라 구분을 지어 개수를 구해준다. 입력 배열의 뒤에서부터 탐색하여 그 점을 시작점으로">
     
 
     
@@ -141,14 +141,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-폴리오미노-POLY" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-k번째-최대-증가-수열-KLIS" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        폴리오미노(POLY)
+        k번째 최대 증가 수열(KLIS)
         </h1>
     
 
@@ -158,8 +158,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/07/03/폴리오미노-POLY/" class="article-date">
-            <time datetime="2019-07-03T03:16:00.000Z" itemprop="datePublished">2019-07-03</time>
+        <a href="/2019/07/30/k번째-최대-증가-수열-KLIS/" class="article-date">
+            <time datetime="2019-07-30T03:01:14.000Z" itemprop="datePublished">2019-07-30</time>
         </a>
     </div>
 
@@ -168,34 +168,20 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>, <a class="tag-link" href="/tags/중/">중</a>
+        <a class="tag-link" href="/tags/다이나믹/">다이나믹</a>, <a class="tag-link" href="/tags/메모이제이션/">메모이제이션</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="폴리오미노-POLY-난이도-中"><a href="#폴리오미노-POLY-난이도-中" class="headerlink" title="폴리오미노(POLY) (난이도:中)"></a>폴리오미노(POLY) (난이도:中)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">일요일에 구현 끝내기</span><br></pre></td></tr></table></figure>
+            <h4 id="k번째-최대-증가-수열-KLIS-난이도-上"><a href="#k번째-최대-증가-수열-KLIS-난이도-上" class="headerlink" title="k번째 최대 증가 수열(KLIS) (난이도:上)"></a>k번째 최대 증가 수열(KLIS) (난이도:上)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h4 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h4><ul>
-<li>처음엔 뭔가 규칙이 있지 않을까 열심히 찾아봤고…</li>
-<li>그 다음엔 시작 지점에서부터 뻗어나가는데 위아래로 뻗어나가다가 한 번이라도 좌우로 두 칸 이상 가면 오던 방향으로 다시 못 돌아간다는 그런 쓰잘데기 없는 생각을 해봤고…</li>
-</ul>
-<h5 id="문제점"><a href="#문제점" class="headerlink" title="문제점"></a>문제점</h5><ul>
-<li>그냥 몰랐음</li>
-</ul>
-<h5 id="올바른-풀이"><a href="#올바른-풀이" class="headerlink" title="올바른 풀이"></a>올바른 풀이</h5><ul>
-<li>가로줄에 있는 정사각형은 무조건 연속적임</li>
-<li>각 세로 줄마다 몇 개의 정사각형이 붙어있는지 정해주면 됨</li>
-<li>아랫 줄에 붙여줄 정사각형들은 위치 옮겨줄 수 있음</li>
-<li>poly(n,first) = (first+second-1) × poly(n-first,second) + …</li>
-<li>(윗줄, 아랫줄 정사각형 개수 - 1) × poly(전체-윗줄 개수) 이런 느낌</li>
-</ul>
-<h5 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h5><ul>
-<li>이제 메모이제이션은 쉬워졌다.</li>
-<li>그런데 코딩의 기본은 아이디어다.</li>
-<li>결론 : 못 푼다;;</li>
-</ul>
+<p>k번째 정답을 구하는 문제이다. k개의 LIS를 일일히 검사하기에는 시간이 부족하므로 특정 기준으로 묶어 개수를 세주고 k보다 작은 그 개술들을 빼줘서 시간을 줄여야 한다. LIS는 증가수열이므로 앞의 시작하는 숫자에 따라 구분을 지어 개수를 구해준다. 입력 배열의 뒤에서부터 탐색하여 그 점을 시작점으로 했을 때의 LIS 길이, 개수를 저장해준다. 현재 지점에서부터 맨 뒤까지 돌면서 현재 숫자보다 더 크며 LIS의 길이가 1 작은 지점들의 LIS 개수를 더해줘서 구할 수 있다. </p>
+<p>이렇게 각 자리마다의 LIS 개수와 길이를 구했으면 k-1의 값을 가지는 skip을 만들어줘서 skip개 만큼의 전체 LIS를 넘기고 k번째 LIS를 구해줘야 한다.  시작 지점은 -1로 잡고 뒤로 돌면서 시작 지점보다 값이 증가했고 LIS의 크기가 1 작은 값들(얘내가 전체 수열의 LIS에 포함되는 숫자들)을 새로운 배열에 push해준다. 이 때, piar&lt;int,int&gt;로 (증가한 값, 그 값의 위치)를 같이 저장해준다. 그러고 사전 순으로 LIS를 구하므로 그 배열을 정렬한다. 이 때, pair로 묶었기 때문에 첫 번째 값에 따라 정렬되어 사전 순으로 정렬된다. 또는 map&lt;int,int&gt;로 넣어줄 수도 있다. 중복되는 값이 없기 때문에 문제가 없고 map으로 넣어주면 정렬을 하지 않아도 되어 더 빠르게 수행할 수 있다. 이제 구해준 배열의 앞에서부터 LIS의 개수를 skip과 비교하여 skip보다 작으면 skip-=LIS개수 해주고 skip보다 크면 그 숫자로 시작하는 LIS에 k번째 LIS가 있으므로 재귀호출을 돌려서 답을 구해준다.</p>
+<br>
+
+<p>k번째 정답을 구하는 문제답게 각 경우에 대한 개수를 구해주고 필요없는 부분은 쭉쭉 넘어가서 답을 구해줘야 한다. 이 개수를 구하는 것을 생각을 못해냈는데 주의해야겠다.</p>
 
         </div>
         <footer class="article-footer">
@@ -203,7 +189,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/03/폴리오미노-POLY/" data-id="cjypalkcr0079l0ngtkz4z3lw" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/30/k번째-최대-증가-수열-KLIS/" data-id="cjypalk150008l0ngrde2hq6b" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -273,26 +259,18 @@
             "@type": "Person",
             "name": "Yunsoo Lee"
         },
-        "headline": "폴리오미노(POLY)",
+        "headline": "k번째 최대 증가 수열(KLIS)",
         "image": "https://2yunsoo.github.io",
-        "keywords": "메모이제이션 다이나믹 중",
+        "keywords": "메모이제이션 다이나믹",
         "genre": "문제",
-        "datePublished": "2019-07-03",
-        "dateCreated": "2019-07-03",
-        "dateModified": "2019-07-12",
-        "url": "https://2yunsoo.github.io/2019/07/03/폴리오미노-POLY/",
-        "description": "폴리오미노(POLY) (난이도:中)1일요일에 구현 끝내기
+        "datePublished": "2019-07-30",
+        "dateCreated": "2019-07-30",
+        "dateModified": "2019-07-30",
+        "url": "https://2yunsoo.github.io/2019/07/30/k번째-최대-증가-수열-KLIS/",
+        "description": "k번째 최대 증가 수열(KLIS) (난이도:上)12
 
-내 풀이
-처음엔 뭔가 규칙이 있지 않을까 열심히 찾아봤고…
-그 다음엔 시작 지점에서부터 뻗어나가는데 위아래로 뻗어나가다가 한 번이라도 좌우로 두 칸 이상 가면 오던 방향으로 다시 못 돌아간다는 그런 쓰잘데기 없는 생각을 해봤고…
-
-문제점
-그냥 몰랐음
-
-올바른 풀이
-가로줄에 있는 정사각형은 무조건 연"
-        "wordCount": 110
+k번째 정답을 구하는 문제이다. k개의 LIS를 일일히 검사하기에는 시간이 부족하므로 특정 기준으로 묶어 개수를 세주고 k보다 작은 그 개술들을 빼줘서 시간을 줄여야 한다. LIS는 증가수열이므로 앞의 시작하는 숫자에 따라 구분을 지어 개수를 구해준다. 입력 배열의 뒤에서부터 탐색하여 그 점을 시작점으로"
+        "wordCount": 231
     }
 </script>
 
@@ -356,20 +334,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/07/03/두니발-박사의-탈옥-NUMB3RS/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            두니발 박사의 탈옥(NUMB3RS)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/07/01/비대칭-타일링-ASYMTILING/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/07/26/동적-계획법-테크닉/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">비대칭 타일링(ASYMTILING)</p>
+        <p class="article-nav-title">동적 계획법 테크닉</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -522,7 +490,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://2yunsoo.github.io/2019/07/03/폴리오미노-POLY/';
+    var disqus_url = 'https://2yunsoo.github.io/2019/07/30/k번째-최대-증가-수열-KLIS/';
     
     (function() {
     var dsq = document.createElement('script');
