@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Yunsoo&#39;s blog">
 <meta property="og:description" content="동적 계획법 테크닉k번째 답 계산하기모스 부호 사전 (MORSE)1234567891011121314151617int skip = k - 1;void generate(int n, int m, string s)&amp;#123;    if(skip &amp;lt; 0)        return;    if(n==0 &amp;amp;&amp;amp; m==0) &amp;#123;        if">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-07-29T04:06:02.111Z">
+<meta property="og:updated_time" content="2019-07-30T08:26:00.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="동적 계획법 테크닉">
 <meta name="twitter:description" content="동적 계획법 테크닉k번째 답 계산하기모스 부호 사전 (MORSE)1234567891011121314151617int skip = k - 1;void generate(int n, int m, string s)&amp;#123;    if(skip &amp;lt; 0)        return;    if(n==0 &amp;amp;&amp;amp; m==0) &amp;#123;        if">
@@ -182,6 +182,17 @@
 <li>건너뛰기 : ‘-‘이 n개, ‘o’가 m개라고 할 때, 이들을 조합해 만들 수 있는 부호는 총 (n+m)!÷n!m!개이다. 만약 skip이 이보다 크거나 같다면 그 개수만큼 skip을 줄여버리고 재귀 호출하지 않고 return 시킨다.</li>
 <li>시작점을 기준으로 잡고 이어나가기. (-,o)의 개수가 (n,m)이라고 할 때 ‘-‘로 시작하는 조합의 개수는 (n-1,m)개. 따라서 skip이 이 개수보다 크다면 무조건 ‘o’로 시작. 작다면 ‘-‘로 시작한다. 이 과정을 반복</li>
 </ol>
+<br>
+
+<h4 id="정수-이외의-입력에-대한-메모이제이션"><a href="#정수-이외의-입력에-대한-메모이제이션" class="headerlink" title="정수 이외의 입력에 대한 메모이제이션"></a>정수 이외의 입력에 대한 메모이제이션</h4><h6 id="연관-배열-이용하기-map-lt-vector-lt-int˙-gt-int-gt-cache"><a href="#연관-배열-이용하기-map-lt-vector-lt-int˙-gt-int-gt-cache" class="headerlink" title="연관 배열 이용하기 : map&lt;vector&lt;int˙&gt;,int&gt; cache;"></a>연관 배열 이용하기 : <code>map&lt;vector&lt;int˙&gt;,int&gt; cache;</code></h6><p>vector를 키로 갖는 map을 이용할 수 있다. 그러나 map에 접근하는데 시간이 걸리고 vector와 같은 컨테이너들은 비교하는 데도 시간이 오래 걸리기 때문에 계산량이 작을 때만 사용할 수 있다.</p>
+<h5 id="일대일-대응-함수-작성하기"><a href="#일대일-대응-함수-작성하기" class="headerlink" title="일대일 대응 함수 작성하기"></a>일대일 대응 함수 작성하기</h5><p>입력의 값을 조절하여 정수 형태로 일대일 대응시켜 메모이제이션을 적용해보자.</p>
+<ol>
+<li>입력이 불린 값의 배열인 경우 : {true} : 1 = 1, {true, false, true, false} : 0101 = 5 같이 변형 가능</li>
+<li>순열인 경우 : 사전순으로 몇 번째 오는지를 기준으로 정수로 변환</li>
+</ol>
+<h5 id="여행하는-외판원-문제"><a href="#여행하는-외판원-문제" class="headerlink" title="여행하는 외판원 문제"></a>여행하는 외판원 문제</h5><p>원래 완전 탐색을 이용해 모든 경로에 대한 크기를 구해줘서 비교하는 문제였다. 같은 인자를 갖는 함수가 다시 호출되지 않아서 메모이제이션을 쓸 수 없다. 메모이제이션을 적용할 수 있도록 visited 배열을 정수 형태로 변환해보자. 각 지점을 방문했으면 1, 방문하지 않았으면 0으로 지정, 즉 2진수로 표현해줄 수 있다. visited는 다음과 같이 표현 가능하다.</p>
+<p>모두 방문했을 경우 : <code>visited==1&lt;&lt;n-1</code><br>방문했는지 확인 : visited&amp;(1&lt;&lt;next)==1<br>next를 방문하여 visited에 추가 : visited+=(1&lt;&lt;next)</p>
+<p>이렇게 정수 형태로 변환한 후 cache[here]˙[visited]로 메모이제이션을 적용해줄 수 있다.</p>
 
         </div>
         <footer class="article-footer">
@@ -189,7 +200,7 @@
 
 
 
-    <a data-url="https://2yunsoo.github.io/2019/07/26/동적-계획법-테크닉/" data-id="cjypalk2n000yl0ng02wwkvck" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://2yunsoo.github.io/2019/07/26/동적-계획법-테크닉/" data-id="cjyqjqfte003d54ngqxji9329" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -265,10 +276,10 @@
         "genre": "알고리즘",
         "datePublished": "2019-07-26",
         "dateCreated": "2019-07-26",
-        "dateModified": "2019-07-29",
+        "dateModified": "2019-07-30",
         "url": "https://2yunsoo.github.io/2019/07/26/동적-계획법-테크닉/",
         "description": "동적 계획법 테크닉k번째 답 계산하기모스 부호 사전 (MORSE)1234567891011121314151617int skip = k - 1;void generate(int n, int m, string s)&#123;    if(skip &lt; 0)        return;    if(n==0 &amp;&amp; m==0) &#123;        if"
-        "wordCount": 261
+        "wordCount": 438
     }
 </script>
 
@@ -368,6 +379,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
+                            <p class="item-title"><a href="/2019/07/31/웨브바짐-ZIMBABWE/" class="title">웨브바짐(ZIMBABWE)</a></p>
+                            <p class="item-date"><time datetime="2019-07-31T00:33:26.000Z" itemprop="datePublished">2019-07-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/문제/">문제</a></p>
                             <p class="item-title"><a href="/2019/07/30/k번째-최대-증가-수열-KLIS/" class="title">k번째 최대 증가 수열(KLIS)</a></p>
                             <p class="item-date"><time datetime="2019-07-30T03:01:14.000Z" itemprop="datePublished">2019-07-30</time></p>
                         </div>
@@ -400,15 +420,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/근거리-네트워크-LAN/" class="title">근거리 네트워크(LAN)</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T08:58:31.000Z" itemprop="datePublished">2019-07-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -418,7 +429,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">14</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/문제/">문제</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/알고리즘/">알고리즘</a><span class="category-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -428,7 +439,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">47</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">7월 2019</a><span class="archive-list-count">48</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">6월 2019</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -438,7 +449,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 14.44px;">BFS</a> <a href="/tags/DFS/" style="font-size: 13.33px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 15.56px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.89px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 17.78px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 13.33px;">다익스트라</a> <a href="/tags/동적계획/" style="font-size: 10px;">동적계획</a> <a href="/tags/메모이제이션/" style="font-size: 15.56px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.22px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 11.11px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 12.22px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.11px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.11px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 16.67px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 13.33px;">트리</a> <a href="/tags/트립/" style="font-size: 11.11px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.22px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 11.11px;">플로이드</a> <a href="/tags/하/" style="font-size: 15.56px;">하</a> <a href="/tags/힙/" style="font-size: 11.11px;">힙</a>
+            <a href="/tags/BFS/" style="font-size: 14.44px;">BFS</a> <a href="/tags/DFS/" style="font-size: 13.33px;">DFS</a> <a href="/tags/INF/" style="font-size: 10px;">INF</a> <a href="/tags/Memoization/" style="font-size: 10px;">Memoization</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/구간트리/" style="font-size: 15.56px;">구간트리</a> <a href="/tags/그래프/" style="font-size: 18.89px;">그래프</a> <a href="/tags/다이나믹/" style="font-size: 18.89px;">다이나믹</a> <a href="/tags/다익스트라/" style="font-size: 13.33px;">다익스트라</a> <a href="/tags/동적계획/" style="font-size: 10px;">동적계획</a> <a href="/tags/메모이제이션/" style="font-size: 16.67px;">메모이제이션</a> <a href="/tags/백준/" style="font-size: 12.22px;">백준</a> <a href="/tags/벨만포드/" style="font-size: 11.11px;">벨만포드</a> <a href="/tags/병합정렬/" style="font-size: 10px;">병합정렬</a> <a href="/tags/분할-정복/" style="font-size: 10px;">분할 정복</a> <a href="/tags/상/" style="font-size: 13.33px;">상</a> <a href="/tags/스패닝트리/" style="font-size: 10px;">스패닝트리</a> <a href="/tags/우선순위큐/" style="font-size: 11.11px;">우선순위큐</a> <a href="/tags/이진-검색-트리/" style="font-size: 10px;">이진 검색 트리</a> <a href="/tags/이진검색트리/" style="font-size: 11.11px;">이진검색트리</a> <a href="/tags/중/" style="font-size: 20px;">중</a> <a href="/tags/최단경로/" style="font-size: 17.78px;">최단경로</a> <a href="/tags/최소스패닝트리/" style="font-size: 10px;">최소스패닝트리</a> <a href="/tags/크루스칼/" style="font-size: 10px;">크루스칼</a> <a href="/tags/트리/" style="font-size: 13.33px;">트리</a> <a href="/tags/트립/" style="font-size: 11.11px;">트립</a> <a href="/tags/펜윅트리/" style="font-size: 12.22px;">펜윅트리</a> <a href="/tags/플로이드/" style="font-size: 11.11px;">플로이드</a> <a href="/tags/하/" style="font-size: 15.56px;">하</a> <a href="/tags/힙/" style="font-size: 11.11px;">힙</a>
         </div>
     </div>
 
